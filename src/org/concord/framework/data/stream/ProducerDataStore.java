@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2004-11-15 17:41:59 $
+ * $Revision: 1.5 $
+ * $Date: 2005-03-07 04:03:43 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -51,7 +51,6 @@ public class ProducerDataStore extends AbstractDataStore
 	protected DataProducer dataProducer;
 	
 	private int numberOfChannels = 0;
-	private int dataOffset = 0;
 	private int nextSampleOffset = 1;
 	private float dt = 1;
 	private boolean useDtAsChannel = true;
@@ -136,24 +135,46 @@ public class ProducerDataStore extends AbstractDataStore
 		Float value;
 		int iSamples = getTotalNumSamples();
 				
-		sampleIndex = dataOffset;
+		sampleIndex =  dataEvent.getDataDescription().getDataOffset();
 		
 		for(int i=0; i<numberOfSamples; i++)
 		{
-			for(int j=0; j<numberOfChannels; j++)
-			{
-				value = new Float(data[sampleIndex + j]);
-				
-				//This is not a WritableDataStore, so this is not valid anymore:
-				//setValueAt(i + iSamples, j, value);
-				addValue(j, value);
-			}
-			sampleIndex+= nextSampleOffset;
+		    synchronized (this){
+		        for(int j=0; j<numberOfChannels; j++)
+		        {
+		            value = new Float(data[sampleIndex + j]);
+		            
+		            //This is not a WritableDataStore, so this is not valid anymore:
+		            //setValueAt(i + iSamples, j, value);
+		            addValue(j, value);
+		        }
+		        sampleIndex+= nextSampleOffset;
+		    }
+		    // notify listeners after we added all the values in the sample
+		    notifyDataAdded();
 		}
 
 		notifyDataAdded();
 	}
 
+	/* (non-Javadoc)
+     * @see org.concord.framework.data.stream.AbstractDataStore#getTotalNumSamples()
+     */
+    public synchronized int getTotalNumSamples()
+    {
+		//Returns the maximum between the number of samples in each channel
+		int t = 0;
+		for (int i=0; i < channelsValues.size(); i++){
+			Vector channel = (Vector)channelsValues.elementAt(i);
+			if (channel.size() > t){
+				t = channel.size();
+			} else if(channel.size() < t) {
+			    System.err.println("got inconsistant call getTotalNumSamples");
+			}
+		}
+		return t;
+    }
+	
 	/**
 	 * Adds a value to the channel indicated
 	 * If the channel doesn't exist, it doesn't do anything
@@ -170,9 +191,7 @@ public class ProducerDataStore extends AbstractDataStore
 		Vector channel = (Vector)channelsValues.elementAt(numChannel);
 		
 		//Add the value to the channel
-		channel.addElement(value);
-		
-		notifyDataAdded();
+		channel.addElement(value);		
 	}
 	
 	/**
@@ -187,7 +206,6 @@ public class ProducerDataStore extends AbstractDataStore
 	protected void updateDataDescription(DataStreamDescription desc)
 	{
 		dataStreamDesc = desc;
-		dataOffset = desc.getDataOffset();
 		nextSampleOffset = desc.getNextSampleOffset();
 		dt = desc.getDt();
 		numberOfChannels = desc.getChannelsPerSample();
