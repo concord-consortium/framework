@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2004-10-12 05:13:49 $
+ * $Revision: 1.3 $
+ * $Date: 2004-10-12 23:52:01 $
  * $Author: dima $
  *
  * Licence Information
@@ -38,6 +38,8 @@ public class DataStreamEvent extends DataEvent
 
     public int [] pTimes = new int [10];
     public int numPTimes = 0;
+    
+    Object      source;
 
 	public DataStreamEvent()
 	{
@@ -111,4 +113,10 @@ public class DataStreamEvent extends DataEvent
 	{
 		return numSamples;
 	}
+	
+    public Object getSource(){return source;}
+    
+    public void setSource(Object source){this.source = source;}
+
+	
 }
