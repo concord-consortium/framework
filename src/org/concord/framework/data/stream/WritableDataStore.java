@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2004-11-23 16:04:37 $
- * $Author: scytacki $
+ * $Revision: 1.5 $
+ * $Date: 2005-03-10 03:04:27 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -55,10 +55,16 @@ public interface WritableDataStore extends DataStore
 	public void setValueAt(int numSample, int numChannel, Object value);
 
 	/**
-	 * Removes a value in a specific sample in all channels
+	 * Removes values in a specific sample in all channels
 	 * @param numSample		sample number, starting from 0, >0
 	 */
-	public void removeValueAt(int numSample);
+	public void removeSampleAt(int numSample);
+	
+	/**
+	 * Inserts empty values in a specific sample in all channels
+	 * @param numSample 	sample number, starting from 0, >0
+	 */
+	//public void insertValueAt(int numSample);
 	
 	/**
 	 * set the description of the channel.  This includes the label
