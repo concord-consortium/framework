@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2004-12-01 20:21:17 $
- * $Author: scytacki $
+ * $Revision: 1.8 $
+ * $Date: 2005-01-04 04:08:59 $
+ * $Author: dima $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -52,8 +52,6 @@ public class DataStreamEvent extends DataEvent
 	public static final int DATA_DESC_CHANGED   = 1004;
 	public static final int DATA_DESC_RESET     = 1005;
 	public static final int DATA_DESC_ERROR     = 1006;
-
-	public int type;
 
 	public float 	[]data = null;
 	public int		numSamples = 1;
