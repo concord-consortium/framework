@@ -55,7 +55,7 @@ public interface OTrunk {
 
 	/**
 	 * Warning: this is method should only be used when you don't know
-	 * which object is requesting the new OTObject.  The requestion object
+	 * which object is requesting the new OTObject.  The requesting object
 	 * is currently used to keep the context of user mode or authoring mode
 	 * @param childID
 	 * @return
@@ -64,6 +64,8 @@ public interface OTrunk {
 	public OTObject getOTObject(OTID childID) throws Exception;
 
 	public OTObject getOTObject(OTID referingId, OTID childID) throws Exception;
+
+	public OTID getOTID(String otidStr);
 	
 	public OTObject getUserRuntimeObject(OTObject authoredObject, OTUser user)
 		throws Exception;
