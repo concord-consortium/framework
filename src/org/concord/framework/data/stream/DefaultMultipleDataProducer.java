@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2004-11-15 17:41:59 $
+ * $Revision: 1.5 $
+ * $Date: 2004-11-23 16:02:35 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -56,6 +56,14 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	}
 
 	/**
+	 * @param size
+	 */
+	public DefaultMultipleDataProducer(int size)
+	{
+		this(1, size);
+	}
+
+	/**
 	 * @param dt
 	 */
 	public DefaultMultipleDataProducer(float dt, int size)
@@ -69,8 +77,18 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 		addValues(vals, true);
 	}
 	
+	/**
+	 * The size of the vals array must match the number of channels.
+	 * if it doesn't an ArrayStoreException will be thrown 
+	 * @param vals
+	 * @param bSendValues
+	 */
 	public void addValues(float[] vals, boolean bSendValues)
 	{
+		if(vals.length != getDataDescription().getChannelsPerSample()) {
+			throw new ArrayStoreException("Size of array doesn't match number of channels");
+		}
+		
 		float[] tempValues;
 		if (!valuesSent){
 			tempValues = new float[vals.length + this.values.length];
