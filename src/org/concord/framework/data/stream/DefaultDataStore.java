@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2004-11-12 18:40:24 $
- * $Author: eblack $
+ * $Revision: 1.5 $
+ * $Date: 2004-11-24 01:20:58 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -81,6 +81,9 @@ public class DefaultDataStore extends AbstractDataStore
 		while (numSample >= channel.size()){
 			//Add empty elements until the desired sample
 			channel.addElement(null);
+		}
+		
+		if (numSample >= getTotalNumSamples()){
 			valueAdded = true;
 		}
 		
