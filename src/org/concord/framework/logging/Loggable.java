@@ -28,5 +28,9 @@ public interface Loggable
 	
 	public void setLogMode(int logmode);
 	public int  getLogMode();
+	
+	public LogManager getLogManager();
+	public void setLogManager(LogManager logManager);
+	
 }
 
