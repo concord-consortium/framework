@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2005-03-24 04:00:38 $
+ * $Revision: 1.2 $
+ * $Date: 2005-03-24 04:15:17 $
  * $Author: dmarkman $
  *
  * Licence Information
@@ -45,6 +45,6 @@ package org.concord.framework.data.stream;
  */
 public interface WritableArrayDataStore extends WritableDataStore
 {	
-	public void setValues(int numbChannels,float []x,float []y);
+	public void setValues(int numbChannels,float []y);
 
 }
