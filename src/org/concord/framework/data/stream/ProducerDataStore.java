@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2004-11-12 18:40:24 $
- * $Author: eblack $
+ * $Revision: 1.4 $
+ * $Date: 2004-11-15 17:41:59 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -190,7 +190,7 @@ public class ProducerDataStore extends AbstractDataStore
 		dataOffset = desc.getDataOffset();
 		nextSampleOffset = desc.getNextSampleOffset();
 		dt = desc.getDt();
-		numberOfChannels = desc.getChannelPerSample();
+		numberOfChannels = desc.getChannelsPerSample();
 		useDtAsChannel = (desc.getDataType() == DataStreamDescription.DATA_SEQUENCE);
 
 		//Make sure the values vector has enough channels

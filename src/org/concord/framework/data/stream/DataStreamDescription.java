@@ -24,8 +24,6 @@
  */
 package org.concord.framework.data.stream;
 
-import java.util.Vector;
-
 public class DataStreamDescription
 {
 	/**
@@ -41,12 +39,14 @@ public class DataStreamDescription
 	public final static int DATA_SERIES = 1;
 
 	private int dataType = DATA_SEQUENCE;
-	private int channelPerSample;
+
+	// This field is redundant
+	// private int channelPerSample;
 	private float dt;
 	private int dataOffset = 0;
 	private int nextSampleOffset = -1;
 	
-	private Vector channelDescriptions;	//DataChannelDescription objects
+	private DataChannelDescription [] channelDescriptions = null;	//DataChannelDescription objects
 	private DataChannelDescription dtChannelDescription;
 
 	public DataStreamDescription(){
@@ -55,17 +55,12 @@ public class DataStreamDescription
 
 	public DataStreamDescription(float dt,int chPerSample){
 		this.dt = dt;
-		this.channelPerSample 	= chPerSample;
-		channelDescriptions = new Vector();
+		setChannelsPerSample(chPerSample);
 		
 		//Dt channel description
 		dtChannelDescription =  new DataChannelDescription();
 		dtChannelDescription.setName("dt");
-		dtChannelDescription.setPrecision(2);
-			
-		//Make sure we have at least one channel description
-		DataChannelDescription channelDesc = new DataChannelDescription();
-		channelDescriptions.add(channelDesc);
+		dtChannelDescription.setPrecision(2);			
 	}
 	
 	public void setDt(float dt)
@@ -78,14 +73,29 @@ public class DataStreamDescription
 		return dt;
 	}
 
-	public void	setChannelPerSample(int chPerSample)
+	/**
+	 * This sets the number of channels per sample
+	 * Warning: It will reset all the channel descriptions to null.  And
+	 *  then create one new channel description for the 1st channel.
+	 * 
+	 * @param chPerSample
+	 */
+	public void	setChannelsPerSample(int chPerSample)
 	{
-		this.channelPerSample = chPerSample;
+		if(channelDescriptions == null ||
+				chPerSample != channelDescriptions.length) {
+			channelDescriptions = new DataChannelDescription [chPerSample];
+
+			//Make sure we have at least one channel description
+			DataChannelDescription channelDesc = new DataChannelDescription();
+			channelDescriptions[0] = channelDesc;
+
+		}
 	}
 
-	public int getChannelPerSample()
+	public int getChannelsPerSample()
 	{
-		return channelPerSample;
+		return channelDescriptions.length;
 	}
 
 	public void	setDataType(int dataType)
@@ -121,7 +131,7 @@ public class DataStreamDescription
 	public int getNextSampleOffset()
 	{
 		if (nextSampleOffset == -1){
-			return channelPerSample;
+			return channelDescriptions.length;
 		}
 		return nextSampleOffset;
 	}
@@ -136,49 +146,38 @@ public class DataStreamDescription
 	
 	
 	/**
-	 * @return Returns the number of channelDesc.
-	 */
-	public int getNumbChannelDescription(){
-	    if(channelDescriptions == null) return 0;
-	    return channelDescriptions.size();
-	}
-	
-	/**
+	 * 
 	 * @return Returns the channelDesc.
 	 */
 	public DataChannelDescription getChannelDescription(int index)
 	{
-		if (index < 0 || index >= channelDescriptions.size()) return null;
-		return (DataChannelDescription)channelDescriptions.elementAt(index);
+		if (index < 0 || index >= channelDescriptions.length) {
+			throw new IndexOutOfBoundsException("channel index: " + index);
+		}
+		return channelDescriptions[index];
 	}
 
 	/**
-	 * @param channelDesc The channelDesc to set.
+	 * @param channelDesc The channelDesc to set.  This put the description
+	 * at position 0 replacing anything that was there.
 	 */
 	public void setChannelDescription(DataChannelDescription channelDesc)
 	{
-		channelDescriptions.removeAllElements();
-		addChannelDescription(channelDesc);
+		if (channelDescriptions.length < 1) return;
+		channelDescriptions[0] = channelDesc;
 	}
-	
-	/**
-	 * @param channelDesc The channelDesc to add
-	 */
-	public void addChannelDescription(DataChannelDescription channelDesc)
-	{
-		channelDescriptions.add(channelDesc);
-	}
-	
+		
 	/**
 	 * @param channelDesc The channelDesc to set.
+	 * @param index the index of the channel that
+	 * this channel description describes
 	 */
 	public void setChannelDescription(DataChannelDescription channelDesc, int index)
 	{
-		//Add empty channel descriptions 
-		while (index >= channelDescriptions.size()){
-			channelDescriptions.add(null);
+		if (index < 0 || index >= channelDescriptions.length) {
+				throw new IndexOutOfBoundsException("channel index: " + index);
 		}
-		channelDescriptions.setElementAt(channelDesc, index);
+		channelDescriptions[index] = channelDesc;
 	}
 	
 	/**
