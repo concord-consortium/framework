@@ -44,4 +44,16 @@ public static final int SIM_RUN_STATE 		= 3;
 	public void goToStep(int stepNumber);
 	
 	public void gotoPreviousStep();
+
+	/**
+	 * Add a simulation listener 
+	 * @param l	simulation listener to add
+	 */
+	public void addSimulationListener(SimulationListener l);	
+
+	/**
+	 * Remove a simulation listener 
+	 * @param l	simulation listener to remove
+	 */
+	public void removeSimulationListener(SimulationListener l);	
 }
