@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2004-11-12 18:40:24 $
- * $Author: eblack $
+ * $Revision: 1.4 $
+ * $Date: 2004-11-23 16:04:37 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -44,7 +44,7 @@ package org.concord.framework.data.stream;
  *
  */
 public interface WritableDataStore extends DataStore
-{
+{	
 	/**
 	 * Sets the value in a specific sample in a specific
 	 * channel
@@ -59,4 +59,14 @@ public interface WritableDataStore extends DataStore
 	 * @param numSample		sample number, starting from 0, >0
 	 */
 	public void removeValueAt(int numSample);
+	
+	/**
+	 * set the description of the channel.  This includes the label
+	 * of the channel, the units, the precision...
+	 * 
+	 * @param numChannel
+	 * @param desc
+	 */
+	public void setDataChannelDescription(int channelIndex, DataChannelDescription desc);
+
 }
