@@ -31,7 +31,7 @@ public class ApplAboutHandlerFactory
 		if(!macOS) return null;
 		ApplAboutHandler handler = null;
 		try{
-			Class appHandlerClass = Class.forName("org.concord.framework.abouthelper.MacApplAboutHandler");
+			Class appHandlerClass = Class.forName("org.concord.platform.framework.macosx.abouthelper.MacApplAboutHandler");
 			handler =  (ApplAboutHandler)appHandlerClass.newInstance();
 		}catch(Throwable t){
 			handler = null;

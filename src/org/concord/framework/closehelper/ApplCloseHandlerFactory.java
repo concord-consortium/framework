@@ -32,7 +32,7 @@ public class ApplCloseHandlerFactory
 		ApplCloseHandler handler = null;
 		
 		try{
-			Class appHandlerClass = Class.forName("org.concord.framework.closehelper.MacApplCloseHandler");
+			Class appHandlerClass = Class.forName("org.concord.platform.framework.macosx.closehelper.MacApplCloseHandler");
 			handler =  (ApplCloseHandler)appHandlerClass.newInstance();
 		}catch(Throwable t){
 			handler = null;
