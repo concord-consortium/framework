@@ -1,6 +1,6 @@
 package org.concord.framework.data.stream;
 
-import org.concord.framework.data.DataDimension;
+import java.util.Vector;
 
 public class DataStreamDescription
 {
@@ -13,19 +13,7 @@ public class DataStreamDescription
 	private int dataOffset = 0;
 	private int nextSampleOffset = 1;
 	
-	private DataDimension unit = null;
-	private float tuneValue = 1.0f;
-
-	// power of 10 precision
-	private int precision;
-
-	// The absolute min and max of the data or NaN if
-	// not available
-	private float absoluteMin, absoluteMax;
-
-	// The recommended min and max of the data or NaN if
-	// not available
-	private float recommendMin, recommendMax;
+	private Vector channelDescriptions;	//DataChannelDescription objects
 
 	public DataStreamDescription(){
 		this(0.0f,1);
@@ -34,6 +22,9 @@ public class DataStreamDescription
 	public DataStreamDescription(float dt,int chPerSample){
 		this.dt = dt;
 		this.channelPerSample 	= chPerSample;
+		channelDescriptions = new Vector();
+		DataChannelDescription channelDesc = new DataChannelDescription();
+		channelDescriptions.add(channelDesc);
 	}
 	
 	public void setDt(float dt)
@@ -66,26 +57,6 @@ public class DataStreamDescription
 		return dataType;
 	}
 
-	public void	setUnit(DataDimension unit)
-	{
-		this.unit = unit;
-	}
-
-	public DataDimension getUnit()
-	{
-		return unit;
-	}
-
-	public void setTuneValue(float tuneValue)
-	{
-		this.tuneValue = tuneValue;
-	}
-	
-	public float getTuneValue()
-	{
-		return tuneValue;
-	}
-
 	public void setDataOffset(int dataOffset)
 	{
 		this.dataOffset = dataOffset;
@@ -110,64 +81,38 @@ public class DataStreamDescription
 	{
 		return nextSampleOffset;
 	}
+	
 	/**
-	 * @return Returns the absoluteMax.
+	 * @return Returns the channelDesc.
 	 */
-	public float getAbsoluteMax() {
-		return absoluteMax;
+	public DataChannelDescription getChannelDescription()
+	{
+		return getChannelDescription(0);
 	}
+	
 	/**
-	 * @param absoluteMax The absoluteMax to set.
+	 * @return Returns the channelDesc.
 	 */
-	public void setAbsoluteMax(float absoluteMax) {
-		this.absoluteMax = absoluteMax;
+	public DataChannelDescription getChannelDescription(int index)
+	{
+		if (index < 0 || index >= channelDescriptions.size()) return null;
+		return (DataChannelDescription)channelDescriptions.elementAt(index);
 	}
+
 	/**
-	 * @return Returns the absoluteMin.
+	 * @param channelDesc The channelDesc to set.
 	 */
-	public float getAbsoluteMin() {
-		return absoluteMin;
+	public void setChannelDescription(DataChannelDescription channelDesc)
+	{
+		channelDescriptions.removeAllElements();
+		addChannelDescription(channelDesc);
 	}
+	
 	/**
-	 * @param absoluteMin The absoluteMin to set.
+	 * @param channelDesc The channelDesc to set.
 	 */
-	public void setAbsoluteMin(float absoluteMin) {
-		this.absoluteMin = absoluteMin;
-	}
-	/**
-	 * @return Returns the precision.
-	 */
-	public int getPrecision() {
-		return precision;
-	}
-	/**
-	 * @param precision The precision to set.
-	 */
-	public void setPrecision(int precision) {
-		this.precision = precision;
-	}
-	/**
-	 * @return Returns the recommendMax.
-	 */
-	public float getRecommendMax() {
-		return recommendMax;
-	}
-	/**
-	 * @param recommendMax The recommendMax to set.
-	 */
-	public void setRecommendMax(float recommendMax) {
-		this.recommendMax = recommendMax;
-	}
-	/**
-	 * @return Returns the recommendMin.
-	 */
-	public float getRecommendMin() {
-		return recommendMin;
-	}
-	/**
-	 * @param recommendMin The recommendMin to set.
-	 */
-	public void setRecommendMin(float recommendMin) {
-		this.recommendMin = recommendMin;
+	public void addChannelDescription(DataChannelDescription channelDesc)
+	{
+		channelDescriptions.add(channelDesc);
 	}
 }
