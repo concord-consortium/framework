@@ -30,6 +30,8 @@
  */
 package org.concord.framework.otrunk;
 
+import java.util.Vector;
+
 
 
 
@@ -48,11 +50,15 @@ package org.concord.framework.otrunk;
  * @author scott
  *
  */
-public class DefaultOTObject implements OTObject
+public class DefaultOTObject 
+	implements OTObject, OTChangeNotifying
 {
 	private OTrunk otDatabase;
 	
 	private OTResourceSchema resources;
+	
+	private Vector changeListeners = new Vector();
+    private OTChangeEvent changeEvent = new OTChangeEvent(this);
 	
 	public DefaultOTObject(OTResourceSchema resources)
 	{
@@ -119,4 +125,31 @@ public class DefaultOTObject implements OTObject
 		}
 		return false;
 	}
+	
+	/* (non-Javadoc)
+     * @see org.concord.framework.otrunk.OTChangeNotifying#addOTChangeListener(org.concord.framework.otrunk.OTChangeListener)
+     */
+    public void addOTChangeListener(OTChangeListener listener)
+    {
+        // TODO Auto-generated method stub
+        if(changeListeners.contains(listener)) return;
+        
+        changeListeners.add(listener);
+    }
+    
+    /* (non-Javadoc)
+     * @see org.concord.framework.otrunk.OTChangeNotifying#removeOTChangeListener(org.concord.framework.otrunk.OTChangeListener)
+     */
+    public void removeOTChangeListener(OTChangeListener listener)
+    {
+        // TODO Auto-generated method stub
+        changeListeners.remove(listener);
+    }
+    
+    protected void notifyOTChange()
+    {
+        for(int i=0;i<changeListeners.size(); i++){
+            ((OTChangeListener)changeListeners.get(i)).stateChanged(changeEvent);
+        }
+    }
 }
