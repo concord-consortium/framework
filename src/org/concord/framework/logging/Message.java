@@ -1,0 +1,1 @@
+package org.concord.framework.logging;public class Message extends TextContainer{public final static String elementName = "message"; 	public Message(String text){		super(text);	}	public String toString(){return "Message: "+super.getText();}}
