@@ -24,8 +24,6 @@ public interface OTObject
 	
 	public void setName(String name);
 
-	public boolean getInput();
-
 	/**
 	 * This method is called when an this object is created. 
 	 * The method will not be called when the object has been
