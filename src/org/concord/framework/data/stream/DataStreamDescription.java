@@ -93,6 +93,15 @@ public class DataStreamDescription
 		return getChannelDescription(0);
 	}
 	
+	
+	/**
+	 * @return Returns the number of channelDesc.
+	 */
+	public int getNumbChannelDescription(){
+	    if(channelDescriptions == null) return 0;
+	    return channelDescriptions.size();
+	}
+	
 	/**
 	 * @return Returns the channelDesc.
 	 */
