@@ -10,6 +10,7 @@ import java.util.Vector;
 import javax.swing.JComponent;
 
 import org.concord.framework.simulation.Simulation;
+import org.concord.framework.simulation.SimulationListener;
 
 public class ImageViewer extends JComponent implements Simulation
 {
@@ -408,6 +409,24 @@ int pixels[];
 			buffer = null;
 		}
 		return buffer;
+	}
+
+	/**
+	 * Add a simulation listener 
+	 * @param l	simulation listener to add
+	 */
+	public void addSimulationListener(SimulationListener l)
+	{
+		System.err.println("Simulation Listeners are not supported yet in "+this.getClass().getName());
+	}
+
+	/**
+	 * Remove a simulation listener 
+	 * @param l	simulation listener to remove
+	 */
+	public void removeSimulationListener(SimulationListener l)
+	{
+		System.err.println("Simulation Listeners are not supported yet in "+this.getClass().getName());
 	}
 }
 class AnimGIF {
