@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-02-15 01:14:27 $
- * $Author: eburke $
+ * $Revision: 1.7 $
+ * $Date: 2005-02-19 14:06:01 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -63,6 +63,19 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 		this(1, size);
 	}
 	
+	/**
+	 * This method is deprecated because it creates a data producer
+	 * that has only one channels. If there is only one 
+	 * channel then just use the DefaultDataProducer.
+	 * 
+	 * previous this method was used when the number of channels
+	 * was unknown.  then when addValues was called the number of 
+	 * channels was dynamically updated.  This caused irradic behavior
+	 * in, so now the number of channels must be set explicitly.
+	 * 
+	 * @deprecated
+	 * @param dt
+	 */
 	public DefaultMultipleDataProducer(float dt)
 	{
 		super(dt);
@@ -84,7 +97,12 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	
 	/**
 	 * The size of the vals array must match the number of channels.
-	 * if it doesn't an ArrayStoreException will be thrown 
+	 * if it doesn't an ArrayStoreException will be thrown
+	 * 
+	 * if bSendValues is true then the data will be sent on to 
+	 * data consumers listening to this producer.  Otherwise the 
+	 * data will accumulate. 
+	 * 
 	 * @param vals
 	 * @param bSendValues
 	 */
