@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-10-26 17:27:21 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-28 18:59:25 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -140,10 +140,10 @@ public class ProducerDataStore extends AbstractDataStore
 	protected void addValue(int numChannel, Object value)
 	{
 		if (numChannel < 0) return;	
-		if (numChannel >= values.size()) return;
+		if (numChannel >= channelsValues.size()) return;
 
 		//Locate the channel
-		Vector channel = (Vector)values.elementAt(numChannel);
+		Vector channel = (Vector)channelsValues.elementAt(numChannel);
 		
 		//Add the value to the channel
 		channel.addElement(value);
@@ -170,9 +170,9 @@ public class ProducerDataStore extends AbstractDataStore
 		useDtAsChannel = (desc.getDataType() == DataStreamDescription.DATA_SEQUENCE);
 
 		//Make sure the values vector has enough channels
-		while (numberOfChannels > values.size()){
+		while (numberOfChannels > channelsValues.size()){
 			//Add empty vectors until all channels have space
-			values.addElement(new Vector());
+			channelsValues.addElement(new Vector());
 		}
 	}
 	
