@@ -36,9 +36,40 @@ package org.concord.framework.text;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Generation - Code and Comments
  */
-public interface UserMessageHandler {
+public interface UserMessageHandler 
+{
+	public final static int CLOSED_OPTION = -1;
+	
+	/**
+	 * This shows the message to the user and blocks until they
+	 * respond by selecting an option.  It could show a dialog, 
+	 * or it might just put an entry in a log file.
+	 * 
+	 * It returns the option selected by the user, or 
+	 * CLOSED_OPTION if the dialog was closed or canceled without
+	 * selecting an option.
+	 * 
+	 * @param message 
+	 *  message for the user, usually in the form of a question.
+	 * @param title
+	 *  short title for the message might be the title of the dialog
+	 * @param options
+	 *  available options for the user.
+	 * @param defaultOption
+	 *  the option selected by default.  
+	 * @return
+	 *  this returns the option select by the user or CLOSED_OPTION
+	 *  if they canceled the choice without selecting an option.
+	 */
 	public int showOptionMessage(String message, String title, String [] options, 
 			String defaultOption);
 
+	/**
+	 * Show a message to the user.  This will have a single "ok" button
+	 * or whatever is appropriate for the platform or presentation.
+	 * 
+	 * @param message
+	 * @param title
+	 */
 	public void showMessage(String message, String title);
 }
