@@ -1,7 +1,7 @@
 package org.concord.framework.logging;
 
-import java.io.Writer;
 import java.io.OutputStream;
+import java.io.Writer;
 
 public interface Loggable
 {

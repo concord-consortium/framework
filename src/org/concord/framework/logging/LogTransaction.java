@@ -3,7 +3,7 @@ package org.concord.framework.logging;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.concord.framework.text.*;
+import org.concord.framework.text.Message;
 
 public final class LogTransaction
 {

@@ -5,8 +5,8 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.io.Writer;
 
-import org.w3c.dom.Element;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 
 public interface DomainPersistentElement

@@ -1,6 +1,7 @@
 package org.concord.framework.domain;
 
 import java.util.Vector;
+
 import org.concord.framework.logging.LogManager;
 
 public interface DomainActivityOwner

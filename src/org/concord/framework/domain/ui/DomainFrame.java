@@ -2,22 +2,27 @@ package org.concord.framework.domain.ui;
 
 
 import java.awt.event.WindowAdapter;
-import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.Vector;
-import java.io.*;
 
 import javax.swing.JFrame;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import org.concord.framework.closehelper.*;
-import org.concord.framework.logging.LogManager;
+import org.concord.framework.closehelper.ApplCloseHandler;
+import org.concord.framework.closehelper.ApplCloseHandlerFactory;
+import org.concord.framework.closehelper.ApplCloseHandlerListener;
 import org.concord.framework.domain.DomainActivityOwner;
+import org.concord.framework.domain.DomainEngine;
 import org.concord.framework.domain.DomainOpener;
 import org.concord.framework.domain.DomainView;
-import org.concord.framework.domain.DomainEngine;
+import org.concord.framework.logging.LogManager;
 
 
 public class DomainFrame 
