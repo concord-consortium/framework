@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2004-10-27 23:14:42 $
+ * $Revision: 1.4 $
+ * $Date: 2004-10-29 05:22:10 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -30,6 +30,8 @@ public class DataChannelDescription
 
 	// power of 10 precision
 	private int precision;
+	
+	private boolean usePrecision = false;
 
 	// The absolute min and max of the data or NaN if
 	// not available
@@ -119,6 +121,7 @@ public class DataChannelDescription
 	 */
 	public void setPrecision(int precision) {
 		this.precision = precision;
+		usePrecision = true;
 	}
 	/**
 	 * @return Returns the recommendMax.
@@ -173,5 +176,12 @@ public class DataChannelDescription
 	public void setNumericData(boolean numericData)
 	{
 		this.numericData = numericData;
+	}
+	/**
+	 * @return Returns the usePrecision.
+	 */
+	public boolean isUsePrecision()
+	{
+		return usePrecision;
 	}
 }
