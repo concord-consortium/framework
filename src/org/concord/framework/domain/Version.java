@@ -1,14 +1,13 @@
 package org.concord.framework.domain;
 
 import java.util.Date;
-
-import org.concord.domain.DomainProperties;
+import java.util.Properties;
 
 public class Version
 extends DomainVersionInfo
 {
 	
-	public void save(DomainProperties properties)
+	public void save(Properties properties)
 	{
 		properties.setProperty("major.release", "" + majorRelease);
 		properties.setProperty("minor.release", "" + minorRelease);
@@ -21,7 +20,7 @@ extends DomainVersionInfo
 		properties.setProperty("developer", developer);
 	}
 	
-	public void restore(DomainProperties properties)
+	public void restore(Properties properties)
 	{
 		majorRelease = Integer.parseInt(properties.getProperty("major.release"));
 		minorRelease = Integer.parseInt(properties.getProperty("minor.release"));
