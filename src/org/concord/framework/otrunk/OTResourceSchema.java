@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-01-11 07:50:46 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2005-01-27 16:43:12 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -51,4 +51,6 @@ public interface OTResourceSchema
 	
 	public String getName();
 	public void setName(String name);
+	
+	public String getLocalId();
 }
