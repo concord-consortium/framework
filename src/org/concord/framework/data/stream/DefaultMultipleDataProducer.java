@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-09-09 21:46:39 $
+ * $Revision: 1.2 $
+ * $Date: 2004-09-10 19:20:49 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -21,7 +21,7 @@ package org.concord.framework.data.stream;
  */
 public class DefaultMultipleDataProducer extends DefaultDataProducer
 {
-
+	boolean valuesSent = true;
 	/**
 	 * 
 	 */
@@ -40,16 +40,53 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 		// TODO Auto-generated constructor stub
 	}
 
-	public void addValues(float[] values)
+	public void addValues(float[] vals)
 	{
-		this.values = values;
-		dataEvent.setData(values);
+		addValues(vals, true);
+	}
+	
+	public void addValues(float[] vals, boolean bSendValues)
+	{
+		float[] tempValues;
+		if (!valuesSent){
+			tempValues = new float[vals.length + this.values.length];
+			for (int i=0; i<tempValues.length; i++){
+				if (i < this.values.length){
+					tempValues[i] = this.values[i];
+				}
+				else{
+					tempValues[i] = vals[i - this.values.length];
+				}
+			}
+			
+			dataEvent.setNumSamples(dataEvent.getNumSamples()+1);
+		}
+		else if (!bSendValues){
+			tempValues = new float[vals.length];
+			for (int i=0; i<tempValues.length; i++){
+				tempValues[i] = vals[i];
+			}
+			
+			dataEvent.setNumSamples(1);
+		}
+		else{
+			tempValues = vals;
+		}
+		this.values = tempValues;
 		
-		if (dataDesc.getChannelPerSample() != values.length){
-			dataDesc.setChannelPerSample(values.length);
+		dataEvent.setData(this.values);
+		
+		if (dataDesc.getChannelPerSample() != vals.length){
+			dataDesc.setChannelPerSample(vals.length);
 			notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 		}
 		
-		notifyDataReceived();
+		if (bSendValues){
+			notifyDataReceived();
+			valuesSent = true;
+		}
+		else{
+			valuesSent = false;		
+		}
 	}
 }
