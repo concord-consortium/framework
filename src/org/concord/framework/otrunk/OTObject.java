@@ -50,7 +50,7 @@ public interface OTObject
 
 	/**
 	 * This method is called when an this object is created. 
-	 * The method will not be called when the object has been
+	 * The method will be called when the object has been
 	 * stored and then re-instanciated.
 	 */
 	public void init();	
