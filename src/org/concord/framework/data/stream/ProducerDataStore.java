@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-03-09 17:08:46 $
+ * $Revision: 1.7 $
+ * $Date: 2005-03-25 17:40:59 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -46,7 +46,7 @@ import java.util.Vector;
  *
  */
 public class ProducerDataStore extends AbstractDataStore 
-	implements DataListener
+	implements DataListener, DeltaDataStore
 {
 	protected DataProducer dataProducer;
 	
@@ -135,6 +135,11 @@ public class ProducerDataStore extends AbstractDataStore
 		Float value;
 		int storeSampleIndex = getTotalNumSamples();		
 		eventSampleIndex =  dataEvent.getDataDescription().getDataOffset();
+		if(data == null) {
+		    System.err.println("null data in dataReceived");
+		    System.err.println("  num samples: " + numberOfSamples);
+		    return;
+		}
 		
 		for(int i=0; i<numberOfSamples; i++)
 		{
@@ -206,6 +211,10 @@ public class ProducerDataStore extends AbstractDataStore
 	protected void updateDataDescription(DataStreamDescription desc)
 	{
 		dataStreamDesc = desc;
+		if(desc == null) {
+		    System.err.println("null data description");
+		    return;
+		}
 		nextSampleOffset = desc.getNextSampleOffset();
 		dt = desc.getDt();
 		numberOfChannels = desc.getChannelsPerSample();
@@ -253,5 +262,10 @@ public class ProducerDataStore extends AbstractDataStore
 	public void setUseDtAsChannel(boolean useDtAsChannel)
 	{
 		this.useDtAsChannel = useDtAsChannel;
+	}
+	
+	public float getDt()
+	{
+	    return dt;
 	}
 }

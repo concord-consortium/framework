@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-03-24 04:15:17 $
- * $Author: dmarkman $
+ * $Revision: 1.3 $
+ * $Date: 2005-03-25 17:40:59 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -43,8 +43,11 @@ package org.concord.framework.data.stream;
  * @author imoncada<p>
  *
  */
-public interface WritableArrayDataStore extends WritableDataStore
+public interface WritableArrayDataStore 
+	extends WritableDataStore, DeltaDataStore
 {	
-	public void setValues(int numbChannels,float []y);
-
+	public void setValues(int numbChannels,float []values, int offset, 
+	        int length, int nextSampleOffset);
+	
+	public void setDt(float dt);
 }
