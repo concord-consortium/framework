@@ -7,5 +7,5 @@
   <artifactId>framework</artifactId>
   <name>Framework</name>
   <groupId>${pom.artifactId}</groupId>
-  <currentVersion>1.6</currentVersion>
+  <currentVersion>1.7</currentVersion>
 </project>
