@@ -40,10 +40,17 @@ public interface DeltaDataStore extends DataStore
 {
 	/**
 	 * If this is true then channel -1 is time.  This channel
-	 * is does not need to be stored in the data store.
+	 * does not need to be stored in the data store.
 	 * @return 
 	 */
 	public boolean isUseDtAsChannel();
 	
+	/**
+	 * Return the dt used by this data store.  This value is
+	 * undefined if isUSeDtAsChannel() returns false.  
+	 * It would be best in this case to return a Float.NaN
+	 * 
+	 * @return
+	 */
 	public float getDt();
 }
