@@ -1,0 +1,1 @@
+package org.concord.framework.logging;public interface TextContained{	void setText(String text);	String getText(); }
