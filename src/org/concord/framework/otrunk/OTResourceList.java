@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-01-27 16:43:12 $
- * $Author: scytacki $
+ * $Revision: 1.4 $
+ * $Date: 2005-03-10 03:52:24 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -53,4 +53,6 @@ public interface OTResourceList extends OTResourceCollection
 	public abstract void add(int index, Object object);
 	
 	public void set(int index, Object object);
+	
+	public void remove(int index);
 }
