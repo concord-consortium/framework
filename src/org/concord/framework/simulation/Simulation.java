@@ -1,21 +1,15 @@
 package org.concord.framework.simulation;
 
-public interface Simulation{
+import org.concord.framework.data.DataFlow;
+
+public interface Simulation extends DataFlow{
 
 public static final int SIM_UNDEF_STATE 	= 0;
 public static final int SIM_RESET_STATE 	= 1;
 public static final int SIM_STOP_STATE 		= 2;
 public static final int SIM_RUN_STATE 		= 3;
 
-/** stop
- * stop simulation
-*/
-	public void stop();
 	
-/** reset
- * reset simulation
-*/
-	public void reset();
 	
 /** isRunning
  * @return <code>true</code> if simulation is running
@@ -35,11 +29,6 @@ public static final int SIM_RUN_STATE 		= 3;
 */
 	public void continueSteps();
 	
-/** start
- * start simulation
-*/
-	public void start();
-
 /** doOneStep
  * does only one step
 */
