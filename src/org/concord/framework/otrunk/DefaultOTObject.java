@@ -50,10 +50,11 @@ public class DefaultOTObject implements OTObject
 		resources.setName(name);
 	}
 		
-	// this needs to be public right now because some views
-	// need the database inorder to handle thirdparty packages
-	// that don't have per instance state.
-	public OTrunk getOTDatabase()
+	/**
+	 * This method can be used by an object to get its own database.
+	 * @return
+	 */
+	protected OTrunk getOTDatabase()
 	{
 		return otDatabase;
 	}

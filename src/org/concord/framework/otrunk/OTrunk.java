@@ -40,4 +40,8 @@ public interface OTrunk {
 	public OTObject getOTObject(OTID childID) throws Exception;
 
 	public OTObject getOTObject(OTID referingId, OTID childID) throws Exception;
+	
+	public OTObject getUserRuntimeObject(OTObject authoredObject, OTUser user)
+		throws Exception;
+
 }
