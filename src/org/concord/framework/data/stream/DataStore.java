@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-08-24 23:15:08 $
+ * $Revision: 1.2 $
+ * $Date: 2004-08-26 20:43:29 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -50,5 +50,22 @@ public interface DataStore
 	 */
 	public Object getValueAt(int numSample, int numChannel);
 
+	/**
+	 * Add a listener to the data store
+	 * @param l
+	 */
+	public void addDataStoreListener(DataStoreListener l);
+	
+	/**
+	 * Remove a listener from the data store
+	 * @param l
+	 */
+	public void removeDataStoreListener(DataStoreListener l);
+	
+	/**
+	 * 
+	 * @param numChannel
+	 * @return
+	 */
 	public DataChannelDescription getDataChannelDescription(int numChannel);
 }
