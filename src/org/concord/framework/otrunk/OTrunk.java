@@ -70,4 +70,5 @@ public interface OTrunk {
 	public OTObject getUserRuntimeObject(OTObject authoredObject, OTUser user)
 		throws Exception;
 
+	public OTWrapper getWrapper(Object wrappedObject);
 }
