@@ -1,6 +1,6 @@
 package org.concord.framework.datastream;
 
-public interface DataSource
+public interface DataProducer
 {
 	public void addDataListener(DataListener listener);
 	
