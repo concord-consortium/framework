@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2004-11-12 18:40:24 $
- * $Author: eblack $
+ * $Revision: 1.4 $
+ * $Date: 2004-11-15 17:41:59 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -58,10 +58,10 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	/**
 	 * @param dt
 	 */
-	public DefaultMultipleDataProducer(float dt)
+	public DefaultMultipleDataProducer(float dt, int size)
 	{
 		super(dt);
-		// TODO Auto-generated constructor stub
+		getDataDescription().setChannelsPerSample(size);
 	}
 
 	public void addValues(float[] vals)
@@ -100,8 +100,8 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 		
 		dataEvent.setData(this.values);
 		
-		if (dataDesc.getChannelPerSample() != vals.length){
-			dataDesc.setChannelPerSample(vals.length);
+		if (dataDesc.getChannelsPerSample() != vals.length){
+			dataDesc.setChannelsPerSample(vals.length);
 			notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 		}
 		
