@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-08-25 00:44:01 $
+ * $Revision: 1.2 $
+ * $Date: 2004-08-27 17:00:37 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -25,6 +25,7 @@ public class SimulationEvent extends EventObject
 {
 	//The source of this event should be a Simulation object
 	
+	private int previousSimulationState;	//The same states that Simulation class
 	private int simulationState;	//The same states that Simulation class
 	
 	/**
@@ -38,10 +39,11 @@ public class SimulationEvent extends EventObject
 	/**
 	 * @param source
 	 */
-	public SimulationEvent(Object source, int state)
+	public SimulationEvent(Object source, int oldState, int newState)
 	{
 		super(source);
-		this.simulationState = state;
+		this.previousSimulationState = oldState;
+		this.simulationState = newState;
 	}
 	
 	/**
@@ -58,5 +60,19 @@ public class SimulationEvent extends EventObject
 	public void setSimulationState(int simulationState)
 	{
 		this.simulationState = simulationState;
+	}
+	/**
+	 * @return Returns the previousSimulationState.
+	 */
+	public int getPreviousSimulationState()
+	{
+		return previousSimulationState;
+	}
+	/**
+	 * @param previousSimulationState The previousSimulationState to set.
+	 */
+	public void setPreviousSimulationState(int previousSimulationState)
+	{
+		this.previousSimulationState = previousSimulationState;
 	}
 }
