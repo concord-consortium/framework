@@ -5,8 +5,8 @@
 //
 // Original Author: Bob Miner
 //
-// $Revision: 1.1 $
-// $Date: 2004-04-30 04:40:44 $
+// $Revision: 1.2 $
+// $Date: 2004-05-10 18:24:21 $
 // $Author: dima $
 //
 
@@ -14,12 +14,7 @@ package org.concord.framework.debug;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
-
-import java.lang.Error;
-import java.lang.String;
-
 import java.text.DateFormat;
-
 import java.util.Date;
 import java.util.Vector;
 
@@ -35,7 +30,7 @@ import java.util.Vector;
  * is conditioned on a passed in "level" integer.  See the log level defintions
  * below for information on what level to use and when.
  *
- * @version		$Revision: 1.1 $ $Date: 2004-04-30 04:40:44 $
+ * @version		$Revision: 1.2 $ $Date: 2004-05-10 18:24:21 $
  * @author 		$Author: dima $
  */
 public class Debug
