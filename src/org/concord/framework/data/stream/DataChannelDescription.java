@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-08-24 23:15:08 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-26 17:27:21 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -38,6 +38,9 @@ public class DataChannelDescription
 	// The recommended min and max of the data or NaN if
 	// not available
 	private float recommendMin, recommendMax;
+	
+	//This indicates if the data is numeric, so the precision will have to be used, etc
+	private boolean numericData = true;
 
 	/**
 	 * 
@@ -148,5 +151,21 @@ public class DataChannelDescription
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+	
+	/**
+	 * @return Returns the numericData.
+	 */
+	public boolean isNumericData()
+	{
+		return numericData;
+	}
+	
+	/**
+	 * @param numericData The numericData to set.
+	 */
+	public void setNumericData(boolean numericData)
+	{
+		this.numericData = numericData;
 	}
 }

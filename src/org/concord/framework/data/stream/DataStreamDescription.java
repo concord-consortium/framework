@@ -23,6 +23,7 @@ public class DataStreamDescription
 	private int nextSampleOffset = -1;
 	
 	private Vector channelDescriptions;	//DataChannelDescription objects
+	private DataChannelDescription dtChannelDescription;
 
 	public DataStreamDescription(){
 		this(0.0f,1);
@@ -32,6 +33,13 @@ public class DataStreamDescription
 		this.dt = dt;
 		this.channelPerSample 	= chPerSample;
 		channelDescriptions = new Vector();
+		
+		//Dt channel description
+		dtChannelDescription =  new DataChannelDescription();
+		dtChannelDescription.setName("dt");
+		dtChannelDescription.setPrecision(2);
+			
+		//Make sure we have at least one channel description
 		DataChannelDescription channelDesc = new DataChannelDescription();
 		channelDescriptions.add(channelDesc);
 	}
@@ -130,10 +138,38 @@ public class DataStreamDescription
 	}
 	
 	/**
-	 * @param channelDesc The channelDesc to set.
+	 * @param channelDesc The channelDesc to add
 	 */
 	public void addChannelDescription(DataChannelDescription channelDesc)
 	{
 		channelDescriptions.add(channelDesc);
+	}
+	
+	/**
+	 * @param channelDesc The channelDesc to set.
+	 */
+	public void setChannelDescription(DataChannelDescription channelDesc, int index)
+	{
+		//Add empty channel descriptions 
+		while (index >= channelDescriptions.size()){
+			channelDescriptions.add(null);
+		}
+		channelDescriptions.setElementAt(channelDesc, index);
+	}
+	
+	/**
+	 * @return Returns the dtChannelDescription.
+	 */
+	public DataChannelDescription getDtChannelDescription()
+	{
+		return dtChannelDescription;
+	}
+	
+	/**
+	 * @param dtChannelDescription The dtChannelDescription to set.
+	 */
+	public void setDtChannelDescription(DataChannelDescription dtChannelDescription)
+	{
+		this.dtChannelDescription = dtChannelDescription;
 	}
 }
