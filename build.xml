@@ -1,13 +1,5 @@
-<project name="Framework" default="framework" basedir =".">
-    <property name="src" value="src" />
-    <property name="lib" value="lib" />
-    <path id="framework.class.path">
-    </path>
-    <target name="framework">
-       <javac srcdir="${src}" destdir="${lib}" includes="org/concord/framework/**" sourcepath="">
-            <classpath refid="framework.class.path" />
-       </javac>
-       <jar jarfile="${lib}/framework.jar" basedir="${lib}" includes="**/framework/**" />
-		<signjar jar="${lib}/framework.jar" alias="concord" storepass="cc1234" />
-    </target>
+<project name="Framework" default="jar">	
+	<import file="../ProjectSets/standard-ant-targets.xml"/>
+
+	<property name="jar-name" value="framework"/>
 </project>
