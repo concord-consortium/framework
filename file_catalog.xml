@@ -34,16 +34,16 @@
     <file>
         <name>build.xml</name>
         <rev>1.5</rev>
-        <modtime>1107634152000</modtime>
+        <modtime>1107634452000</modtime>
         <size>4911</size>
-        <md5sum>ce5d9eb7a93cec5e5c5d680795fe6584</md5sum>
+        <md5sum>ebdfa0c3155702f13a1dca574ade7bef</md5sum>
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.9</rev>
-        <modtime>1107633967000</modtime>
-        <size>21930</size>
-        <md5sum>2e11b0e58f3b231c4a70bbecfd90f41c</md5sum>
+        <rev>1.10</rev>
+        <modtime>1107634267000</modtime>
+        <size>21929</size>
+        <md5sum>a663affed6f65917954a35ca8b60ef2f</md5sum>
     </file>
     <file>
         <name>maven.xml</name>
@@ -61,10 +61,10 @@
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.1</rev>
-        <modtime>1107634157000</modtime>
-        <size>333</size>
-        <md5sum>db49495b7722e2dfae4c89ede6628b06</md5sum>
+        <rev>1.12</rev>
+        <modtime>1107634457000</modtime>
+        <size>334</size>
+        <md5sum>87d396057c8c27f4e92adf8e170fde5c</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/assessment/QuestionForm.java</name>
