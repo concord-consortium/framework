@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-08-26 20:43:29 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-26 17:27:21 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -38,4 +38,11 @@ public interface DataStoreListener
 	 * @param evt
 	 */
 	public void dataChanged(DataStoreEvent evt);
+
+	/**
+	 * Method called when there is a change in the data channels description
+	 * or a channel has been added or removed 
+	 * @param evt
+	 */
+	public void dataChannelDescChanged(DataStoreEvent evt);
 }

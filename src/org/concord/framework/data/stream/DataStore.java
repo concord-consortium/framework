@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2004-08-26 20:43:29 $
+ * $Revision: 1.3 $
+ * $Date: 2004-10-26 17:27:21 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -68,4 +68,9 @@ public interface DataStore
 	 * @return
 	 */
 	public DataChannelDescription getDataChannelDescription(int numChannel);
+	
+	/**
+	 * Clears all values in the data store
+	 */
+	public void clearValues();
 }

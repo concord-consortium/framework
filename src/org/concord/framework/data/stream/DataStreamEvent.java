@@ -1,8 +1,8 @@
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2004-10-16 20:37:20 $
- * $Author: dima $
+ * $Revision: 1.5 $
+ * $Date: 2004-10-26 17:27:21 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -32,7 +32,6 @@ public class DataStreamEvent extends DataEvent
 	public int type;
 
 	public float 	[]data = null;
-	public DataStreamDescription	dataDesc = null;
 	public int		numSamples = 1;
 	public int	 	[]intData = null;
 	public float    refVal = 0;
@@ -85,26 +84,6 @@ public class DataStreamEvent extends DataEvent
 	public int[] getIntData()
 	{
 		return intData;
-	}
-
-	public void setDataDescription(DataStreamDescription dataDesc)
-	{ 
-		this.dataDesc = dataDesc;
-	}
-
-	public DataStreamDescription getDataDescription()
-	{
-		return dataDesc;
-	}
-
-	public void setType(int type)
-	{
-		this.type = type;
-	}
-
-	public int getType()
-	{
-		return type;
 	}
 
 	public void setNumSamples(int numSamples)

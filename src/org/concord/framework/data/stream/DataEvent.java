@@ -6,6 +6,8 @@ public class DataEvent
 
 	public int type;
 
+	public DataStreamDescription dataDesc = null;
+	
 	public DataEvent()
 	{
 		this(0);
@@ -25,4 +27,15 @@ public class DataEvent
 	{
 		return type;
 	}
+
+	public void setDataDescription(DataStreamDescription dataDesc)
+	{ 
+		this.dataDesc = dataDesc;
+	}
+
+	public DataStreamDescription getDataDescription()
+	{
+		return dataDesc;
+	}
+
 }
