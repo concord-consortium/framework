@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-03-07 04:03:43 $
+ * $Revision: 1.6 $
+ * $Date: 2005-03-09 17:08:46 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -52,7 +52,7 @@ public class ProducerDataStore extends AbstractDataStore
 	
 	private int numberOfChannels = 0;
 	private int nextSampleOffset = 1;
-	private float dt = 1;
+	protected float dt = 1;
 	private boolean useDtAsChannel = true;
 		
 	protected DataStreamDescription dataStreamDesc;
@@ -131,24 +131,24 @@ public class ProducerDataStore extends AbstractDataStore
 	{
 		float [] data = dataEvent.getData();
 		int numberOfSamples = dataEvent.getNumSamples();
-		int sampleIndex;
+		int eventSampleIndex;
 		Float value;
-		int iSamples = getTotalNumSamples();
-				
-		sampleIndex =  dataEvent.getDataDescription().getDataOffset();
+		int storeSampleIndex = getTotalNumSamples();		
+		eventSampleIndex =  dataEvent.getDataDescription().getDataOffset();
 		
 		for(int i=0; i<numberOfSamples; i++)
 		{
 		    synchronized (this){
 		        for(int j=0; j<numberOfChannels; j++)
 		        {
-		            value = new Float(data[sampleIndex + j]);
+		            value = new Float(data[eventSampleIndex + j]);
 		            
 		            //This is not a WritableDataStore, so this is not valid anymore:
 		            //setValueAt(i + iSamples, j, value);
-		            addValue(j, value);
+		            addValue(storeSampleIndex, j, value);
 		        }
-		        sampleIndex+= nextSampleOffset;
+		        eventSampleIndex+= nextSampleOffset;
+		        storeSampleIndex++;
 		    }
 		    // notify listeners after we added all the values in the sample
 		    notifyDataAdded();
@@ -182,7 +182,7 @@ public class ProducerDataStore extends AbstractDataStore
 	 * @param numChannel	channel number, starting from 0, >0
 	 * @param value			value to add
 	 */
-	protected void addValue(int numChannel, Object value)
+	protected void addValue(int numSample, int numChannel, Object value)
 	{
 		if (numChannel < 0) return;	
 		if (numChannel >= channelsValues.size()) return;
