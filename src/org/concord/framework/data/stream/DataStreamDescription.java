@@ -33,8 +33,8 @@ public class DataStreamDescription
 	public final static int DATA_SEQUENCE = 0;
 	
 	/**
-	 * This set of data is a collection of points that is not
-	 * sequential in time.
+	 * This set of data is a collection of points that 
+	 * does not need to be sequencial in time.
 	 */ 
 	public final static int DATA_SERIES = 1;
 
@@ -98,6 +98,10 @@ public class DataStreamDescription
 		return channelDescriptions.length;
 	}
 
+	/**
+	 * Use DATA_SEQUENCE or DATA_SERIES here
+	 * @param dataType
+	 */
 	public void	setDataType(int dataType)
 	{
 		this.dataType = dataType;
