@@ -1,8 +1,8 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-08-24 23:15:08 $
- * $Author: imoncada $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-12 05:13:49 $
+ * $Author: dima $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -26,6 +26,7 @@ public class DataStreamEvent extends DataEvent
 	public static final int DATA_READY_TO_START = 1002;
 	public static final int DATA_STOPPED        = 1003;
 	public static final int DATA_DESC_CHANGED   = 1004;
+	public static final int DATA_DESC_RESET     = 1005;
 
 	public int type;
 
