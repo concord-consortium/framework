@@ -6,11 +6,11 @@ import org.concord.framework.data.*;
 public class DefaultDataProducer
 	implements DataProducer
 {
-	Vector dataListeners = new Vector();
+	protected Vector dataListeners = new Vector();
 
-	float [] values = new float [1];
-	DataStreamDescription dataDesc;
-	DataEvent dataEvent;
+	protected float [] values = new float [1];
+	protected DataStreamDescription dataDesc;
+	protected DataStreamEvent dataEvent;
 
 	public DefaultDataProducer()
 	{
@@ -22,7 +22,7 @@ public class DefaultDataProducer
 		dataDesc = new DataStreamDescription();
 		dataDesc.setDt(dt);
 
-		dataEvent = new DataEvent(DataEvent.DATA_RECEIVED, values, null, dataDesc);
+		dataEvent = new DataStreamEvent(DataStreamEvent.DATA_RECEIVED, values, null, dataDesc);
 	}
 
 	public void addDataListener(DataListener listener)
@@ -65,13 +65,13 @@ public class DefaultDataProducer
 				dataListener.dataStreamEvent(dataEvent);
 			}
 		}
-		dataEvent.setType(DataEvent.DATA_RECEIVED);
+		dataEvent.setType(DataStreamEvent.DATA_RECEIVED);
 	}
 
 	public void addValue(float value)
 	{
 		values[0] = value;
-		dataEvent.setType(DataEvent.DATA_RECEIVED);
+		dataEvent.setType(DataStreamEvent.DATA_RECEIVED);
 		for(int i=0; i<dataListeners.size(); i++) {
 			DataListener dataListener = (DataListener)dataListeners.elementAt(i);
 			if(dataListener != null)
@@ -83,7 +83,7 @@ public class DefaultDataProducer
 
 	public void setUnit(DataDimension unit)
 	{
-		dataDesc.setUnit(unit);
+		dataDesc.getChannelDescription().setUnit(unit);
 		dataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 	}
 
