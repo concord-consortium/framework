@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-01-13 03:10:54 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2005-01-27 16:43:12 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -51,4 +51,6 @@ public interface OTResourceList extends OTResourceCollection
 	public abstract void add(Object object);
 
 	public abstract void add(int index, Object object);
+	
+	public void set(int index, Object object);
 }
