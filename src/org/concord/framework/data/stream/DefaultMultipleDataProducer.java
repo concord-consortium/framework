@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2004-11-23 16:02:35 $
- * $Author: scytacki $
+ * $Revision: 1.6 $
+ * $Date: 2005-02-15 01:14:27 $
+ * $Author: eburke $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -62,7 +62,12 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	{
 		this(1, size);
 	}
-
+	
+	public DefaultMultipleDataProducer(float dt)
+	{
+		super(dt);
+	}
+	
 	/**
 	 * @param dt
 	 */
