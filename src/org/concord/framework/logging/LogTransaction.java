@@ -3,6 +3,8 @@ package org.concord.framework.logging;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.concord.framework.text.*;
+
 public final class LogTransaction
 {
 	public final static int	UNDEFINE_PRIORITY		= 	0;
