@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2004-10-26 17:27:21 $
+ * $Revision: 1.3 $
+ * $Date: 2004-10-27 23:14:42 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -57,6 +57,12 @@ public class DataChannelDescription
 	{
 		this.name = name;
 	}
+	
+	public DataChannelDescription(String name, int precision)
+	{
+		this(name);
+		setPrecision(precision);
+	}	
 	
 	public void	setUnit(DataDimension unit)
 	{
