@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <pomVersion>3</pomVersion>
+  <!-- Inherit main project xml file -->
+  <extend>../project.xml</extend>
+
+  <!-- Project specific parameters -->
   <artifactId>framework</artifactId>
   <name>Framework</name>
-  <groupId>framework</groupId>
+  <groupId>${pom.artifactId}</groupId>
   <currentVersion>1.0</currentVersion>
-  <inceptionYear>2004</inceptionYear>
-  <package>org.concord.framework</package>
-  <logo>/images/logo.gif</logo>
-  <repository>
-    <connection>scm:cvs:ext:${cvs.user.name}@cvs.concord.org:/home/buildspace/CodeBank:Projects/Domain</connection>
-  </repository>
-  <mailingLists>
-    <mailingList>
-      <name>${pom.name} Dev List</name>
-    </mailingList>
-    <mailingList>
-      <name>${pom.name} User List</name>
-    </mailingList>
-  </mailingLists>
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <unitTest>
-      <includes>
-        <include>**/*Test.java</include>
-      </includes>
-    </unitTest>
-  </build>
 </project>
 
