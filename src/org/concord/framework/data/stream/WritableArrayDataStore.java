@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-03-25 17:40:59 $
+ * $Revision: 1.4 $
+ * $Date: 2005-03-25 17:45:15 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -46,8 +46,8 @@ package org.concord.framework.data.stream;
 public interface WritableArrayDataStore 
 	extends WritableDataStore, DeltaDataStore
 {	
-	public void setValues(int numbChannels,float []values, int offset, 
-	        int length, int nextSampleOffset);
+	public void setValues(int numChannels,float []values, int offset, 
+	        int numSamples, int nextSampleOffset);
 	
 	public void setDt(float dt);
 }
