@@ -8,5 +8,6 @@
             <classpath refid="framework.class.path" />
        </javac>
        <jar jarfile="${lib}/framework.jar" basedir="${lib}" includes="**/framework/**" />
+		<signjar jar="${lib}/framework.jar" alias="concord" storepass="cc1234" />
     </target>
 </project>
