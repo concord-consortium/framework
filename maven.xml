@@ -5,19 +5,11 @@
   xmlns:ant="jelly:ant">
 
   <!--
-    Add the properties, create the status file, and delete it when done
+     Set pre goal for manifest
   -->
-  <preGoal name="catalog">
-    <j:set var="ccScm.cvs.server" value="source.concord.org" />
-    <j:set var="ccScm.cvs.repo" value="/cvs/repo/CodeBank" />
-    <j:set var="ccScm.cvs.module" value="Projects/${pom.name}" />
-
-    <ant:cvs command="status -v" output="status.properties"/>
+  <preGoal name="jar:jar">
+    <attainGoal name="ccmanifest" />
   </preGoal>
-
-  <postGoal name="catalog">
-    <ant:delete file="status.properties" />
-  </postGoal>
 
   <!--
      Since setting maven.build.dir or maven.build.dest will effect most built
