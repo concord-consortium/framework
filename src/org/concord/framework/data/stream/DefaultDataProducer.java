@@ -55,7 +55,7 @@ public class DefaultDataProducer
 	{		
 	}
 	
-	void dataStreamEvent(int type)
+	protected void notifyDataStreamEvent(int type)
 	{
 		dataEvent.setType(type);
 		for(int i=0; i<dataListeners.size(); i++) {
@@ -71,6 +71,12 @@ public class DefaultDataProducer
 	public void addValue(float value)
 	{
 		values[0] = value;
+		
+		notifyDataReceived();
+	}
+
+	protected void notifyDataReceived()
+	{
 		dataEvent.setType(DataStreamEvent.DATA_RECEIVED);
 		for(int i=0; i<dataListeners.size(); i++) {
 			DataListener dataListener = (DataListener)dataListeners.elementAt(i);
@@ -80,17 +86,17 @@ public class DefaultDataProducer
 			}
 		}
 	}
-
+	
 	public void setUnit(DataDimension unit)
 	{
 		dataDesc.getChannelDescription().setUnit(unit);
-		dataStreamEvent(DataEvent.DATA_DESC_CHANGED);
+		notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 	}
 
 	public void setDt(float dt)
 	{
 		dataDesc.setDt(dt);
-		dataStreamEvent(DataEvent.DATA_DESC_CHANGED);
+		notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 	}
 
 }
