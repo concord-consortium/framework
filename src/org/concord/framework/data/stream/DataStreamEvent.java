@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2005-01-04 04:08:59 $
- * $Author: dima $
+ * $Revision: 1.9 $
+ * $Date: 2005-03-07 04:03:43 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -121,13 +121,23 @@ public class DataStreamEvent extends DataEvent
 		return numSamples;
 	}
 	
-    public Object getSource(){return source;}
+    public Object getSource()
+    {
+        return source;
+    }
     
-    public void setSource(Object source){this.source = source;}
+    public void setSource(Object source)
+    {
+        this.source = source;
+    }
 
-    public Object getAdditionalInfo(){return additionalInfo;}
+    public Object getAdditionalInfo()
+    {
+        return additionalInfo;
+    }
 
-    public void  setAdditionalInfo(Object additionalInfo){this.additionalInfo = additionalInfo;}
-	
-	
+    public void  setAdditionalInfo(Object additionalInfo)
+    {
+        this.additionalInfo = additionalInfo;
+    }	
 }
