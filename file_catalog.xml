@@ -4,536 +4,351 @@
     <repo>/home/buildspace/CodeBank</repo>
     <module>Projects/Framework</module>
     <file>
-        <name>.classpath</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/.classpath</name>
         <rev>1.3</rev>
-        <modtime>1088181150000</modtime>
-        <size>226</size>
-        <md5sum>7815c12cc804e77085dd6e5ddf3163ec</md5sum>
     </file>
     <file>
-        <name>.cvsignore</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/.cvsignore</name>
         <rev>1.2</rev>
-        <modtime>1097118066000</modtime>
-        <size>22</size>
-        <md5sum>e1be951db32e19ecd71f3ee9a52b44b1</md5sum>
     </file>
     <file>
-        <name>.project</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/.project</name>
         <rev>1.2</rev>
-        <modtime>1106689588000</modtime>
-        <size>368</size>
-        <md5sum>a8c626ba763562b414c32c866563a460</md5sum>
     </file>
     <file>
-        <name>LICENSE.txt</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/LICENSE.txt</name>
         <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>26421</size>
-        <md5sum>278f2557e3b277b94e9a8430f6a6d0a9</md5sum>
     </file>
     <file>
-        <name>build.xml</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/build.xml</name>
         <rev>1.5</rev>
-        <modtime>1105477922000</modtime>
-        <size>158</size>
-        <md5sum>9a71c6a361776c009ef16e90e04e8ca3</md5sum>
     </file>
     <file>
-        <name>maven.xml</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/file_catalog.xml</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/maven.xml</name>
         <rev>1.4</rev>
-        <modtime>1104432552000</modtime>
-        <size>1212</size>
-        <md5sum>94992b644e258111389bd43329a89dc7</md5sum>
     </file>
     <file>
-        <name>project.properties</name>
-        <rev>1.14</rev>
-        <modtime>1106586658000</modtime>
-        <size>166</size>
-        <md5sum>7c3d54aff05489c93b97bdd552a8c8b2</md5sum>
+        <name>/cvs/repo/CodeBank/Projects/Framework/project.properties</name>
+        <rev>1.15</rev>
     </file>
     <file>
-        <name>project.xml</name>
-        <rev>1.4</rev>
-        <modtime>1106607338000</modtime>
-        <size>352</size>
-        <md5sum>f70d34e32b09d0e82a21e9892c248f0a</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/assessment/QuestionForm.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>2413</size>
-        <md5sum>578d5249818c41e83e0be2dbf9da551d</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/assessment/QuestionFormContainer.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1692</size>
-        <md5sum>b267f90cc06dc8d722625d049ad085ad</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/assessment/QuestionState.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>3089</size>
-        <md5sum>66ccad7388cd469007985540abb7c995</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/closehelper/ApplCloseHandler.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1211</size>
-        <md5sum>fba44cbdc7e954cafb07aee55ee3892d</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/closehelper/ApplCloseHandlerFactory.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1699</size>
-        <md5sum>ee43028fca8a3e6b7691718e3d939bce</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/closehelper/ApplCloseHandlerListener.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1044</size>
-        <md5sum>e782cb4723404c16bc577054c256dbc8</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/DataDimension.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1088</size>
-        <md5sum>9ca7716abe144cad410a21e64eeaeb94</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/DataFlow.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1171</size>
-        <md5sum>c9f5c53372ce73d9547d17986d789359</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/DataFlowCapabilities.java</name>
-        <rev>1.2</rev>
-        <modtime>1105806000000</modtime>
-        <size>1824</size>
-        <md5sum>98fb41de2dbbf9c443f200e5f77dfe57</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/DecoratedValue.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>2353</size>
-        <md5sum>79aa49dd3daf1540f2baef80680680a1</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/DecorationColor.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1247</size>
-        <md5sum>b71707a06b922367284f45cae06750a5</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/stream/AbstractDataStore.java</name>
-        <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>6375</size>
-        <md5sum>707d234d69462be24960c6889bef5fd0</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/stream/DataChannelDescription.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/project.xml</name>
         <rev>1.5</rev>
-        <modtime>1100284824000</modtime>
-        <size>4243</size>
-        <md5sum>42d805d75c09cb621f6d38be4b49d476</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataConsumer.java</name>
-        <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>1112</size>
-        <md5sum>fd119d1fc29c196dd96e348bb1e6794d</md5sum>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/assessment/QuestionForm.java</name>
+        <rev>1.2</rev>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataEvent.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/assessment/QuestionFormContainer.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/assessment/QuestionState.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/closehelper/ApplCloseHandler.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/closehelper/ApplCloseHandlerFactory.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/closehelper/ApplCloseHandlerListener.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/DataDimension.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/DataFlow.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/DataFlowCapabilities.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/DecoratedValue.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/DecorationColor.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/AbstractDataStore.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>1491</size>
-        <md5sum>927c28f735c6026152ecd5e52029edc6</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataListener.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataChannelDescription.java</name>
+        <rev>1.5</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataConsumer.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>1118</size>
-        <md5sum>86a4dc45622b3c1e2cb1be03a13e8465</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataProducer.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1235</size>
-        <md5sum>c5f80d2778f03d0984200e75b6ca1b82</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/stream/DataProducerProxy.java</name>
-        <rev>1.2</rev>
-        <modtime>1105585854000</modtime>
-        <size>1116</size>
-        <md5sum>5bddcbfe44aa6288ebe4dbf0da354a31</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/stream/DataStore.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataEvent.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>2829</size>
-        <md5sum>52d07afa668dc04ad806625f1c9bc9fc</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataStoreEvent.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1907</size>
-        <md5sum>6ad72a06b56b6f87c0d4394090e96c23</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/data/stream/DataStoreListener.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataListener.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>1915</size>
-        <md5sum>8eaec617cf2ce87ebf3f17e2467f797a</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataStreamDescription.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataProducer.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataProducerProxy.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataStore.java</name>
+        <rev>1.4</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataStoreEvent.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataStoreListener.java</name>
+        <rev>1.3</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataStreamDescription.java</name>
         <rev>1.8</rev>
-        <modtime>1100540519000</modtime>
-        <size>4859</size>
-        <md5sum>656425b78536ea7d42434816fb74618a</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataStreamEvent.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DataStreamEvent.java</name>
         <rev>1.8</rev>
-        <modtime>1104811739000</modtime>
-        <size>3239</size>
-        <md5sum>891fcda6fbc331495931c4e6dc84e082</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DefaultDataProducer.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DefaultDataProducer.java</name>
         <rev>1.6</rev>
-        <modtime>1100284824000</modtime>
-        <size>3069</size>
-        <md5sum>7bd56ab738eddf5f719cb9922d4b7d1f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DefaultDataStore.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DefaultDataStore.java</name>
         <rev>1.5</rev>
-        <modtime>1101259258000</modtime>
-        <size>3171</size>
-        <md5sum>0bb8b002a3db226502da3b9afa8dafb7</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DefaultMultipleDataProducer.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/DefaultMultipleDataProducer.java</name>
         <rev>1.5</rev>
-        <modtime>1101225755000</modtime>
-        <size>3127</size>
-        <md5sum>e42cf431b47784f5065783a1ec6fd3e6</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/ProducerDataStore.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/ProducerDataStore.java</name>
         <rev>1.4</rev>
-        <modtime>1100540519000</modtime>
-        <size>5861</size>
-        <md5sum>7c2340a4372172b9fc6d3546b2ea6436</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/WritableDataStore.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/data/stream/WritableDataStore.java</name>
         <rev>1.4</rev>
-        <modtime>1101225877000</modtime>
-        <size>2076</size>
-        <md5sum>8669f919742910061a26ed4ac8aa8e05</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/debug/Debug.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/debug/Debug.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>17550</size>
-        <md5sum>145d0623e08ed42cdf901b71671e1dff</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainActivityOwner.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainActivityOwner.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>1505</size>
-        <md5sum>f046ca593a8512f1bb82f4f6b2a9880f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainComponentEditor.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainComponentEditor.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1262</size>
-        <md5sum>0643a846e2be1b2a159ce32b34645e8f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainEngine.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainEngine.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1269</size>
-        <md5sum>ded69677739b3595694d457467d15ff9</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainModel.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainModel.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1256</size>
-        <md5sum>f5fcbf102a67b2f250eab67cc9b67c9d</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainOpener.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainOpener.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1030</size>
-        <md5sum>5f0eae7b1367a906abbb34f407196c1f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainPersistentElement.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainPersistentElement.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>1439</size>
-        <md5sum>c17fbafcadf77dbe812630f8088a2da2</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainProxyInfo.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainProxyInfo.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1102</size>
-        <md5sum>fd1fc0137ad837c5b7ef4318d69c792f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainUser.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainUser.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1185</size>
-        <md5sum>9de127b750b7c0b32ddf4d6b4832c048</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainUtil.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainUtil.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>1002</size>
-        <md5sum>6635e46babfe35f8b764b6a6db4af4cb</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainVersionInfo.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainVersionInfo.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>3361</size>
-        <md5sum>f3a4486f158757c7a38175b90064abca</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/DomainView.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/DomainView.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1384</size>
-        <md5sum>3b5b4a3e34f40cedbb191c0a3fee2374</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/StateOwner.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/NodeState.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/NodeStateTransition.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/StateOwner.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1064</size>
-        <md5sum>23969b8c22d8e43a6d0b5b6c35e946a0</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/Version.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/Version.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>2045</size>
-        <md5sum>81c019034f8ca7fc13b7499e72432eb0</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/domain/ui/DomainFrame.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/event/NodeStateEvent.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/event/NodeStateListener.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/event/NodeStateTransitionEvent.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/event/NodeStateTransitionListener.java</name>
+        <rev>1.1</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/domain/ui/DomainFrame.java</name>
         <rev>1.5</rev>
-        <modtime>1100284824000</modtime>
-        <size>1422</size>
-        <md5sum>9a1fc0f2219450aa5a5a289ef7360bf4</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/logging/LogHintMessage.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/logging/LogHintMessage.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1717</size>
-        <md5sum>909099e156c5989df0c42e2870721fbb</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/logging/LogManager.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/logging/LogManager.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1187</size>
-        <md5sum>c06047965c0a395ecd8f852a49a68822</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/logging/LogTransaction.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/logging/LogTransaction.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>9184</size>
-        <md5sum>52c92a181109fddd0136e44bf7d0bc49</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/logging/Loggable.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/logging/Loggable.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>2065</size>
-        <md5sum>eb4054263992b416c61dd14a0cf4ef84</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/otrunk/DefaultOTObject.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/DefaultOTObject.java</name>
         <rev>1.4</rev>
-        <modtime>1106689588000</modtime>
-        <size>2885</size>
-        <md5sum>e86d0860353de6ca8127f5a71f7730de</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/otrunk/OTID.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTID.java</name>
         <rev>1.2</rev>
-        <modtime>1102350132000</modtime>
-        <size>1532</size>
-        <md5sum>497e1046cc82e84bdca22b97f4672bd2</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/otrunk/OTObject.java</name>
-        <rev>1.3</rev>
-        <modtime>1102350132000</modtime>
-        <size>1641</size>
-        <md5sum>5838d6a6d4759a96c1557f1e642c47c4</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTObjectList.java</name>
-        <rev>1.2</rev>
-        <modtime>1102350132000</modtime>
-        <size>1891</size>
-        <md5sum>255ed1d827308edf73d3a16440fa6045</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTObjectMap.java</name>
-        <rev>1.2</rev>
-        <modtime>1105429846000</modtime>
-        <size>2259</size>
-        <md5sum>acb2cdf94de7460a576f8ee8c18b8067</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTResourceCollection.java</name>
-        <rev>1.2</rev>
-        <modtime>1106232985000</modtime>
-        <size>1360</size>
-        <md5sum>de14ff703793725e1932ec5ad1442284</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTResourceList.java</name>
-        <rev>1.2</rev>
-        <modtime>1106232985000</modtime>
-        <size>1464</size>
-        <md5sum>778dc11ddf2795c58f528a47a3d969f8</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTResourceMap.java</name>
-        <rev>1.2</rev>
-        <modtime>1106232985000</modtime>
-        <size>1436</size>
-        <md5sum>3483d4257c430a9f6076bc94ab2abd19</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTResourceSchema.java</name>
-        <rev>1.2</rev>
-        <modtime>1105429846000</modtime>
-        <size>1395</size>
-        <md5sum>9c393e4bdc38a1d6a6bc80519fef6f42</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTUser.java</name>
-        <rev>1.2</rev>
-        <modtime>1105429847000</modtime>
-        <size>1337</size>
-        <md5sum>25e7a85aec52761177bd9efcad98e08b</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/otrunk/OTrunk.java</name>
-        <rev>1.3</rev>
-        <modtime>1105429847000</modtime>
-        <size>2257</size>
-        <md5sum>4a804a17fc88525443ed93ce27e373cd</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/simulation/Simulation.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTObject.java</name>
         <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>2112</size>
-        <md5sum>8b48d54f7a91e2af6d9c0c2f5191065d</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/simulation/SimulationEvent.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTObjectList.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTObjectMap.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTResourceCollection.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTResourceList.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>2492</size>
-        <md5sum>7752205c1a5c720f78cd087625f0d037</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/simulation/SimulationListener.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTResourceMap.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1470</size>
-        <md5sum>a2b3b1359e6a943fa6410cd564eda628</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/system/SingleProperty.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>6235</size>
-        <md5sum>7c1b6b1581a9c3659863bed848ea9782</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/system/SystemResourcesChecker.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTResourceSchema.java</name>
         <rev>1.3</rev>
-        <modtime>1100284824000</modtime>
-        <size>2253</size>
-        <md5sum>17aa28a4b29770684b7e46e83bb4a52f</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/text/MarkupTextContained.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTUser.java</name>
         <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1382</size>
-        <md5sum>104a7428661c2738a50783b560c52309</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/text/Message.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1174</size>
-        <md5sum>9f6ee38e98485100132070d45a0d1100</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/text/TextContained.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1047</size>
-        <md5sum>ef4b37ecedab2a04ecb574bde741647e</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/text/TextContainer.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1236</size>
-        <md5sum>4866b86507fe6daa47a3a4ecd002e70b</md5sum>
-    </file>
-    <file>
-        <name>src/org/concord/framework/text/UserMessageHandler.java</name>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/OTrunk.java</name>
         <rev>1.3</rev>
-        <modtime>1106232985000</modtime>
-        <size>2489</size>
-        <md5sum>8afc2906c54965ccd0c621ce310f3d22</md5sum>
     </file>
-</filecatalog>
-
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/view/OTFrame.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/view/OTObjectView.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/otrunk/view/OTViewContainer.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/simulation/Simulation.java</name>
+        <rev>1.4</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/simulation/SimulationEvent.java</name>
+        <rev>1.3</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/simulation/SimulationListener.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/system/SingleProperty.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/system/SystemResourcesChecker.java</name>
+        <rev>1.3</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/text/MarkupTextContained.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/text/Message.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/text/TextContained.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/text/TextContainer.java</name>
+        <rev>1.2</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/text/UserMessageHandler.java</name>
+        <rev>1.3</rev>
+    </file>
+    <file>
+        <name>/cvs/repo/CodeBank/Projects/Framework/src/org/concord/framework/util/SimpleTreeNode.java</name>
+        <rev>1.2</rev>
+    </file>
+<file><name>file_catalog.xml</name><rev>1.2</rev></file></filecatalog>
