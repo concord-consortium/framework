@@ -4,13 +4,10 @@ package org.concord.framework.domain.ui;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowListener;
 import java.awt.event.WindowEvent;
-import java.awt.Toolkit;
-import java.lang.reflect.*;
 import java.util.Vector;
 import java.io.*;
 
 import javax.swing.JFrame;
-import javax.swing.Timer;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -30,6 +27,7 @@ implements ApplCloseHandlerListener, DomainView
 	protected DomainActivityOwner domainActivityOwner;
 	protected DomainOpener domainOpener;
 	protected LogManager logManager;
+	protected Object activity;
 
 	public DomainFrame()
 	{
@@ -119,6 +117,10 @@ implements ApplCloseHandlerListener, DomainView
 		removeWindowListener(windowListener);
 	}
 
+	public void setActivity(Object activity)
+	{
+		this.activity = activity;
+	}
 
 	public void handleQuit()
 	{
