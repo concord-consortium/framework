@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2004-10-28 18:59:25 $
+ * $Revision: 1.3 $
+ * $Date: 2004-10-28 21:26:50 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -14,10 +14,8 @@ import java.util.Vector;
 
 /**
  * DefaultDataStore
- * This class is a default implementation of the DataStore
- * interface. It keeps values in a set of vectors, one vector
- * per channel. 
- * It also has a setValueAt() method, to set the values.
+ * This class is a default implementation of the WritableDataStore
+ * interface. 
  *
  * Date created: Oct 24, 2004
  *
