@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-03-10 03:04:27 $
+ * $Revision: 1.7 $
+ * $Date: 2005-03-10 03:15:49 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -101,7 +101,7 @@ public class DefaultDataStore extends AbstractDataStore
 		}
 	}
 
-	/* (non-Javadoc)
+	/**
 	 * @see org.concord.framework.data.stream.WritableDataStore#removeSampleAt(int)
 	 */
 	public void removeSampleAt(int numSample)
@@ -124,4 +124,14 @@ public class DefaultDataStore extends AbstractDataStore
 		}
 	}
 	
+	/**
+	 * @param i
+	 */
+	public void insertSampleAt(int i)
+	{
+		for (int j=0; j < channelsValues.size(); j++){
+			Vector channel = (Vector)channelsValues.elementAt(j);
+			channel.add(i, null);
+		}
+	}
 }

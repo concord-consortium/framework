@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-03-10 03:04:27 $
+ * $Revision: 1.6 $
+ * $Date: 2005-03-10 03:15:49 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -64,7 +64,7 @@ public interface WritableDataStore extends DataStore
 	 * Inserts empty values in a specific sample in all channels
 	 * @param numSample 	sample number, starting from 0, >0
 	 */
-	//public void insertValueAt(int numSample);
+	public void insertSampleAt(int numSample);
 	
 	/**
 	 * set the description of the channel.  This includes the label
