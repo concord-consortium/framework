@@ -14,8 +14,13 @@ public class DefaultDataProducer
 
 	public DefaultDataProducer()
 	{
+		this(1.0f);
+	}
+
+	public DefaultDataProducer(float dt)
+	{
 		dataDesc = new DataStreamDescription();
-		dataDesc.setDt(1.0f);
+		dataDesc.setDt(dt);
 
 		dataEvent = new DataEvent(DataEvent.DATA_RECEIVED, values, null, dataDesc);
 	}
