@@ -11,7 +11,7 @@ public class DataStreamDescription
 	private int channelPerSample;
 	private float dt;
 	private int dataOffset = 0;
-	private int nextSampleOffset = 1;
+	private int nextSampleOffset = -1;
 	
 	private Vector channelDescriptions;	//DataChannelDescription objects
 
@@ -79,6 +79,9 @@ public class DataStreamDescription
 	 */
 	public int getNextSampleOffset()
 	{
+		if (nextSampleOffset == -1){
+			return channelPerSample;
+		}
 		return nextSampleOffset;
 	}
 	
