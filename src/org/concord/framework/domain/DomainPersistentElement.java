@@ -17,5 +17,6 @@ public interface DomainPersistentElement
 	public void restore(InputStream input);
 	
 	public Element serializeAsElement(Document document);
+	public Object restoreFromElement(Element xmlElement);
 }
 
