@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2005-03-10 03:15:49 $
- * $Author: imoncada $
+ * $Revision: 1.8 $
+ * $Date: 2005-03-25 17:40:59 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -47,11 +47,26 @@ import java.util.Vector;
  *
  */
 public class DefaultDataStore extends AbstractDataStore
-	implements WritableDataStore
+	implements WritableArrayDataStore
 {
+    public float dt = Float.NaN;
+    
 	public DefaultDataStore()
 	{
 		super();
+	}
+	
+	/**
+	 * @see org.concord.framework.data.stream.DataStore#getValueAt(int, int)
+	 */
+	public Object getValueAt(int numSample, int numChannel)
+	{
+		//Special case: when dt is a channel, it's the channel -1
+		if (numChannel == -1 && isUseDtAsChannel()){
+			return new Float(numSample * dt);
+		}
+		
+		return super.getValueAt(numSample, numChannel);
 	}
 	
 	/**
@@ -102,6 +117,38 @@ public class DefaultDataStore extends AbstractDataStore
 	}
 
 	/**
+	 * Very inefficient way of saving an array of data points
+	 * 
+	 */
+	public void setValues(int numbChannels,float []values,
+	        int offset, int length, int nextSampleOffset)
+	{
+	    // System.err.println("setValues: " + values.length);
+	    // ignore numbChannels for now
+	    if(channelsValues.size() == 0) {
+	        channelsValues.add(new Vector());
+	    }
+	    
+		Vector channel = (Vector)channelsValues.elementAt(0);		
+		
+	    for(int i=0;i<length;i++) {
+			//Locate the sample within the channel
+			while (i >= channel.size()){
+				//Add empty elements until the desired sample
+				channel.addElement(null);
+			}
+						//Set the value
+			channel.setElementAt(new Float(values[offset+(i*nextSampleOffset)]), i);			
+	    }
+	    
+		if (length > getTotalNumSamples()){
+			notifyDataAdded();
+		} else {
+			notifyDataChanged();		    
+		}	
+	}
+		
+	/**
 	 * @see org.concord.framework.data.stream.WritableDataStore#removeSampleAt(int)
 	 */
 	public void removeSampleAt(int numSample)
@@ -134,4 +181,26 @@ public class DefaultDataStore extends AbstractDataStore
 			channel.add(i, null);
 		}
 	}
+	
+	/**
+     * @see org.concord.framework.data.stream.WritableArrayDataStore#setDt(float)
+     */
+    public void setDt(float dt)
+    {
+        this.dt = dt;
+		notifyChannelDescChanged();
+    }
+    
+    /**
+     * @see org.concord.framework.data.stream.DeltaDataStore#isUseDtAsChannel()
+     */
+    public boolean isUseDtAsChannel()
+    {
+        return !Float.isNaN(dt);
+    }
+    
+    public float getDt()
+    {
+        return dt;
+    }
 }
