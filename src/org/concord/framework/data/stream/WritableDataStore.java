@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-10-26 17:27:21 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-28 18:59:25 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -29,4 +29,10 @@ public interface WritableDataStore extends DataStore
 	 * @param value			value to add
 	 */
 	public void setValueAt(int numSample, int numChannel, Object value);
+
+	/**
+	 * Removes a value in a specific sample in all channels
+	 * @param numSample		sample number, starting from 0, >0
+	 */
+	public void removeValueAt(int numSample);
 }

@@ -40,15 +40,21 @@ public class DefaultDataProducer
 		return dataDesc;
 	}
 
+	/**
+	 * @see org.concord.framework.data.DataFlow#stop()
+	 */
 	public void stop()
 	{
 	}
 
+	/**
+	 * @see org.concord.framework.data.DataFlow#start()
+	 */
 	public void start()
 	{
 	}
 	
-	/* (non-Javadoc)
+	/**
 	 * @see org.concord.framework.data.DataFlow#reset()
 	 */
 	public void reset()

@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-10-26 17:27:21 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-28 18:59:25 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -30,7 +30,7 @@ public abstract class AbstractDataStore
 	protected boolean provideDefaultChannelDesc = true;	//Indicates if the data store will provide 
 														//default DataChannelDescriptions with the index of the channel (headers 0,1,2,3...)
 	
-	protected Vector values;		//Vector of Vector objects, one vector per channel
+	protected Vector channelsValues;		//Vector of Vector objects, one vector per channel
 	protected Vector channelDesc;	//Vector of ChannelDescription objects, one per channel
 	
 	protected Vector dataStoreListeners;
@@ -41,7 +41,7 @@ public abstract class AbstractDataStore
 	public AbstractDataStore()
 	{
 		super();
-		values = new Vector();
+		channelsValues = new Vector();
 		channelDesc = new Vector();
 		dataStoreListeners = new Vector();
 	}
@@ -53,8 +53,8 @@ public abstract class AbstractDataStore
 	{
 		//Returns the maximum between the number of samples in each channel
 		int t = 0;
-		for (int i=0; i < values.size(); i++){
-			Vector channel = (Vector)values.elementAt(i);
+		for (int i=0; i < channelsValues.size(); i++){
+			Vector channel = (Vector)channelsValues.elementAt(i);
 			if (channel.size() > t){
 				t = channel.size();
 			}
@@ -68,7 +68,7 @@ public abstract class AbstractDataStore
 	public int getTotalNumChannels()
 	{
 		//System.out.println("channels:"+values.size());
-		return values.size();
+		return channelsValues.size();
 	}
 
 	/**
@@ -79,8 +79,8 @@ public abstract class AbstractDataStore
 		if (numSample < 0 || numChannel < 0) return null;
 		
 		//Locate the channel
-		if (numChannel >= values.size()) return null;		
-		Vector channel = (Vector)values.elementAt(numChannel);
+		if (numChannel >= channelsValues.size()) return null;		
+		Vector channel = (Vector)channelsValues.elementAt(numChannel);
 		
 		//Locate the sample within the channel
 		if (numSample >= channel.size()) return null;		
@@ -94,8 +94,8 @@ public abstract class AbstractDataStore
 	 */
 	public void clearValues()
 	{
-		for (int i=0; i < values.size(); i++){
-			Vector channel = (Vector)values.elementAt(i);
+		for (int i=0; i < channelsValues.size(); i++){
+			Vector channel = (Vector)channelsValues.elementAt(i);
 			channel.removeAllElements();
 		}
 		notifyDataRemoved();

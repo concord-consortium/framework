@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2004-10-26 17:27:21 $
+ * $Revision: 1.2 $
+ * $Date: 2004-10-28 18:59:25 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -27,6 +27,11 @@ import java.util.Vector;
 public class DefaultDataStore extends AbstractDataStore
 	implements WritableDataStore
 {
+	public DefaultDataStore()
+	{
+		super();
+	}
+	
 	/**
 	 * Sets a value at the sample and channel indicated
 	 * This method adds samples and channels if necessary,
@@ -43,12 +48,12 @@ public class DefaultDataStore extends AbstractDataStore
 		if (numSample < 0 || numChannel < 0) return;
 		
 		//Locate the channel
-		while (numChannel >= values.size()){
+		while (numChannel >= channelsValues.size()){
 			//Add empty vectors until the desired channel
-			values.addElement(new Vector());
+			channelsValues.addElement(new Vector());
 			channelAdded = true;
 		}
-		Vector channel = (Vector)values.elementAt(numChannel);
+		Vector channel = (Vector)channelsValues.elementAt(numChannel);
 		
 		//Locate the sample within the channel
 		while (numSample >= channel.size()){
@@ -68,6 +73,29 @@ public class DefaultDataStore extends AbstractDataStore
 		}
 		else{
 			notifyDataChanged();
+		}
+	}
+
+	/* (non-Javadoc)
+	 * @see org.concord.framework.data.stream.WritableDataStore#removeValueAt(int)
+	 */
+	public void removeValueAt(int numSample)
+	{
+		boolean valueRemoved = false;
+		
+		if (numSample < 0) return;
+		
+		for (int i=0; i < channelsValues.size(); i++){
+			Vector channel = (Vector)channelsValues.elementAt(i);
+			
+			if (numSample < channel.size()){
+				channel.remove(numSample);
+				valueRemoved = true;
+			}
+		}
+		
+		if (valueRemoved){
+			notifyDataRemoved();
 		}
 	}
 	
