@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2004-11-12 18:40:24 $
- * $Author: eblack $
+ * $Revision: 1.7 $
+ * $Date: 2004-12-01 20:21:17 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -60,8 +60,11 @@ public class DataStreamEvent extends DataEvent
 	public int	 	[]intData = null;
 	public float    refVal = 0;
 
-    public int [] pTimes = new int [10];
-    public int numPTimes = 0;
+	// hooks for storing profile data
+	// as the event is processed timestamps might be stored here which
+	// could be logged latter.  This would be an ideal use for AspectJ
+    // public int [] pTimes = new int [10];
+    // public int numPTimes = 0;
     
     Object      source;
     Object      additionalInfo;
