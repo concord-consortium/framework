@@ -1,7 +1,7 @@
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2004-10-12 23:52:01 $
+ * $Revision: 1.4 $
+ * $Date: 2004-10-16 20:37:20 $
  * $Author: dima $
  *
  * Licence Information
@@ -27,6 +27,7 @@ public class DataStreamEvent extends DataEvent
 	public static final int DATA_STOPPED        = 1003;
 	public static final int DATA_DESC_CHANGED   = 1004;
 	public static final int DATA_DESC_RESET     = 1005;
+	public static final int DATA_DESC_ERROR     = 1006;
 
 	public int type;
 
@@ -40,6 +41,8 @@ public class DataStreamEvent extends DataEvent
     public int numPTimes = 0;
     
     Object      source;
+    Object      additionalInfo;
+
 
 	public DataStreamEvent()
 	{
@@ -118,5 +121,9 @@ public class DataStreamEvent extends DataEvent
     
     public void setSource(Object source){this.source = source;}
 
+    public Object getAdditionalInfo(){return additionalInfo;}
+
+    public void  setAdditionalInfo(Object additionalInfo){this.additionalInfo = additionalInfo;}
+	
 	
 }
