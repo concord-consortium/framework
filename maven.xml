@@ -15,11 +15,12 @@
   </postGoal>
 
   <!--
-     Extend the cleanup to remove the extra 'lib' directory
+     Extend the cleanup to remove the extra 'lib' and 'conf' directory
   -->
   <postGoal name="clean:clean">
     <!-- Create the lib directory -->
     <ant:delete dir="${basedir}/lib" />
+    <ant:delete dir="${basedir}/conf" />
   </postGoal>
 
 </project>
