@@ -6,7 +6,11 @@
   <groupId>framework</groupId>
   <currentVersion>1.0</currentVersion>
   <inceptionYear>2004</inceptionYear>
+  <package>org.concord.framework</package>
   <logo>/images/logo.gif</logo>
+  <repository>
+    <connection>scm:cvs:ext:${cvs.user.name}@cvs.concord.org:/home/buildspace/CodeBank:Projects/Domain</connection>
+  </repository>
   <mailingLists>
     <mailingList>
       <name>${pom.name} Dev List</name>

@@ -4,7 +4,16 @@ import java.util.Vector;
 
 public class DataStreamDescription
 {
+	/**
+	 * This set of data uses the dt because it is one after the
+	 * other in time: sequencial data
+	 */  
 	public final static int DATA_SEQUENCE = 0;
+	
+	/**
+	 * This set of data is a collection of points that is not
+	 * sequential in time.
+	 */ 
 	public final static int DATA_SERIES = 1;
 
 	private int dataType = DATA_SEQUENCE;
