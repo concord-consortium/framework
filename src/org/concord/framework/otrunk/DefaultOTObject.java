@@ -102,4 +102,21 @@ public class DefaultOTObject implements OTObject
     		return null;
     	}
 	}	
+	
+	public boolean equals(Object other)
+	{
+		if(!(other instanceof OTObject)){
+			return false;
+		}
+		
+		if(this == other) {
+			return true;
+		}
+		
+		if(((OTObject)other).getGlobalId().equals(getGlobalId())) {
+			System.err.println("compared two ot objects with the same ID but different instances");
+			return true;
+		}
+		return false;
+	}
 }
