@@ -5,6 +5,21 @@
   xmlns:ant="jelly:ant">
 
   <!--
+    Add the properties, create the status file, and delete it when done
+  -->
+  <preGoal name="catalog">
+    <j:set var="ccScm.cvs.server" value="source.concord.org" />
+    <j:set var="ccScm.cvs.repo" value="/cvs/repo/CodeBank" />
+    <j:set var="ccScm.cvs.module" value="Projects/${pom.name}" />
+
+    <ant:cvs command="status -v" output="status.properties"/>
+  </preGoal>
+
+  <postGoal name="catalog">
+    <ant:delete file="status.properties" />
+  </postGoal>
+
+  <!--
      Since setting maven.build.dir or maven.build.dest will effect most built
      residuals, create this post goal to get just the jar file into the lib directory
   -->
