@@ -23,21 +23,46 @@
  */
 
 /*
- * Created on Mar 21, 2005
+ * Last modification information:
+ * $Revision: 1.3 $
+ * $Date: 2005-04-10 03:57:13 $
+ * $Author: imoncada $
  *
- * TODO To change the template for this generated file go to
- * Window - Preferences - Java - Code Style - Code Templates
- */
+ * Licence Information
+ * Copyright 2004 The Concord Consortium 
+*/
 package org.concord.framework.otrunk;
 
 /**
- * @author scott
+ * OTWrapper
+ * 
+ * This interface is used by the OTrunk framework.
+ * OTWrappers are objects that wrap a "real" object and are able to
+ * save and restore data to/from this object.
+ *  
+ * Note:
+ * The OT objects implementing this interface should also implement 
+ * a public method called getWrappedObject() that returns the object
+ * that is being "wrapped". The return type of this method should
+ * coincide with the class of the wrapped object.
+ * (That is the reason why this method is not defined in this interface)
  *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
+ * Date created: Mar 21, 2005
+ *
+ * @author scytacki<p>
+ *
  */
 public interface OTWrapper
     extends OTObject
 {
     public void saveObject();
+
+	/* Also, implement this implicit method:
+	 * 
+	 * public <type> getWrappedObject()
+	 * 
+	 * This method is not explicitly defined in this interface because  
+	 * each object would return a different class, so the method would
+	 * have a different signature, and that is not possible in java.
+	 */
 }
