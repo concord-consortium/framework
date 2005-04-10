@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2005-04-10 18:43:00 $
+ * $Revision: 1.5 $
+ * $Date: 2005-04-10 23:53:41 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -51,6 +51,8 @@ public interface OTWrapper
     public void saveObject(Object wrappedObject);
 
 	public Object createWrappedObject();
+	
+	public void registerWrappedObject(Object wrappedObject);
 	
 	public Class getWrappedObjectClass();
 }
