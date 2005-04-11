@@ -36,7 +36,11 @@ package org.concord.framework.otrunk;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public interface OTObjectInterface extends OTObject
+public interface OTObjectInterface extends OTObject, OTChangeNotifying
 {
     public OTrunk getOTDatabase();
+
+    public void setDoNotifyChangeListeners(boolean doNotify);
+    
+    public void notifyOTChange();
 }

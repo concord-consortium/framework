@@ -40,7 +40,7 @@ import java.util.EventObject;
  */
 public class OTChangeEvent extends EventObject
 {
-    public OTChangeEvent(Object source)
+    public OTChangeEvent(OTObject source)
     {
         super(source);
     }

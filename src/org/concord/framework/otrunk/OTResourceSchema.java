@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-01-27 16:43:12 $
+ * $Revision: 1.4 $
+ * $Date: 2005-04-11 23:22:30 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -52,5 +52,9 @@ public interface OTResourceSchema
 	public String getName();
 	public void setName(String name);
 	
+	public boolean isResourceSet(String name);
+	
 	public String getLocalId();
+	
+	
 }
