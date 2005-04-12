@@ -71,4 +71,6 @@ public interface OTrunk {
 		throws Exception;
 
 	public OTWrapper getWrapper(Object wrappedObject);
+	
+	public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
 }
