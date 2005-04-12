@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2005-03-10 03:52:24 $
+ * $Revision: 1.5 $
+ * $Date: 2005-04-12 05:26:20 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -55,4 +55,6 @@ public interface OTResourceList extends OTResourceCollection
 	public void set(int index, Object object);
 	
 	public void remove(int index);
+	
+	public void remove(Object obj);
 }

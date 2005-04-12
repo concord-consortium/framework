@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2004-12-06 16:22:12 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2005-04-12 05:26:20 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -66,5 +66,9 @@ public interface OTObjectList
 
 	public abstract int size();
 
+	public abstract void remove(int index);
+	
+	public abstract void remove(OTObject obj);
+	
 	public abstract void removeAll();
 }
