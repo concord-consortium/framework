@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2005-03-25 17:40:59 $
+ * $Revision: 1.8 $
+ * $Date: 2005-04-13 03:48:32 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -50,7 +50,7 @@ public class ProducerDataStore extends AbstractDataStore
 {
 	protected DataProducer dataProducer;
 	
-	private int numberOfChannels = 0;
+	private int numberOfProducerChannels = 0;
 	private int nextSampleOffset = 1;
 	protected float dt = 1;
 	private boolean useDtAsChannel = true;
@@ -141,27 +141,34 @@ public class ProducerDataStore extends AbstractDataStore
 		    return;
 		}
 		
-		for(int i=0; i<numberOfSamples; i++)
+		addSamples(data, eventSampleIndex, numberOfSamples, nextSampleOffset);		
+	}
+
+	protected synchronized void addSamples(float [] values, int offset, 
+	        int numberOfSamples, int localNextSampleOffset)
+	{
+		int eventSampleIndex = offset;
+		int storeSampleIndex = getTotalNumSamples();		
+
+	    for(int i=0; i<numberOfSamples; i++)
 		{
 		    synchronized (this){
-		        for(int j=0; j<numberOfChannels; j++)
+		        for(int j=0; j<numberOfProducerChannels; j++)
 		        {
-		            value = new Float(data[eventSampleIndex + j]);
+		            Float value = new Float(values[eventSampleIndex + j]);
 		            
 		            //This is not a WritableDataStore, so this is not valid anymore:
 		            //setValueAt(i + iSamples, j, value);
 		            addValue(storeSampleIndex, j, value);
 		        }
-		        eventSampleIndex+= nextSampleOffset;
+		        eventSampleIndex+= localNextSampleOffset;
 		        storeSampleIndex++;
 		    }
-		    // notify listeners after we added all the values in the sample
-		    notifyDataAdded();
 		}
 
-		notifyDataAdded();
+		notifyDataAdded();	    
 	}
-
+	
 	/* (non-Javadoc)
      * @see org.concord.framework.data.stream.AbstractDataStore#getTotalNumSamples()
      */
@@ -208,6 +215,11 @@ public class ProducerDataStore extends AbstractDataStore
 		notifyChannelDescChanged();
 	}
 
+	protected int getNumberOfProducerChannels()
+	{
+	    return numberOfProducerChannels;
+	}
+	
 	protected void updateDataDescription(DataStreamDescription desc)
 	{
 		dataStreamDesc = desc;
@@ -217,11 +229,11 @@ public class ProducerDataStore extends AbstractDataStore
 		}
 		nextSampleOffset = desc.getNextSampleOffset();
 		dt = desc.getDt();
-		numberOfChannels = desc.getChannelsPerSample();
+		numberOfProducerChannels = desc.getChannelsPerSample();
 		useDtAsChannel = (desc.getDataType() == DataStreamDescription.DATA_SEQUENCE);
 
 		//Make sure the values vector has enough channels
-		while (numberOfChannels > channelsValues.size()){
+		while (numberOfProducerChannels > channelsValues.size()){
 			//Add empty vectors until all channels have space
 			channelsValues.addElement(new Vector());
 		}
