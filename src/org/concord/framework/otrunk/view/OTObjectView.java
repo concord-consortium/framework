@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-01-29 20:09:45 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2005-04-19 01:18:13 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -48,4 +48,6 @@ import javax.swing.JComponent;
 public interface OTObjectView
 {
 	public JComponent getComponent(boolean editable);
+	
+	public void viewClosed();
 }
