@@ -22,4 +22,19 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
-package org.concord.framework.text;public class TextContainer implements TextContained{String text;	public TextContainer(String text){		setText(text);	}	public void setText(String text){		this.text = text;	}	public String getText(){		return text;	}	public String toString(){return getText();}}
+package org.concord.framework.text;
+
+public class TextContainer implements TextContained{
+String text;
+	public TextContainer(String text){
+		setText(text);
+	}
+	public void setText(String text){
+		this.text = text;
+	}
+	public String getText(){
+		return text;
+	}
+	public String toString(){return getText();}
+}
+

@@ -63,17 +63,24 @@ public final class LogTransaction
     public static final String TRANSACTION_END_ACT_STRING       = "endactivity";
     public static final String TRANSACTION_START_SECTION_STRING = "startsection";
     public static final String TRANSACTION_END_SECTION_STRING   = "endsection";
+    public static final String TRANSACTION_LOGINTERACTION       = "loginteraction";
+    public static final String TRANSACTION_INTERACTION          = "interaction";
+    public static final String TRANSACTION_EVENT_CONTENT        = "eventlogcontent";
+    public static final String TRANSACTION_EVENT_PROPERTY       = "property";
+    public static final String TRANSACTION_EVENT_VALUE          = "value";
 
-    public static final int TRANSACTION_UNDEFINED_ID     = 0;
-    public static final int TRANSACTION_TRANSITION_ID    = 1;
-    public static final int TRANSACTION_ACTION_ID        = 2;
-    public static final int TRANSACTION_QUESTION_ID      = 3;
-    public static final int TRANSACTION_OBSERVATION_ID   = 4;
-    public static final int TRANSACTION_EVENT_ID         = 5;
-    public static final int TRANSACTION_START_ACT_ID     = 6;
-    public static final int TRANSACTION_END_ACT_ID       = 7;
-    public static final int TRANSACTION_START_SECTION_ID = 8;
-    public static final int TRANSACTION_END_SECTION_ID   = 9;
+    public static final int TRANSACTION_UNDEFINED_ID        = 0;
+    public static final int TRANSACTION_TRANSITION_ID       = 1;
+    public static final int TRANSACTION_ACTION_ID           = 2;
+    public static final int TRANSACTION_QUESTION_ID         = 3;
+    public static final int TRANSACTION_OBSERVATION_ID      = 4;
+    public static final int TRANSACTION_EVENT_ID            = 5;
+    public static final int TRANSACTION_START_ACT_ID        = 6;
+    public static final int TRANSACTION_END_ACT_ID          = 7;
+    public static final int TRANSACTION_START_SECTION_ID    = 8;
+    public static final int TRANSACTION_END_SECTION_ID      = 9;
+    public static final int TRANSACTION_LOGINTERACTION_ID   = 10;
+    public static final int TRANSACTION_INTERACTION_ID      = 11;
 
     public final static String START_ACTIVITY_ACTION     = "START OF ACTIVITY";
     public final static String END_ACTIVITY_ACTION       = "END OF ACTIVITY";

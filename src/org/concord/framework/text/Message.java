@@ -22,4 +22,12 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
-package org.concord.framework.text;public class Message extends TextContainer{public final static String elementName = "message"; 	public Message(String text){		super(text);	}	public String toString(){return "Message: "+super.getText();}}
+package org.concord.framework.text;
+
+public class Message extends TextContainer{
+public final static String elementName = "message"; 
+	public Message(String text){
+		super(text);
+	}
+	public String toString(){return "Message: "+super.getText();}
+}

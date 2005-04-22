@@ -1,5 +1,4 @@
 
-
 /*
  *  Copyright (C) 2004  The Concord Consortium, Inc.,
  *  10 Concord Crossing, Concord, MA 01741
@@ -22,10 +21,11 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
-package org.concord.framework.text;
 
-public interface TextContained{
-	void setText(String text);
-	String getText(); 
+package org.concord.framework.logging;
+
+public interface DateContained{
+	void setDate(DateContainer date);
+	DateContainer getDate();
 }
 
