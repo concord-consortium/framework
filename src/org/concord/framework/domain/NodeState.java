@@ -38,4 +38,6 @@ extends StateOwner
     public NodeState getNodeStateRoot();
     public List getShowList();
     public int getNodeStateDepth();
+    public boolean isTrackable();
+    public boolean isReentrant();
 }
