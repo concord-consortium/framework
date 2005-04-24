@@ -108,6 +108,12 @@ public class DefaultOTObject
 	    return getReferencedObject(linkId);
 	}
 	
+	public OTID getReferencedId(String id)
+	{
+	    OTrunk otrunk = getOTDatabase();
+	    return otrunk.getOTID(id);	    
+	}
+	
 	public OTObject getReferencedObject(OTID id)
 	{
     	try {
