@@ -1,4 +1,4 @@
-<project name="Framework" default="jar">	
+<project name="Framework" default="signed-jar">	
 	<import file="../ProjectSets/standard-ant-targets.xml"/>
 
 	<property name="jar-name" value="framework"/>
