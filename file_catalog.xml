@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <filecatalog>
-    <server>xeon.concord.org</server>
+    <server>cvs.concord.org</server>
     <repo>/home/buildspace/CodeBank</repo>
     <module>Projects/Framework</module>
     <file>
@@ -12,10 +12,10 @@
     </file>
     <file>
         <name>.cvsignore</name>
-        <rev>1.2</rev>
-        <modtime>1097118066000</modtime>
-        <size>22</size>
-        <md5sum>e1be951db32e19ecd71f3ee9a52b44b1</md5sum>
+        <rev>1.3</rev>
+        <modtime>1108362011000</modtime>
+        <size>16</size>
+        <md5sum>2675fa1f72239828f779d6db161a0a57</md5sum>
     </file>
     <file>
         <name>.project</name>
@@ -33,38 +33,45 @@
     </file>
     <file>
         <name>build.xml</name>
-        <rev>1.5</rev>
-        <modtime>1107793451000</modtime>
-        <size>4914</size>
-        <md5sum>cbe46ef0c08349daafa71cd339892f1b</md5sum>
+        <rev>1.6</rev>
+        <modtime>1114657350000</modtime>
+        <size>165</size>
+        <md5sum>218fa4ae4f6960a48f14c0dae6068943</md5sum>
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.26</rev>
-        <modtime>1107793272000</modtime>
+        <rev>1.27</rev>
+        <modtime>1107793571000</modtime>
         <size>21930</size>
-        <md5sum>7f198f2ca71319da15041f9f12fd326e</md5sum>
-    </file>
-    <file>
-        <name>maven.xml</name>
-        <rev>1.5</rev>
-        <modtime>1107636338000</modtime>
-        <size>866</size>
-        <md5sum>9f968a4298c0d55df32a63bafd4a6746</md5sum>
-    </file>
-    <file>
-        <name>project.properties</name>
-        <rev>1.15</rev>
-        <modtime>1107371689000</modtime>
-        <size>166</size>
-        <md5sum>7c3d54aff05489c93b97bdd552a8c8b2</md5sum>
+        <md5sum>7821a6ce1f6b6c57779295480f01aafb</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.28</rev>
-        <modtime>1107793456000</modtime>
-        <size>334</size>
-        <md5sum>4daa54936a8c23bafe81d054c21351f4</md5sum>
+        <rev>1.30</rev>
+        <modtime>1115756797000</modtime>
+        <size>336</size>
+        <md5sum>7b73665181d69bcc3d7a362124838708</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/abouthelper/ApplAboutHandler.java</name>
+        <rev>1.1</rev>
+        <modtime>1108966587000</modtime>
+        <size>1211</size>
+        <md5sum>a382e5f8451a09f786919ba2392f4853</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/abouthelper/ApplAboutHandlerFactory.java</name>
+        <rev>1.2</rev>
+        <modtime>1111510987000</modtime>
+        <size>1451</size>
+        <md5sum>d5372fcd1df9f27350b27ed971fb9ecb</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/abouthelper/ApplAboutHandlerListener.java</name>
+        <rev>1.1</rev>
+        <modtime>1108966587000</modtime>
+        <size>1045</size>
+        <md5sum>7a831c1070c1fa983ddbf1961904477b</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/assessment/QuestionForm.java</name>
@@ -89,17 +96,17 @@
     </file>
     <file>
         <name>src/org/concord/framework/closehelper/ApplCloseHandler.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1211</size>
-        <md5sum>fba44cbdc7e954cafb07aee55ee3892d</md5sum>
+        <rev>1.3</rev>
+        <modtime>1108966172000</modtime>
+        <size>1213</size>
+        <md5sum>0745b6e6e30dc4eda1bc1180c1ed3b17</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/closehelper/ApplCloseHandlerFactory.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284823000</modtime>
-        <size>1699</size>
-        <md5sum>ee43028fca8a3e6b7691718e3d939bce</md5sum>
+        <rev>1.4</rev>
+        <modtime>1111510996000</modtime>
+        <size>1454</size>
+        <md5sum>a67990f150c1e44285a09d7a1db60f42</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/closehelper/ApplCloseHandlerListener.java</name>
@@ -186,13 +193,6 @@
         <md5sum>c5f80d2778f03d0984200e75b6ca1b82</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/data/stream/DataProducerProxy.java</name>
-        <rev>1.2</rev>
-        <modtime>1105585854000</modtime>
-        <size>1116</size>
-        <md5sum>5bddcbfe44aa6288ebe4dbf0da354a31</md5sum>
-    </file>
-    <file>
         <name>src/org/concord/framework/data/stream/DataStore.java</name>
         <rev>1.4</rev>
         <modtime>1100284824000</modtime>
@@ -215,17 +215,17 @@
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DataStreamDescription.java</name>
-        <rev>1.8</rev>
-        <modtime>1100540519000</modtime>
-        <size>4859</size>
-        <md5sum>656425b78536ea7d42434816fb74618a</md5sum>
+        <rev>1.9</rev>
+        <modtime>1107895163000</modtime>
+        <size>4945</size>
+        <md5sum>d4b4ed24a9ed682631ded2dd5d7634bd</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DataStreamEvent.java</name>
-        <rev>1.8</rev>
-        <modtime>1104811739000</modtime>
-        <size>3239</size>
-        <md5sum>891fcda6fbc331495931c4e6dc84e082</md5sum>
+        <rev>1.9</rev>
+        <modtime>1110168223000</modtime>
+        <size>3316</size>
+        <md5sum>d6eff66ad3be91abd13f6f008d97227a</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DefaultDataProducer.java</name>
@@ -236,31 +236,45 @@
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DefaultDataStore.java</name>
-        <rev>1.5</rev>
-        <modtime>1101259258000</modtime>
-        <size>3171</size>
-        <md5sum>0bb8b002a3db226502da3b9afa8dafb7</md5sum>
+        <rev>1.8</rev>
+        <modtime>1111772459000</modtime>
+        <size>5046</size>
+        <md5sum>c736aebf7ab98db2f2edb917487c5671</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DefaultMultipleDataProducer.java</name>
-        <rev>1.5</rev>
-        <modtime>1101225755000</modtime>
-        <size>3127</size>
-        <md5sum>e42cf431b47784f5065783a1ec6fd3e6</md5sum>
+        <rev>1.7</rev>
+        <modtime>1108821961000</modtime>
+        <size>3831</size>
+        <md5sum>2650fb076ca6b84f9d9d9fa35fd20e25</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/data/stream/DeltaDataStore.java</name>
+        <rev>1.3</rev>
+        <modtime>1112717852000</modtime>
+        <size>1729</size>
+        <md5sum>ae8d451e82e5e9689e653a55784cb688</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/ProducerDataStore.java</name>
+        <rev>1.8</rev>
+        <modtime>1113364112000</modtime>
+        <size>7301</size>
+        <md5sum>958dd768a5932183debef6cdee0ae449</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/data/stream/WritableArrayDataStore.java</name>
         <rev>1.4</rev>
-        <modtime>1100540519000</modtime>
-        <size>5861</size>
-        <md5sum>7c2340a4372172b9fc6d3546b2ea6436</md5sum>
+        <modtime>1111772715000</modtime>
+        <size>1538</size>
+        <md5sum>d791bff7974a7f995a03ecb40ef4b334</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/WritableDataStore.java</name>
-        <rev>1.4</rev>
-        <modtime>1101225877000</modtime>
-        <size>2076</size>
-        <md5sum>8669f919742910061a26ed4ac8aa8e05</md5sum>
+        <rev>1.6</rev>
+        <modtime>1110424549000</modtime>
+        <size>2251</size>
+        <md5sum>c914e524bdda5cba6b3f75e4281df295</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/debug/Debug.java</name>
@@ -282,6 +296,13 @@
         <modtime>1100284824000</modtime>
         <size>1262</size>
         <md5sum>0643a846e2be1b2a159ce32b34645e8f</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/domain/DomainData.java</name>
+        <rev>1.1</rev>
+        <modtime>1114695293000</modtime>
+        <size>1156</size>
+        <md5sum>409cc5c8712e0c5019a1c7b513247b4c</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/domain/DomainEngine.java</name>
@@ -348,10 +369,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/domain/NodeState.java</name>
-        <rev>1.1</rev>
-        <modtime>1107132267000</modtime>
-        <size>1427</size>
-        <md5sum>7bb0f70384ac9acb81bca2b287104394</md5sum>
+        <rev>1.2</rev>
+        <modtime>1114143010000</modtime>
+        <size>1495</size>
+        <md5sum>221392b72a17e062b2200b437bc104c9</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/domain/NodeStateTransition.java</name>
@@ -373,6 +394,13 @@
         <modtime>1100284824000</modtime>
         <size>2045</size>
         <md5sum>81c019034f8ca7fc13b7499e72432eb0</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/domain/WrapperComp.java</name>
+        <rev>1.2</rev>
+        <modtime>1114569069000</modtime>
+        <size>1447</size>
+        <md5sum>5116da102fe8ef6e6832620d5d659516</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/domain/event/NodeStateEvent.java</name>
@@ -410,6 +438,48 @@
         <md5sum>9a1fc0f2219450aa5a5a289ef7360bf4</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/logging/DateContained.java</name>
+        <rev>1.1</rev>
+        <modtime>1114142958000</modtime>
+        <size>1063</size>
+        <md5sum>35febc8d06f44a2c6d04835bd6e36558</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/DateContainer.java</name>
+        <rev>1.1</rev>
+        <modtime>1114142958000</modtime>
+        <size>2581</size>
+        <md5sum>cded571eaa4e16533e08970bab41680a</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/EndSectionListener.java</name>
+        <rev>1.2</rev>
+        <modtime>1114202468000</modtime>
+        <size>1065</size>
+        <md5sum>fc2ff8c8426a23ac0e6afd3883b9aa07</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/Interaction.java</name>
+        <rev>1.3</rev>
+        <modtime>1115346525000</modtime>
+        <size>4441</size>
+        <md5sum>59f215b37a40d9590ca0fe416f806f0b</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/LastNodeAdapter.java</name>
+        <rev>1.2</rev>
+        <modtime>1114202468000</modtime>
+        <size>1176</size>
+        <md5sum>6678e231a715866b05feca9f93ecf27c</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/LastNodeListener.java</name>
+        <rev>1.2</rev>
+        <modtime>1114202468000</modtime>
+        <size>1058</size>
+        <md5sum>0f753dcb43cf45feaf55a91908b613b3</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/logging/LogHintMessage.java</name>
         <rev>1.2</rev>
         <modtime>1100284824000</modtime>
@@ -418,31 +488,59 @@
     </file>
     <file>
         <name>src/org/concord/framework/logging/LogManager.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
-        <size>1187</size>
-        <md5sum>c06047965c0a395ecd8f852a49a68822</md5sum>
+        <rev>1.3</rev>
+        <modtime>1114716990000</modtime>
+        <size>1226</size>
+        <md5sum>5ed596dd5e96d0f049625894c8c7430c</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/logging/LogTransaction.java</name>
-        <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>9184</size>
-        <md5sum>52c92a181109fddd0136e44bf7d0bc49</md5sum>
+        <rev>1.5</rev>
+        <modtime>1114142958000</modtime>
+        <size>9749</size>
+        <md5sum>ee678d219823bb44cb4c0705f432ac23</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/logging/Loggable.java</name>
-        <rev>1.4</rev>
-        <modtime>1100284824000</modtime>
-        <size>2065</size>
-        <md5sum>eb4054263992b416c61dd14a0cf4ef84</md5sum>
+        <rev>1.5</rev>
+        <modtime>1114142958000</modtime>
+        <size>3944</size>
+        <md5sum>c0faefc4ebc459511be6cd161009f2ed</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/logging/LoggableAdapter.java</name>
+        <rev>1.1</rev>
+        <modtime>1114142958000</modtime>
+        <size>3692</size>
+        <md5sum>4f548386404d833375f364a24de5713b</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/DefaultOTObject.java</name>
-        <rev>1.4</rev>
-        <modtime>1106505142000</modtime>
-        <size>2885</size>
-        <md5sum>e86d0860353de6ca8127f5a71f7730de</md5sum>
+        <rev>1.7</rev>
+        <modtime>1114357250000</modtime>
+        <size>4297</size>
+        <md5sum>96fc9560c54a6b5b9e49fb6b920e73b1</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/OTChangeEvent.java</name>
+        <rev>1.3</rev>
+        <modtime>1113261750000</modtime>
+        <size>1442</size>
+        <md5sum>7fb81e8ac0558a7f4d339ab462c508aa</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/OTChangeListener.java</name>
+        <rev>1.2</rev>
+        <modtime>1111125368000</modtime>
+        <size>1368</size>
+        <md5sum>50e4f7b8ee3e2058bd1d0062c0ad3465</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/OTChangeNotifying.java</name>
+        <rev>1.2</rev>
+        <modtime>1111125368000</modtime>
+        <size>1454</size>
+        <md5sum>968b6ada40c8140e380bfe33c51ee716</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTID.java</name>
@@ -459,11 +557,18 @@
         <md5sum>cfa12ca7fa4602c99de535c129d4c1b7</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/otrunk/OTObjectInterface.java</name>
+        <rev>1.3</rev>
+        <modtime>1113261750000</modtime>
+        <size>1495</size>
+        <md5sum>9c55abc9fcdd4be54c0bbb3a52d66520</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/otrunk/OTObjectList.java</name>
-        <rev>1.2</rev>
-        <modtime>1102350132000</modtime>
-        <size>1891</size>
-        <md5sum>255ed1d827308edf73d3a16440fa6045</md5sum>
+        <rev>1.3</rev>
+        <modtime>1113283580000</modtime>
+        <size>1983</size>
+        <md5sum>f92049284865826b1128c6534c6be12c</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTObjectMap.java</name>
@@ -481,10 +586,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTResourceList.java</name>
-        <rev>1.3</rev>
-        <modtime>1106844192000</modtime>
-        <size>1513</size>
-        <md5sum>c5fb4868314ff2859e18d36268c15cdc</md5sum>
+        <rev>1.5</rev>
+        <modtime>1113283580000</modtime>
+        <size>1582</size>
+        <md5sum>e07135ba3f4da971d87786aa8ec553d1</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTResourceMap.java</name>
@@ -495,10 +600,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTResourceSchema.java</name>
-        <rev>1.3</rev>
-        <modtime>1106844192000</modtime>
-        <size>1429</size>
-        <md5sum>f30967f09112a3468dcc8d56729f4018</md5sum>
+        <rev>1.4</rev>
+        <modtime>1113261750000</modtime>
+        <size>1479</size>
+        <md5sum>45dc59de6d8d2cdbd28fc6c96090a31d</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTUser.java</name>
@@ -508,11 +613,18 @@
         <md5sum>25e7a85aec52761177bd9efcad98e08b</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/otrunk/OTWrapper.java</name>
+        <rev>1.5</rev>
+        <modtime>1113177221000</modtime>
+        <size>1645</size>
+        <md5sum>348ea33e8dffbeb984dc6a9ff4585620</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/otrunk/OTrunk.java</name>
-        <rev>1.3</rev>
-        <modtime>1105429847000</modtime>
-        <size>2257</size>
-        <md5sum>4a804a17fc88525443ed93ce27e373cd</md5sum>
+        <rev>1.7</rev>
+        <modtime>1114357250000</modtime>
+        <size>2524</size>
+        <md5sum>504b1cbf865c04091f29e516a04e6f94</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTFrame.java</name>
@@ -523,17 +635,24 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTObjectView.java</name>
-        <rev>1.2</rev>
-        <modtime>1107029385000</modtime>
-        <size>1383</size>
-        <md5sum>73b71930ea3bfca7bea03fbd6f8d6f5a</md5sum>
+        <rev>1.3</rev>
+        <modtime>1113873493000</modtime>
+        <size>1415</size>
+        <md5sum>5a98a21c3dc5346c8edfa5ec345e5fa9</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTViewContainer.java</name>
+        <rev>1.3</rev>
+        <modtime>1112382868000</modtime>
+        <size>1595</size>
+        <md5sum>7daecfa48ba1dd54643f190898d9aa76</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/view/OTViewContainerListener.java</name>
         <rev>1.2</rev>
-        <modtime>1107029385000</modtime>
-        <size>1553</size>
-        <md5sum>cc2789c0e0c012a1ee44325bd6b06286</md5sum>
+        <modtime>1112382968000</modtime>
+        <size>1398</size>
+        <md5sum>d94b0f5b8518eca7ad26b013a763908d</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/simulation/Simulation.java</name>
@@ -579,24 +698,24 @@
     </file>
     <file>
         <name>src/org/concord/framework/text/Message.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
+        <rev>1.3</rev>
+        <modtime>1114143037000</modtime>
         <size>1174</size>
-        <md5sum>9f6ee38e98485100132070d45a0d1100</md5sum>
+        <md5sum>46b68fd567aa3624692f781114352a5d</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/text/TextContained.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
+        <rev>1.3</rev>
+        <modtime>1114143037000</modtime>
         <size>1047</size>
-        <md5sum>ef4b37ecedab2a04ecb574bde741647e</md5sum>
+        <md5sum>2eec6a2c11839e92e17fc1493f9bd27f</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/text/TextContainer.java</name>
-        <rev>1.2</rev>
-        <modtime>1100284824000</modtime>
+        <rev>1.3</rev>
+        <modtime>1114143037000</modtime>
         <size>1236</size>
-        <md5sum>4866b86507fe6daa47a3a4ecd002e70b</md5sum>
+        <md5sum>f070a53a521adef24e94baa20537f6c7</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/text/UserMessageHandler.java</name>
@@ -606,6 +725,13 @@
         <md5sum>8afc2906c54965ccd0c621ce310f3d22</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/util/Indexable.java</name>
+        <rev>1.1</rev>
+        <modtime>1114143062000</modtime>
+        <size>1039</size>
+        <md5sum>524f198cb7b5cbfa54322ebe32527774</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/util/SimpleTreeNode.java</name>
         <rev>1.2</rev>
         <modtime>1105806000000</modtime>
@@ -613,3 +739,4 @@
         <md5sum>ca3c48077661a911dc20e08e46c56ac1</md5sum>
     </file>
 </filecatalog>
+
