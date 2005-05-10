@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <!-- Inherit main project xml file -->
-  <extend>../Builds/project.xml</extend>
-
-  <!-- Project specific parameters -->
-  <artifactId>framework</artifactId>
-  <name>Framework</name>
-  <groupId>${pom.artifactId}</groupId>
-  <currentVersion>1.26</currentVersion>
+    <!-- Inherit main project xml file -->
+    <extend>../Builds/project.xml</extend>
+    <!-- Project specific parameters -->
+    <artifactId>framework</artifactId>
+    <name>Framework</name>
+    <groupId>${pom.artifactId}</groupId>
+    <currentVersion>1.0</currentVersion>
 </project>
 
