@@ -31,5 +31,11 @@ public interface LogManager
 	void logLoggable(Loggable loggable);
     void logLoggable(Loggable loggable, LogHintMessage hint);
     void close();
+    void registerLoggable(Loggable loggable);
+    void unregisterLoggable(Loggable loggable);
+    void unregisterAllLoggables();
+    
+    java.util.logging.Logger getLogger();
+    
 }
 
