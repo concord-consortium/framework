@@ -28,7 +28,9 @@ public interface LogManager
 {
     void logAction(int level, String message);
     void logAction(int level, String message, int priority);
-	void logLoggable(Loggable loggable);
+    void logObservation(int level, String message);
+    void logObservation(int level, String message, int priority);
+    void logLoggable(Loggable loggable);
     void logLoggable(Loggable loggable, LogHintMessage hint);
     void close();
     void registerLoggable(Loggable loggable);
