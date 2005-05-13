@@ -25,7 +25,7 @@ package org.concord.framework.domain.event;
 
 import java.util.EventListener;
 
-public interface NodeLifeCycleLitener extends EventListener {
+public interface NodeLifeCycleListener extends EventListener {
 	public void nodeWasBorn(NodeLifeCycleEvent event);
 	public void nodeWasKilled(NodeLifeCycleEvent event);
 }
