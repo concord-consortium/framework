@@ -40,17 +40,17 @@
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.37</rev>
-        <modtime>1115825045000</modtime>
+        <rev>1.38</rev>
+        <modtime>1115825091000</modtime>
         <size>25860</size>
-        <md5sum>79ce0f8f7f095160e9c28871858e7915</md5sum>
+        <md5sum>25b6d6803e31a54a3196fa24399b9b94</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.30</rev>
-        <modtime>1115825087000</modtime>
+        <rev>1.31</rev>
+        <modtime>1116015558000</modtime>
         <size>336</size>
-        <md5sum>7b73665181d69bcc3d7a362124838708</md5sum>
+        <md5sum>1f2c41f88730456a4915e70bd3cef83f</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/abouthelper/ApplAboutHandler.java</name>
@@ -403,6 +403,20 @@
         <md5sum>5116da102fe8ef6e6832620d5d659516</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/domain/event/NodeLifeCycleEvent.java</name>
+        <rev>1.1</rev>
+        <modtime>1115949871000</modtime>
+        <size>1143</size>
+        <md5sum>e026ad833787b0f9d35bc86a4f79c3a5</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/domain/event/NodeLifeCycleListener.java</name>
+        <rev>1.1</rev>
+        <modtime>1115950193000</modtime>
+        <size>1175</size>
+        <md5sum>1cdf3bdba86786a4c2d50d7b4348d78b</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/domain/event/NodeStateEvent.java</name>
         <rev>1.1</rev>
         <modtime>1107132267000</modtime>
@@ -488,10 +502,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/logging/LogManager.java</name>
-        <rev>1.3</rev>
-        <modtime>1114716990000</modtime>
-        <size>1226</size>
-        <md5sum>5ed596dd5e96d0f049625894c8c7430c</md5sum>
+        <rev>1.5</rev>
+        <modtime>1115961879000</modtime>
+        <size>1528</size>
+        <md5sum>b6bef2c647eb0cdbc9c2223c7f72fcef</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/logging/LogTransaction.java</name>
