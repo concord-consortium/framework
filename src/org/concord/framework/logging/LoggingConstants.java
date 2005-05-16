@@ -26,5 +26,10 @@ package org.concord.framework.logging;
 
 public interface LoggingConstants{
     public static final String LOGGING_ROOT_PATH_PROPERTY = "org.concord.logging.rootpath";
+    public static final String LOGGING_ACTIVITY_ID_PROPERTY = "org.concord.pedagogica.activity_id";
+    public static final String LOGGING_ACTIVITY_INSTANCE_ID_PROPERTY = "org.concord.pedagogica.activity_instance_id";
+    public static final String LOGGING_USER_ID_PROPERTY = "org.concord.pedagogica.user_id";
+    public static final String LOGGING_PASSWORD_HASH_PROPERTY = "org.concord.pedagogica.password_hash";
+    public static final String LOGGING_BLOWFISH_PROPERTY = "org.concord.pedagogica.encrypted_blowfish_key";
+    public static final String LOGGING_PRIVATE_PROPERTY = "org.concord.pedagogica.encrypted_private_key";
 }
-
