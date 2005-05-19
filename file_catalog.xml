@@ -40,17 +40,17 @@
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.38</rev>
-        <modtime>1115825091000</modtime>
-        <size>25860</size>
-        <md5sum>25b6d6803e31a54a3196fa24399b9b94</md5sum>
+        <rev>1.39</rev>
+        <modtime>1116015564000</modtime>
+        <size>26373</size>
+        <md5sum>b3431934a81dce9726dfc1769df176cf</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.31</rev>
-        <modtime>1116015558000</modtime>
+        <rev>1.33</rev>
+        <modtime>1116524798000</modtime>
         <size>336</size>
-        <md5sum>1f2c41f88730456a4915e70bd3cef83f</md5sum>
+        <md5sum>329d5959c261484fcd730ec303bd6db5</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/abouthelper/ApplAboutHandler.java</name>
@@ -529,6 +529,13 @@
         <md5sum>4f548386404d833375f364a24de5713b</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/logging/LoggingConstants.java</name>
+        <rev>1.4</rev>
+        <modtime>1116478500000</modtime>
+        <size>2012</size>
+        <md5sum>5f73325640589e80240b3b201fff28bf</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/otrunk/DefaultOTObject.java</name>
         <rev>1.7</rev>
         <modtime>1114357250000</modtime>
@@ -635,10 +642,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTrunk.java</name>
-        <rev>1.7</rev>
-        <modtime>1114357250000</modtime>
-        <size>2524</size>
-        <md5sum>504b1cbf865c04091f29e516a04e6f94</md5sum>
+        <rev>1.8</rev>
+        <modtime>1116521989000</modtime>
+        <size>2728</size>
+        <md5sum>46c7360a8685d06416a761a626c02e23</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTFrame.java</name>
@@ -649,10 +656,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTObjectView.java</name>
-        <rev>1.3</rev>
-        <modtime>1113873493000</modtime>
-        <size>1415</size>
-        <md5sum>5a98a21c3dc5346c8edfa5ec345e5fa9</md5sum>
+        <rev>1.4</rev>
+        <modtime>1116521989000</modtime>
+        <size>1545</size>
+        <md5sum>4d21e3f93218d350938f6b13b6180c08</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTViewContainer.java</name>
@@ -744,6 +751,13 @@
         <modtime>1114143062000</modtime>
         <size>1039</size>
         <md5sum>524f198cb7b5cbfa54322ebe32527774</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/util/Named.java</name>
+        <rev>1.1</rev>
+        <modtime>1116088028000</modtime>
+        <size>1013</size>
+        <md5sum>d80178dc25e79a5b63036e69e7b4536f</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/util/SimpleTreeNode.java</name>
