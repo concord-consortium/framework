@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-04-19 01:18:13 $
+ * $Revision: 1.4 $
+ * $Date: 2005-05-19 16:59:49 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -34,6 +34,8 @@
 package org.concord.framework.otrunk.view;
 
 import javax.swing.JComponent;
+
+import org.concord.framework.otrunk.OTObject;
 
 
 /**
@@ -47,6 +49,8 @@ import javax.swing.JComponent;
  */
 public interface OTObjectView
 {
+    public void initialize(OTObject otObject, OTViewContainer viewContainer);
+    
 	public JComponent getComponent(boolean editable);
 	
 	public void viewClosed();
