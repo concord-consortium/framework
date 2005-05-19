@@ -25,6 +25,7 @@
 package org.concord.framework.logging;
 
 public interface LoggingConstants{
+    public static final String LOGGING_GLOBAL_FILTER_PROPERTY = "org.concord.logging.globalfilter";
     public static final String LOGGING_ROOT_PATH_PROPERTY = "org.concord.logging.rootpath";
     public static final String LOGGING_ACTIVITY_ID_PROPERTY = "org.concord.pedagogica.activity_id";
     public static final String LOGGING_ACTIVITY_INSTANCE_ID_PROPERTY = "org.concord.pedagogica.activity_instance_id";
