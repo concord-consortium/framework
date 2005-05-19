@@ -79,4 +79,13 @@ public interface OTrunk {
 	public OTWrapper getWrapper(Object wrappedObject);
 	
 	public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
+	
+	/** 
+	 * All the services will be checked to see which is an instanceof this 
+	 * serviceInterface.
+	 * 
+	 * @param serviceInterface
+	 * @return
+	 */
+	public Object getService(Class serviceInterface);
 }
