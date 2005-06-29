@@ -36,4 +36,6 @@ public interface LoggingConstants{
     public static final String LOGGING_PASSWORD_HASH_PROPERTY = "org.concord.pedagogica.password_hash";
     public static final String LOGGING_BLOWFISH_PROPERTY = "org.concord.pedagogica.encrypted_blowfish_key";
     public static final String LOGGING_PRIVATE_PROPERTY = "org.concord.pedagogica.encrypted_private_key";
+    public static final String LOGGING_PROJECT_ID_PROPERTY = "org.concord.pedagogica.project_id";
+    public static final String LOGGING_GROUP_ID_PROPERTY = "org.concord.pedagogica.group_id";
 }
