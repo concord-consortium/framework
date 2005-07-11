@@ -76,6 +76,9 @@ public interface OTrunk {
 	public OTObject getUserRuntimeObject(OTObject authoredObject, OTUser user)
 		throws Exception;
 
+    public boolean hasUserModified(OTObject authoredObject, OTUser user)
+        throws Exception;
+    
 	public OTWrapper getWrapper(Object wrappedObject);
 	
 	public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
