@@ -24,14 +24,16 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2005-05-19 16:59:49 $
- * $Author: scytacki $
+ * $Revision: 1.5 $
+ * $Date: 2005-07-19 15:47:29 $
+ * $Author: swang $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk.view;
+
+import java.io.File;
 
 import javax.swing.JComponent;
 
@@ -54,4 +56,7 @@ public interface OTObjectView
 	public JComponent getComponent(boolean editable);
 	
 	public void viewClosed();
+	
+	public String getXHTMLText(File folder, int containerDisplayWidth,
+			int containerDisplayHeight);
 }
