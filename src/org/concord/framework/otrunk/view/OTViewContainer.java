@@ -24,14 +24,17 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-04-01 19:14:28 $
- * $Author: scytacki $
+ * $Revision: 1.4 $
+ * $Date: 2005-07-19 15:47:44 $
+ * $Author: swang $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk.view;
+
+import java.awt.Component;
+import java.io.File;
 
 import javax.swing.JComponent;
 
@@ -55,4 +58,6 @@ public interface OTViewContainer
 	
 	public JComponent getComponent(OTObject otObject, 
 			OTViewContainer container, boolean editable);
+	
+	public String saveImage(JComponent comp, float scaleX, float scaleY, File folder, OTObject otObject);
 }
