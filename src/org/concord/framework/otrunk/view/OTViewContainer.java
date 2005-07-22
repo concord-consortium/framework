@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2005-07-19 15:47:44 $
- * $Author: swang $
+ * $Revision: 1.5 $
+ * $Date: 2005-07-22 16:47:00 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -56,8 +56,7 @@ public interface OTViewContainer
 	
 	public OTObject getCurrentObject();
 	
-	public JComponent getComponent(OTObject otObject, 
-			OTViewContainer container, boolean editable);
+	public JComponent getComponent(OTObject otObject, boolean editable);
 	
 	public String saveImage(JComponent comp, float scaleX, float scaleY, File folder, OTObject otObject);
 }
