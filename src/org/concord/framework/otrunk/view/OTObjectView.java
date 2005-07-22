@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-07-19 15:47:29 $
- * $Author: swang $
+ * $Revision: 1.6 $
+ * $Date: 2005-07-22 16:19:09 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -49,7 +49,7 @@ import org.concord.framework.otrunk.OTObject;
  * @author scott<p>
  *
  */
-public interface OTObjectView
+public interface OTObjectView extends OTView
 {
     public void initialize(OTObject otObject, OTViewContainer viewContainer);
     
