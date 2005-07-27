@@ -24,9 +24,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-07-22 16:21:09 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2005-07-27 21:13:32 $
+ * $Author: swang $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -39,4 +39,5 @@ public interface OTXHTMLView
     extends OTView
 {
     String getXHTMLText(OTObject otObject);
+    String getXHTMLImageText(OTXHTMLHelper helper, float containerDisplayWidth, float containerHeight);
 }
