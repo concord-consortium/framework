@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-07-22 16:47:00 $
+ * $Revision: 1.6 $
+ * $Date: 2005-07-28 17:08:44 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -57,6 +57,4 @@ public interface OTViewContainer
 	public OTObject getCurrentObject();
 	
 	public JComponent getComponent(OTObject otObject, boolean editable);
-	
-	public String saveImage(JComponent comp, float scaleX, float scaleY, File folder, OTObject otObject);
 }
