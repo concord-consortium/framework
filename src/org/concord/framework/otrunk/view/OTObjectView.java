@@ -24,8 +24,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-07-22 16:19:09 $
+ * $Revision: 1.7 $
+ * $Date: 2005-07-28 17:08:44 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -57,6 +57,4 @@ public interface OTObjectView extends OTView
 	
 	public void viewClosed();
 	
-	public String getXHTMLText(File folder, int containerDisplayWidth,
-			int containerDisplayHeight);
 }

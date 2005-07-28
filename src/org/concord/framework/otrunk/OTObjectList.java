@@ -24,9 +24,9 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-04-12 05:26:20 $
- * $Author: imoncada $
+ * $Revision: 1.4 $
+ * $Date: 2005-07-28 17:08:44 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -48,13 +48,13 @@ import java.util.Vector;
 public interface OTObjectList
 {
 
-	public abstract OTObject get(int index);
+	public OTObject get(int index);
 
-	public abstract Vector getVector();
+	public Vector getVector();
 
-	public abstract void add(OTObject obj);
+	public void add(OTObject obj);
 
-	public abstract void add(int index, OTObject obj);
+	public void add(int index, OTObject obj);
 
 	/*
 	 * It might be best if the users of this list could have all ids hidden from
@@ -62,13 +62,13 @@ public interface OTObjectList
 	 * to the list.  If this method wasn't here then the call would have to
 	 * instanciate the object and then call the other add method.
 	 */
-	public abstract void add(OTID id);
+	public void add(OTID id);
 
-	public abstract int size();
+	public int size();
 
-	public abstract void remove(int index);
+	public void remove(int index);
 	
-	public abstract void remove(OTObject obj);
+	public void remove(OTObject obj);
 	
-	public abstract void removeAll();
+	public void removeAll();    
 }
