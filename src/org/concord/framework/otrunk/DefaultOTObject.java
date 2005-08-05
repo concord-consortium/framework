@@ -55,6 +55,7 @@ public class DefaultOTObject
 	private OTrunk otDatabase;
 	
 	private OTResourceSchema resources;
+	private Vector userList;
 	
 	private Vector changeListeners = new Vector();
     private OTChangeEvent changeEvent = new OTChangeEvent(this);
@@ -63,6 +64,10 @@ public class DefaultOTObject
 	{
 		this.resources = resources;		
 	}
+	
+	//public DefaultOTObject(Vector userList) {
+	//	this.userList = userList;
+	//}
 			
 	public OTID getGlobalId()
 	{
