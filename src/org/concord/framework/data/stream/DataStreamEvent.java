@@ -24,8 +24,8 @@
  */
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2005-03-07 04:03:43 $
+ * $Revision: 1.10 $
+ * $Date: 2005-08-05 16:07:14 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -139,5 +139,30 @@ public class DataStreamEvent extends DataEvent
     public void  setAdditionalInfo(Object additionalInfo)
     {
         this.additionalInfo = additionalInfo;
-    }	
+    }
+    
+    /**
+     * Copy this object into the passed in object and return 
+     * it.  If the passed in object is null then it will create a
+     * new object
+     * 
+     * @param output
+     * @return
+     */
+    public DataStreamEvent clone(DataStreamEvent output)
+    {
+        if(output == null) {
+            output = new DataStreamEvent();
+        }
+        
+        output.setData(getData());
+        output.setIntData(getIntData());
+        output.setNumSamples(getNumSamples());
+        output.setSource(getSource());
+        output.setAdditionalInfo(getAdditionalInfo());
+        output.setType(getType());
+        output.setDataDescription(getDataDescription());
+        
+        return output;
+    }
 }
