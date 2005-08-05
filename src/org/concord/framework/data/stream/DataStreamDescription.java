@@ -40,8 +40,6 @@ public class DataStreamDescription
 
 	private int dataType = DATA_SEQUENCE;
 
-	// This field is redundant
-	// private int channelPerSample;
 	private float dt;
 	private int dataOffset = 0;
 	private int nextSampleOffset = -1;
