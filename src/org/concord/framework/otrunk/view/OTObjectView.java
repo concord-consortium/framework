@@ -23,16 +23,14 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.9 $
+ * $Date: 2005-08-22 15:32:00 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk.view;
-
-import java.io.File;
 
 import javax.swing.JComponent;
 

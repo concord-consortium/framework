@@ -52,10 +52,7 @@ import java.util.Vector;
 public class DefaultOTObject 
 	implements OTObject, OTChangeNotifying
 {
-	private OTrunk otDatabase;
-	
 	private OTResourceSchema resources;
-	private Vector userList;
 	
 	private Vector changeListeners = new Vector();
     private OTChangeEvent changeEvent = new OTChangeEvent(this);
@@ -83,29 +80,26 @@ public class DefaultOTObject
 	{
 		resources.setName(name);
 	}
-		
-	/**
-	 * This method can be used by an object to get its own database.
-	 * @return
-	 */
-	protected OTrunk getOTDatabase()
-	{
-		return otDatabase;
-	}
-	
-	public void setOTDatabase(OTrunk otDatabase)
-	{
-		this.otDatabase = otDatabase;
-	}
-	
+
+    /**
+     * This method can be used by an object to get the object service
+     * associated with this object.  This service can be used for creating
+     * new objects, and getting objects from ids.
+     * @return
+     */
+    protected OTObjectService getOTObjectService()
+    {
+        return resources.getOTObjectService();
+    }
+    
 	public void init()
 	{
 	}
 	
 	public OTObject getReferencedObject(String id)
 	{
-	    OTrunk otrunk = getOTDatabase();
-	    OTID linkId = otrunk.getOTID(id);
+        OTObjectService objService = resources.getOTObjectService();
+	    OTID linkId = objService.getOTID(id);
 	    if(linkId == null) {
 	        return null;
 	    }
@@ -114,15 +108,15 @@ public class DefaultOTObject
 	
 	public OTID getReferencedId(String id)
 	{
-	    OTrunk otrunk = getOTDatabase();
-	    return otrunk.getOTID(id);	    
+        OTObjectService objService = resources.getOTObjectService();
+        return objService.getOTID(id);
 	}
 	
 	public OTObject getReferencedObject(OTID id)
 	{
     	try {
-    		OTrunk db = getOTDatabase();
-    		return db.getOTObject(getGlobalId(), id);
+            OTObjectService objService = resources.getOTObjectService();
+    		return objService.getOTObject(id);
     	} catch (Exception e) {
     		e.printStackTrace();
     		return null;

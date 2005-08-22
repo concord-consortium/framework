@@ -39,6 +39,12 @@ import java.util.EventObject;
  */
 public class OTChangeEvent extends EventObject
 {
+    /**
+     * This field is added just to get rid of compiler warnings.
+     * this class is not intended to be serialized.
+     */
+    private static final long serialVersionUID = 1L;
+
     public OTChangeEvent(OTObject source)
     {
         super(source);

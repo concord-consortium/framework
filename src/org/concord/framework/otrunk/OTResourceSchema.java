@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.6 $
+ * $Date: 2005-08-22 15:32:00 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -48,6 +48,8 @@ public interface OTResourceSchema
 {
 	public OTID getGlobalId();
 	
+    public OTObjectService getOTObjectService();    
+    
 	public String getName();
 	public void setName(String name);
 	
