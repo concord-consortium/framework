@@ -62,8 +62,6 @@ public interface OTrunk {
 	 */
 	public OTObject getOTObject(OTID childID) throws Exception;
 
-	public OTObject getOTObject(OTID referingId, OTID childID) throws Exception;
-
 	/**
 	 * This will create an OTID from the passed in string.
 	 * 

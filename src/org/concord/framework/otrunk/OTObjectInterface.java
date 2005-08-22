@@ -37,8 +37,8 @@ package org.concord.framework.otrunk;
  */
 public interface OTObjectInterface extends OTObject, OTChangeNotifying
 {
-    public OTrunk getOTDatabase();
-
+    public OTObjectService getOTObjectService();
+    
     public void setDoNotifyChangeListeners(boolean doNotify);
     
     public void notifyOTChange();
