@@ -31,10 +31,6 @@ package org.concord.framework.otrunk;
 
 import java.util.Vector;
 
-
-
-
-
 /**
  * This class can be used to create more complex OTObjects.
  * The OTObject interface can be used for simple interfaces
@@ -122,7 +118,13 @@ public class DefaultOTObject
     		return null;
     	}
 	}	
-	
+
+    public int hashCode()
+    {
+        String str = getClass().getName() + "@" +  getGlobalId();
+        return str.hashCode();
+    }
+    
 	public boolean equals(Object other)
 	{
 		if(!(other instanceof OTObject)){
