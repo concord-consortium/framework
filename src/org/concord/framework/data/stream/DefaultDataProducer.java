@@ -25,9 +25,10 @@ package org.concord.framework.data.stream;
 
 import java.util.Vector;
 import org.concord.framework.data.*;
+import org.concord.framework.util.Copyable;
 
 public class DefaultDataProducer
-	implements DataProducer
+	implements DataProducer, Copyable
 {
 	protected Vector dataListeners = new Vector();
 
@@ -126,6 +127,16 @@ public class DefaultDataProducer
 	{
 		dataDesc.setDt(dt);
 		notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
+	}
+
+	public Object getCopy() {
+		DefaultDataProducer producer = new DefaultDataProducer();
+		producer.dataDesc = (DataStreamDescription)this.dataDesc.getCopy();
+		producer.dataEvent = (DataStreamEvent)this.dataEvent.clone(new DataStreamEvent());
+		//producer.dataListeners = this.dataListeners;
+		producer.values = this.values;
+		// TODO Auto-generated method stub
+		return producer;
 	}
 
 }

@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.7 $
+ * $Date: 2005-09-15 14:00:01 $
+ * $Author: swang $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -206,5 +206,20 @@ public class DataChannelDescription
 	public boolean isUsePrecision()
 	{
 		return usePrecision;
+	}
+	
+	public Object getCopy() {
+		DataChannelDescription channelDesc = new DataChannelDescription();
+		channelDesc.absoluteMax = this.absoluteMax;
+		channelDesc.absoluteMin = this.absoluteMin;
+		channelDesc.name = this.name;
+		channelDesc.numericData = this.numericData;
+		channelDesc.precision = this.precision;
+		channelDesc.recommendMax = this.recommendMax;
+		channelDesc.recommendMin = this.recommendMin;
+		channelDesc.tuneValue = this.tuneValue;
+		channelDesc.unit = this.unit;
+		channelDesc.usePrecision = this.usePrecision;
+		return channelDesc;
 	}
 }

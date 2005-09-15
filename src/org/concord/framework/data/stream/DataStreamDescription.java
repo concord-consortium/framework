@@ -196,4 +196,20 @@ public class DataStreamDescription
 	{
 		this.dtChannelDescription = dtChannelDescription;
 	}
+	
+	public Object getCopy() {
+		DataStreamDescription desc = new DataStreamDescription();
+		DataChannelDescription[] channels = 
+			new DataChannelDescription[this.channelDescriptions.length];
+		for(int i = 0; i < channels.length; i++) {
+			channels[i] = 
+				(DataChannelDescription)(this.channelDescriptions[i].getCopy());
+		}
+		desc.channelDescriptions = channels;
+		desc.setChannelDescription((DataChannelDescription)this.dtChannelDescription.getCopy());
+		desc.setDataType(this.dataType);
+		desc.setDt(this.dt);
+		desc.setDataOffset(this.dataOffset);
+		return desc;
+	}
 }
