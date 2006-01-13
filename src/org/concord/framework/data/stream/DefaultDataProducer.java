@@ -47,6 +47,7 @@ public class DefaultDataProducer
 		dataDesc.setDt(dt);
 
 		dataEvent = new DataStreamEvent(DataStreamEvent.DATA_RECEIVED, values, null, dataDesc);
+		dataEvent.setSource(this);
 	}
 
 	public void addDataListener(DataListener listener)
