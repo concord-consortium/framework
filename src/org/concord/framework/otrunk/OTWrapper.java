@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.7 $
+ * $Date: 2006-02-01 21:48:08 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -51,6 +51,8 @@ public interface OTWrapper
 
 	public Object createWrappedObject();
 	
+    public void initWrappedObject(Object container, Object wrappedObject);
+    
 	public void registerWrappedObject(Object wrappedObject);
 	
 	public Class getWrappedObjectClass();
