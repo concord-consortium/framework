@@ -42,4 +42,6 @@ public interface OTObjectInterface extends OTObject, OTChangeNotifying
     public void setDoNotifyChangeListeners(boolean doNotify);
     
     public void notifyOTChange();
+    
+	public boolean isResourceSet(String name);
 }
