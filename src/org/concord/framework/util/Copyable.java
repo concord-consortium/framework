@@ -24,5 +24,10 @@
 package org.concord.framework.util;
 
 public interface Copyable {
+    
+    /**
+     * It is not clear if this is a deep copy or not
+     * @return
+     */
 	public Object getCopy();
 }

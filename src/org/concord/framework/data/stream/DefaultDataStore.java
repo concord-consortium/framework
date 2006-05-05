@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.10 $
+ * $Date: 2006-05-05 15:44:33 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -136,7 +136,8 @@ public class DefaultDataStore extends AbstractDataStore
 				//Add empty elements until the desired sample
 				channel.addElement(null);
 			}
-						//Set the value
+            
+			//Set the value
 			channel.setElementAt(new Float(values[offset+(i*nextSampleOffset)]), i);			
 	    }
 	    
