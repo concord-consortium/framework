@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-08-22 15:32:00 $
+ * $Revision: 1.7 $
+ * $Date: 2006-05-05 15:44:33 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -57,5 +57,8 @@ public interface OTResourceSchema
 	
 	public String getLocalId();
 	
-	
+    /**
+     * Copy this schema into the passed in schema
+     */ 
+	public void copyInto(OTResourceSchema schema);
 }
