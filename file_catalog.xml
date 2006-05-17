@@ -3,7 +3,7 @@
     <server>cvs.concord.org</server>
     <repo>/home/buildspace/CodeBank</repo>
     <module>Projects/Framework</module>
-    <tagname>rel_1_6</tagname>
+    <tagname>rel_1_7</tagname>
     <file>
         <name>.classpath</name>
         <rev>1.3</rev>
@@ -41,17 +41,17 @@
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.46</rev>
-        <modtime>1131999846000</modtime>
-        <size>28358</size>
-        <md5sum>e6cb4b1791beaea25eaeff04337de9e0</md5sum>
+        <rev>1.47</rev>
+        <modtime>1139264440000</modtime>
+        <size>29544</size>
+        <md5sum>eac3c2a386df50853cbcff0d8b0224ce</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.43</rev>
-        <modtime>1139264431000</modtime>
+        <rev>1.45</rev>
+        <modtime>1147889618000</modtime>
         <size>336</size>
-        <md5sum>3876cfc926a14eeede9d14b37e6690a2</md5sum>
+        <md5sum>3e3d5c7eb02ea7d0f65a581a852925a7</md5sum>
     </file>
     <file>
         <name>.settings/org.eclipse.jdt.core.prefs</name>
@@ -173,6 +173,13 @@
         <md5sum>c446d126281903a79fa283501768fef7</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/data/stream/ChannelFilter.java</name>
+        <rev>1.2</rev>
+        <modtime>1146844336000</modtime>
+        <size>1607</size>
+        <md5sum>9994ab374a553310a4127171ee34bb5b</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/data/stream/DataChannelDescription.java</name>
         <rev>1.7</rev>
         <modtime>1126792801000</modtime>
@@ -215,11 +222,25 @@
         <md5sum>0c6dc62f6acea64112cb96f23fd6bafb</md5sum>
     </file>
     <file>
+        <name>src/org/concord/framework/data/stream/DataStoreCollection.java</name>
+        <rev>1.2</rev>
+        <modtime>1146844336000</modtime>
+        <size>1325</size>
+        <md5sum>885e50dd28836dd10e240f94be0ba190</md5sum>
+    </file>
+    <file>
         <name>src/org/concord/framework/data/stream/DataStoreEvent.java</name>
         <rev>1.3</rev>
         <modtime>1123258270000</modtime>
         <size>1919</size>
         <md5sum>f9dc925c11730ce231ee1a356f177c02</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/data/stream/DataStoreImporter.java</name>
+        <rev>1.2</rev>
+        <modtime>1146844336000</modtime>
+        <size>1275</size>
+        <md5sum>b30c1d78633c87ba9c0234d3934ad76d</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DataStoreListener.java</name>
@@ -251,10 +272,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DefaultDataStore.java</name>
-        <rev>1.9</rev>
-        <modtime>1123258270000</modtime>
-        <size>5056</size>
-        <md5sum>d531cb17256f05862a9516140fb53b70</md5sum>
+        <rev>1.10</rev>
+        <modtime>1146843873000</modtime>
+        <size>5070</size>
+        <md5sum>1771d7d21e160a06aa3dcd8055d4e3df</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/data/stream/DefaultMultipleDataProducer.java</name>
@@ -636,10 +657,10 @@
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTResourceSchema.java</name>
-        <rev>1.6</rev>
-        <modtime>1124724720000</modtime>
-        <size>1550</size>
-        <md5sum>b36e68f68c3e797dfc01a305e2d36555</md5sum>
+        <rev>1.7</rev>
+        <modtime>1146843873000</modtime>
+        <size>1663</size>
+        <md5sum>4a37d3547f986e59a6167bc15daa0a1e</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/OTUser.java</name>
@@ -661,6 +682,13 @@
         <modtime>1124724720000</modtime>
         <size>2766</size>
         <md5sum>c166165f3311d3859c3e8b4bb4bb701f</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/view/OTAction.java</name>
+        <rev>1.2</rev>
+        <modtime>1146844336000</modtime>
+        <size>1331</size>
+        <md5sum>a17e5dca5e7fa5732da1c2e64e3857bb</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTFrame.java</name>
@@ -817,11 +845,18 @@
         <md5sum>78a4c2c9f9fb21bf0ebbdefc107c2414</md5sum>
     </file>
     <file>
-        <name>src/org/concord/framework/util/Copyable.java</name>
+        <name>src/org/concord/framework/util/CheckedColorTreeModel.java</name>
         <rev>1.2</rev>
-        <modtime>1126792868000</modtime>
-        <size>1033</size>
-        <md5sum>5aea200b2a8feb00c85f1c536d0e16ae</md5sum>
+        <modtime>1146844336000</modtime>
+        <size>1978</size>
+        <md5sum>cc0581a4a68b4234a5bd1910252edc97</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/util/Copyable.java</name>
+        <rev>1.3</rev>
+        <modtime>1146843873000</modtime>
+        <size>1122</size>
+        <md5sum>7c24864b76c36b4f0114ecfdcb66c156</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/util/Indexable.java</name>
