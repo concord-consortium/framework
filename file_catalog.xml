@@ -3,7 +3,7 @@
     <server>cvs.concord.org</server>
     <repo>/home/buildspace/CodeBank</repo>
     <module>Projects/Framework</module>
-    <tagname>rel_1_7</tagname>
+    <tagname>rel_1_8</tagname>
     <file>
         <name>.classpath</name>
         <rev>1.3</rev>
@@ -41,17 +41,17 @@
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.47</rev>
-        <modtime>1139264440000</modtime>
-        <size>29544</size>
-        <md5sum>eac3c2a386df50853cbcff0d8b0224ce</md5sum>
+        <rev>1.48</rev>
+        <modtime>1147889630000</modtime>
+        <size>30796</size>
+        <md5sum>8eaed531cfa8190f3354f73fb72d146d</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.45</rev>
-        <modtime>1147889618000</modtime>
+        <rev>1.47</rev>
+        <modtime>1147982328000</modtime>
         <size>336</size>
-        <md5sum>3e3d5c7eb02ea7d0f65a581a852925a7</md5sum>
+        <md5sum>2a082ef1a62522bf915afbadd0ab8553</md5sum>
     </file>
     <file>
         <name>.settings/org.eclipse.jdt.core.prefs</name>
@@ -689,6 +689,13 @@
         <modtime>1146844336000</modtime>
         <size>1331</size>
         <md5sum>a17e5dca5e7fa5732da1c2e64e3857bb</md5sum>
+    </file>
+    <file>
+        <name>src/org/concord/framework/otrunk/view/OTActionView.java</name>
+        <rev>1.2</rev>
+        <modtime>1147981840000</modtime>
+        <size>1242</size>
+        <md5sum>54d502f80213acb1388248d38e275b7c</md5sum>
     </file>
     <file>
         <name>src/org/concord/framework/otrunk/view/OTFrame.java</name>
