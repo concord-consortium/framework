@@ -3,7 +3,7 @@
     <server>cvs.concord.org</server>
     <repo>/home/buildspace/CodeBank</repo>
     <module>Projects/Framework</module>
-    <tagname>rel_1_8</tagname>
+    <tagname>rel_1_9</tagname>
     <file>
         <name>.classpath</name>
         <rev>1.3</rev>
@@ -41,17 +41,17 @@
     </file>
     <file>
         <name>file_catalog.xml</name>
-        <rev>1.48</rev>
-        <modtime>1147889630000</modtime>
-        <size>30796</size>
-        <md5sum>8eaed531cfa8190f3354f73fb72d146d</md5sum>
+        <rev>1.49</rev>
+        <modtime>1147982341000</modtime>
+        <size>31044</size>
+        <md5sum>a55ca1eb67373f864469074071d2db3b</md5sum>
     </file>
     <file>
         <name>project.xml</name>
-        <rev>1.47</rev>
-        <modtime>1147982328000</modtime>
+        <rev>1.49</rev>
+        <modtime>1152821300000</modtime>
         <size>336</size>
-        <md5sum>2a082ef1a62522bf915afbadd0ab8553</md5sum>
+        <md5sum>bc677a41b6bc0ccf271954b6f61e6c6c</md5sum>
     </file>
     <file>
         <name>.settings/org.eclipse.jdt.core.prefs</name>
