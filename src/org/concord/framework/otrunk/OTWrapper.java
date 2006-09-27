@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2006-09-27 18:46:34 $
+ * $Revision: 1.9 $
+ * $Date: 2006-09-27 20:55:47 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -97,6 +97,16 @@ public interface OTWrapper
 	
 	/**
 	 * This saves the state of realObject into this ot object.
+	 * 
+	 * TODO it is not clear how much state should be saved here and whether it should
+	 * be recursive.  If listeners are being used on all the sub objects then when
+	 * this is called after the object has been registered it doesn't need to be
+	 * recursive.  If this is called to store a realObject that wasn't created by 
+	 * the wrapper this will need to recursively save all the sub objects. 
+	 * 
+	 * It should not mess up anything if the method is recursive.  It is just a waste of
+	 * time in some cases.  However there is a danger of infinite loops with circular 
+	 * references.  
 	 * 
 	 * @param wrapperService
 	 * @param realObject
