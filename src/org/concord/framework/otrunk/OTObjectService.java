@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2005-08-22 15:37:13 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2006-09-27 18:46:34 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -46,7 +46,20 @@ public interface OTObjectService
      */
     public OTID getOTID(String otidStr);
 
+    public OTWrapperService createWrapperService();
+    
+    /**
+     * @deprecated
+     * @param wrappedObject
+     * @return
+     */
     public OTWrapper getWrapper(Object wrappedObject);
     
+    /**
+     * @deprecated
+     * @param wrappedObject
+     * @return
+     */
     public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
+    
 }
