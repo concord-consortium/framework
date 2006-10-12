@@ -94,6 +94,8 @@ public interface OTWrapperService {
 	public OTWrapper getWrapper(Object realObject);
 
 	
+	public OTWrapper getWrapper(Object realObject, Class wrapperClass);
+	
 	/**
 	 * Look to see if this realObject has been created already or added with
 	 * getWrapper.  If so return that previous realObject.
