@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.concord</groupId>
+    <artifactId>maven2-parent</artifactId>
+    <version>3</version>
+    <relativePath>../Builds/maven2-parent</relativePath>
+  </parent>
+  
+  <groupId>org.concord</groupId>
+  <artifactId>framework</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Framework</name>
+  <description>A project of common interfaces shared by Concord projcects</description>
+
+  <!-- this is required to find out parent pom you should 
+     not add any new repositories here -->
+  <repositories>
+    <repository>
+      <id>cc-repo-internal</id>
+      <name>Concord Consortium Internal</name>
+      <url>http://source.concord.org/maven2/internal</url>
+      <snapshots><enabled>false</enabled></snapshots>
+    </repository>
+  </repositories>
+
+  <properties>
+    <concordDir>${project.name}</concordDir>
+  </properties>
+
+</project>
