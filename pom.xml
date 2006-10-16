@@ -1,6 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.concord</groupId>
@@ -17,8 +16,15 @@
   <name>Framework</name>
   <description>A project of common interfaces shared by Concord projcects</description>
 
-  <!-- this is required to find out parent pom you should 
-     not add any new repositories here -->
+  <properties>
+    <concordDir>${project.name}</concordDir>
+  </properties>
+
+  <!--MVN_AUTO This comment and the elements below it are automatically 
+    generated any changes you make to these elements will be replaced if the pom is
+    regenerated. Do not edit this comment or the elements below it.-->
+
+  <!--this is required to find out parent pom you should-->
   <repositories>
     <repository>
       <id>cc-repo-internal</id>
@@ -28,11 +34,10 @@
     </repository>
   </repositories>
 
-  <!-- This has to be defined in each pom because maven changes these urls
+  <!--This has to be defined in each pom because maven changes these urls
      automatically when they are inherited.  It adds the "this" artifactId 
      to the url specified in the parent.  If the parent defined a modules
-     element then it is supposed to use the path in that modules element
-    -->
+     element then it is supposed to use the path in that modules element-->    
   <scm>
     <connection>
       scm:cvs:pserver:anonymous:@source.concord.org:/cvs/repo/CodeBank:Projects/${concordDir}
@@ -44,9 +49,4 @@
       http://source.concord.org/cgi-bin/viewcvs.cgi/Projects/${concordDir}/?cvsroot=CodeBank
     </url>
   </scm>
-  
-  <properties>
-    <concordDir>${project.name}</concordDir>
-  </properties>
-
 </project>
