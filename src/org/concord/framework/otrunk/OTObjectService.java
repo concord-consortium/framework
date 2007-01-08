@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2006-09-27 18:46:34 $
+ * $Revision: 1.4 $
+ * $Date: 2007-01-08 20:06:17 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -46,20 +46,5 @@ public interface OTObjectService
      */
     public OTID getOTID(String otidStr);
 
-    public OTWrapperService createWrapperService();
-    
-    /**
-     * @deprecated
-     * @param wrappedObject
-     * @return
-     */
-    public OTWrapper getWrapper(Object wrappedObject);
-    
-    /**
-     * @deprecated
-     * @param wrappedObject
-     * @return
-     */
-    public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
-    
+    public OTControllerService createControllerService();    
 }

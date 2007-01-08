@@ -25,14 +25,22 @@ package org.concord.framework.otrunk;
 
 import java.lang.reflect.Field;
 
-public abstract class DefaultOTWrapper extends DefaultOTObject 
-	implements OTWrapper 
+public abstract class DefaultOTController implements OTController 
 {
-	public DefaultOTWrapper(OTResourceSchema resources)
-	{
-		super(resources);
-	}
-
+	protected OTObject otObject;
+	protected OTControllerService controllerService;
+	
+    public void initialize(OTObject otObject, OTControllerService controllerService)
+    {
+    	this.otObject = otObject;
+    	this.controllerService = controllerService;
+    }
+	
+    public OTObject getOTObject()
+    {
+    	return otObject;
+    }
+    
 	/**
 	 * The default implementation of this calls getRealObjectClass and
 	 * instanciates an object of that type. 
@@ -44,7 +52,7 @@ public abstract class DefaultOTWrapper extends DefaultOTObject
 	 * If you only have one real object class with a null constructor 
 	 * then you just need to add a property to your class:
 	 * 
-	 * public final static Class [] wrappedObjectClasses
+	 * public final static Class [] realObjectClasses
 	 * 
 	 * If you have multiple classes with null constructor you should still
 	 * use the property above, but you should also override getRealObjectClass
@@ -83,7 +91,7 @@ public abstract class DefaultOTWrapper extends DefaultOTObject
 	 * 
 	 * By default this method looks for a static field on the class:
 	 * 
-	 * public final static Class [] wrappedObjectClasses
+	 * public final static Class [] realObjectClasses
 	 * 
 	 * It then takes the first element of that array and returns it.
 	 * 
@@ -101,7 +109,7 @@ public abstract class DefaultOTWrapper extends DefaultOTObject
 	 * This method is useful if a class inbetween your class and this class
 	 * overrode the default behavior of getRealObjectClass()
 	 * 
-	 * @see org.concord.framework.otrunk.OTWrapper#getRealObjectClass()
+	 * @see org.concord.framework.otrunk.OTController#getRealObjectClass()
 	 */
 	protected final Class getRealObjectClassInternal()
 	{
