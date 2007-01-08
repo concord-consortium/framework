@@ -76,10 +76,6 @@ public interface OTrunk {
     public boolean hasUserModified(OTObject authoredObject, OTUser user)
         throws Exception;
     
-	public OTWrapper getWrapper(Object wrappedObject);
-	
-	public OTWrapper putWrapper(Object wrappedObject, OTWrapper wrapper);
-	
 	/** 
 	 * All the services will be checked to see which is an instanceof this 
 	 * serviceInterface.

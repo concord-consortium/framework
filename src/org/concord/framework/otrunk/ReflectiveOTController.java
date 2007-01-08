@@ -27,26 +27,22 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Vector;
 
-public class ReflectiveOTWrapper extends DefaultOTWrapper 
-{
-	private OTResourceSchema resources;
-	
+public class ReflectiveOTController extends DefaultOTController
+{	
 	protected Vector loadMappings;
 	protected Vector saveMappings;
-	
-	public ReflectiveOTWrapper(OTResourceSchema resources) {
-		super(resources);
-		this.resources = resources;
-	}	
-	
-	public void loadRealObject(OTWrapperService wrapperService,
-			Object realObject) {
+		
+	public void loadRealObject(Object realObject) {
+
+		OTObjectInterface myObject = (OTObjectInterface)otObject;
+		
+
 		// Go through all the methods of the resources class
 		// and see if there is a matching method in the realObject
 		// class.  Then call that method
 		// look for getProperty
 		// then look for setProperty
-		Class resourcesClass = resources.getClass();
+		Class resourcesClass = myObject.getClass();
 		Method[] methods = resourcesClass.getMethods();
 		
 		Class realObjClass = realObject.getClass();
@@ -92,12 +88,11 @@ public class ReflectiveOTWrapper extends DefaultOTWrapper
 			}
 		} 
 		
-		
 		for(int i=0; i<loadMappings.size(); i++){
 			Mapping mapping = (Mapping)loadMappings.get(i);
 			try {
-				if(resources.isResourceSet(mapping.propertyName)){
-					Object value = mapping.getMethod.invoke(resources, null);
+				if(myObject.isResourceSet(mapping.propertyName)){
+					Object value = mapping.getMethod.invoke(otObject, null);
 					mapping.setMethod.invoke(realObject, new Object[]{value});
 				}
 			} catch (IllegalArgumentException e) {
@@ -113,18 +108,18 @@ public class ReflectiveOTWrapper extends DefaultOTWrapper
 		}
 	}
 
-	public void registerRealObject(OTWrapperService wrapperService,
-			Object realObject) {
+	public void registerRealObject(Object realObject) {
 	}
 
-	public void saveRealObject(OTWrapperService wrapperService,
-			Object realObject) {
+	public void saveRealObject(Object realObject) {
+		OTObjectInterface myObject = (OTObjectInterface)otObject;
+		
 		// Go through all the methods of the resources class
 		// and see if there is a matching method in the realObject
 		// class.  Then call that method
 		// look for getProperty
 		// then look for setProperty
-		Class resourcesClass = resources.getClass();
+		Class resourcesClass = myObject.getClass();
 		Method[] methods = resourcesClass.getMethods();
 		
 		Class realObjClass = realObject.getClass();
@@ -180,7 +175,7 @@ public class ReflectiveOTWrapper extends DefaultOTWrapper
 			Mapping mapping = (Mapping)saveMappings.get(i);
 			try {
 				Object value = mapping.getMethod.invoke(realObject, null);
-				mapping.setMethod.invoke(resources, new Object[]{value});
+				mapping.setMethod.invoke(myObject, new Object[]{value});
 			} catch (IllegalArgumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2006-09-27 20:55:47 $
+ * $Revision: 1.1 $
+ * $Date: 2007-01-08 20:06:17 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -32,84 +32,91 @@
 */
 package org.concord.framework.otrunk;
 
+
 /**
- * OTWrapper
+ * OTController
  * 
  * This interface is used by the OTrunk framework.
- * OTWrappers are objects that wrap a "real" objects and are able to
- * save and restore data to/from this object.  The methods on this 
- * interface should be not be called directly.  Instead the OTWrapperService
- * should be used to manage ot wrapper objects.  
+ * 
+ * OTController are objects that manage a "real" objects and are able to
+ * save and restore data to/from an OTObject.  The methods on this 
+ * interface should be not be called directly.  Instead the OTControllerService
+ * (soon to be merged with the OTViewFactory)
+ * should be used to manage OTController objects.  
  *  
  * Date created: Mar 21, 2005
  *
  * @author scytacki<p>
  *
  */
-public interface OTWrapper
-    extends OTObject
+public interface OTController
 {
 	/**
 	 * You need to add a static field that has the same signature as this one
 	 * to your implementation of this interface.  This field is used when the
-	 * wrapper class is registered.  It it is also used by the default implementation
-	 * of the createRealObject method in DefaultOTWrapper
+	 * controller class is registered.  It it is also used by the default implementation
+	 * of the createRealObject method in DefaultOTController
 	 *  
 	 */
 	public final static Class [] realObjectClasses = null;
+
+	public final static Class [] otObjectClasses = null;
+
+    public void initialize(OTObject otObject, OTControllerService controllerService);
 	
+    public OTObject getOTObject();
+    
 	/**
-	 * Create an instance of the real object which this wrapper represents.
+	 * Create an instance of the real object which this controller represents.
 	 * 
-	 * It is valid to have multiple classes of objects wrapped by 
-	 * the same OTWrapper.  In that case this method might branch on the 
-	 * content in the resources of the ot object.
-	 * 
+	 * It is valid to have multiple realObject classes supported by 
+	 * the same OTController class.  In that case this method might branch on the 
+	 * content of its OTObject.
 	 * 
 	 * @return
 	 */
 	public Object createRealObject();
 	
 	/**
-	 * Load the state from the OTWrapper into the realObject.  This method 
+	 * Load the state from the OT object into the realObject.  This method 
 	 * can be called either directly after createRealObject or it can be 
 	 * called on its own.   
 	 * 
-	 * @param wrapperService
+	 * @param controllerService
 	 * @param realObject
 	 */
-    public void loadRealObject(OTWrapperService wrapperService, Object realObject);
+    public void loadRealObject(Object realObject);
     
     /**
      * This will be called after loadRealObject.  It could also be called on its
      * own.  It should be used registers listeners on the real object. These listeners
      * are to update the state in the OTObject with the state in the real object.
      *  
-     * The OTWrapper might also want to update all the real objects if changes to 
+     * The OTController might also want to update all the real objects if changes to 
      * one cause a change in the state of the OTObject.   This would be the case if
-     * if a single OTWrapper is being viewed in two places at the same time.  In that 
-     * case there will be two wrapperServices and two instances 
+     * if a single OT object is being viewed in two places at the same time.  In that 
+     * case there will be two controllerServices and two realObjects 
      * 
-     * @param wrapperService
+     * @param controllerService
      * @param realObject
      */
-	public void registerRealObject(OTWrapperService wrapperService, Object realObject);
+	public void registerRealObject(Object realObject);
 	
 	/**
-	 * This saves the state of realObject into this ot object.
+	 * This saves the state of realObject into the ot object.
 	 * 
 	 * TODO it is not clear how much state should be saved here and whether it should
 	 * be recursive.  If listeners are being used on all the sub objects then when
 	 * this is called after the object has been registered it doesn't need to be
 	 * recursive.  If this is called to store a realObject that wasn't created by 
-	 * the wrapper this will need to recursively save all the sub objects. 
+	 * this framework then it will need to recursively save all the sub objects. 
 	 * 
 	 * It should not mess up anything if the method is recursive.  It is just a waste of
-	 * time in some cases.  However there is a danger of infinite loops with circular 
+	 * time in some cases.  There is a danger of infinite loops with circular 
 	 * references.  
 	 * 
-	 * @param wrapperService
+	 * @param controllerService
 	 * @param realObject
 	 */
-    public void saveRealObject(OTWrapperService wrapperService, Object realObject);
+    public void saveRealObject(Object realObject);
 }
