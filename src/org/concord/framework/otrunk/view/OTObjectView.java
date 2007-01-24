@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2005-08-22 15:32:00 $
+ * $Revision: 1.10 $
+ * $Date: 2007-01-24 22:11:20 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -48,9 +48,7 @@ import org.concord.framework.otrunk.OTObject;
  */
 public interface OTObjectView extends OTView
 {
-    public void initialize(OTObject otObject, OTViewContainer viewContainer);
-    
-	public JComponent getComponent(boolean editable);
+	public JComponent getComponent(OTObject otObject, boolean editable);
 	
 	public void viewClosed();
 	

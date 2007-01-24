@@ -23,16 +23,14 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2005-08-22 15:32:00 $
+ * $Revision: 1.9 $
+ * $Date: 2007-01-24 22:11:20 $
  * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk.view;
-
-import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
 
@@ -50,7 +48,5 @@ public interface OTViewContainer
 {
 	public void setCurrentObject(OTObject pfObject, OTFrame otFrame);
 	
-	public OTObject getCurrentObject();
-	
-	public JComponent getComponent(OTObject otObject, boolean editable);
+	public OTObject getCurrentObject();	
 }
