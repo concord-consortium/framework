@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.10 $
- * $Date: 2007-02-05 18:57:46 $
+ * $Revision: 1.1 $
+ * $Date: 2007-02-05 18:57:45 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -32,29 +32,26 @@
 */
 package org.concord.framework.otrunk.view;
 
-import org.concord.framework.otrunk.OTObject;
-
+import org.concord.framework.otrunk.OTObjectInterface;
 
 /**
- * PfViewContainer
+ * OTViewEntry
  * Class name and description
  *
- * Date created: Sep 8, 2004
+ * Date created: May 18, 2005
  *
  * @author scott<p>
  *
  */
-public interface OTViewContainer
+public interface OTViewEntry
+    extends OTObjectInterface
 {
-	/**
-	 * This will set the current object in the view container based
-	 * on the default view returned from the viewFactory.
-	 * 
-	 * @param pfObject
-	 */
-	public void setCurrentObject(OTObject pfObject);
-
-	// TODO add a method to specify the viewEntry to use
-	
-	public OTObject getCurrentObject();	
+    public String getObjectClass();
+    public void setObjectClass(String objectClass);
+    
+    public String getViewClass();
+    public void setViewClass(String viewClass);
+    
+    public OTViewEntry getAuthorEntry();
+    public void setAuthorEntry(OTViewEntry entry);    
 }

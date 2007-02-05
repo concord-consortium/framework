@@ -20,34 +20,41 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * END LICENSE */
- 
+
+/*
+ * Last modification information:
+ * $Revision: 1.1 $
+ * $Date: 2007-02-05 18:57:46 $
+ * $Author: scytacki $
+ *
+ * Licence Information
+ * Copyright 2004 The Concord Consortium 
+*/
 package org.concord.framework.otrunk.view;
-
-import java.util.Vector;
-
-import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
 
-public interface OTViewFactory {
 
-    public OTViewFactory createChildViewFactory();
-
-	public void setUserList(Vector userList);
-
-	/* (non-Javadoc)
-	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getComponent(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer, boolean)
+/**
+ * OTFrameManager
+ * Class name and description
+ *
+ * Date created: Jan 21, 2005
+ *
+ * @author scott<p>
+ *
+ */
+public interface OTFrameManager
+{
+	/**
+	 * This will use the viewFactory to find the default view for
+	 * the otObject.
+	 *  
+	 * @param otObject
+	 * @param otFrame
 	 */
-	public JComponent getComponent(OTObject otObject,
-			OTViewContainer container, boolean editable);
-
-	public OTView getView(OTObject otObject, Class viewInterface);
-
-	public OTView getView(OTObject otObject, OTViewEntry viewEntry);
+	public void putObjectInFrame(OTObject otObject, OTFrame otFrame);
 	
-	/* (non-Javadoc)
-	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getObjectView(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer)
-	 */
-	public OTObjectView getObjectView(OTObject otObject,
-			OTViewContainer container);
+	// TODO add method which takes a viewEntry argument so it can 
+	// the particular view can specified.
 }
