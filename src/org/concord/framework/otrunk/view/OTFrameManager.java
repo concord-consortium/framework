@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2007-02-05 18:57:46 $
+ * $Revision: 1.2 $
+ * $Date: 2007-02-11 01:36:02 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -55,6 +55,13 @@ public interface OTFrameManager
 	 */
 	public void putObjectInFrame(OTObject otObject, OTFrame otFrame);
 	
-	// TODO add method which takes a viewEntry argument so it can 
-	// the particular view can specified.
+	/**
+	 * This will use the viewEntry passed in to get the 
+	 * view for the otObject.
+	 *  
+	 * @param otObject
+	 * @param otFrame
+	 */
+	public void putObjectInFrame(OTObject otObject, 
+			OTViewEntry viewEntry, OTFrame otFrame);	
 }
