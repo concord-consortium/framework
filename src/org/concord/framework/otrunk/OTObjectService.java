@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2007-01-08 20:06:17 $
+ * $Revision: 1.5 $
+ * $Date: 2007-02-12 05:37:47 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -46,5 +46,21 @@ public interface OTObjectService
      */
     public OTID getOTID(String otidStr);
 
-    public OTControllerService createControllerService();    
+    public OTControllerService createControllerService(); 
+
+    /**
+     * create a new OTObject and copy the original object 
+     * into that one.    
+     * 
+     * @param original
+     * @param maxDepth how many objects deep to copy, -1 means
+     *   every referenced object.  0 means only copy the original
+     *   object, 1 means copy the original object and all of the
+     *   objects it directly references, 2 means copy the original
+     *   object and all of the objects it directly references and 
+     *   all of the object those objects directly reference...
+     * @return
+     */
+    public OTObject copyObject(OTObject original, int maxDepth)
+    	throws Exception;
 }
