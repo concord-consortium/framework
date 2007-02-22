@@ -28,6 +28,7 @@ import java.util.Vector;
 import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
+import org.concord.framework.otrunk.OTObjectService;
 
 public interface OTViewFactory {
 
@@ -50,4 +51,6 @@ public interface OTViewFactory {
 	 */
 	public OTObjectView getObjectView(OTObject otObject,
 			OTViewContainer container);
+	
+	public OTObjectService getObjectService();
 }
