@@ -83,7 +83,7 @@ public class DefaultOTObject
      * new objects, and getting objects from ids.
      * @return
      */
-    protected OTObjectService getOTObjectService()
+    public OTObjectService getOTObjectService()
     {
         return resources.getOTObjectService();
     }
