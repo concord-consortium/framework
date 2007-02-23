@@ -37,8 +37,6 @@ package org.concord.framework.otrunk;
  */
 public interface OTObjectInterface extends OTObject, OTChangeNotifying
 {
-    public OTObjectService getOTObjectService();
-    
     public void setDoNotifyChangeListeners(boolean doNotify);
     
     public void notifyOTChange();
@@ -46,4 +44,6 @@ public interface OTObjectInterface extends OTObject, OTChangeNotifying
 	public boolean isResourceSet(String name);
 	
 	public void copyInto(OTObjectInterface object);
+	
+	public String getLocalId();
 }

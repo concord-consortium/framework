@@ -23,16 +23,16 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.4 $
+ * $Date: 2007-02-23 04:16:03 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk.view;
 
-import org.concord.framework.otrunk.OTObject;
+import org.concord.framework.otrunk.OTObjectInterface;
 
 
 /**
@@ -45,7 +45,7 @@ import org.concord.framework.otrunk.OTObject;
  *
  */
 public interface OTFrame
-	extends OTObject
+	extends OTObjectInterface
 {
 	int getHeight();
 	

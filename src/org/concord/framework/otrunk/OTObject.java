@@ -53,4 +53,12 @@ public interface OTObject
 	 * stored and then re-instanciated.
 	 */
 	public void init();	
+	
+	/**
+	 * This is a public method so users of the object can create new
+	 * objects.  
+	 * 
+	 * @return
+	 */
+    public OTObjectService getOTObjectService();
 }
