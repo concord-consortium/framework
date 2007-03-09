@@ -43,7 +43,32 @@ public interface OTViewFactory {
 
 	public OTView getView(OTObject otObject, Class viewInterface);
 
+	/**
+	 * @see #getView(OTObject, OTViewEntry, String)
+	 * @param otObject
+	 * @param viewInterface
+	 * @param mode
+	 * @return
+	 */
+	public OTView getView(OTObject otObject, Class viewInterface, String mode);
+	
 	public OTView getView(OTObject otObject, OTViewEntry viewEntry);
+	
+	/**
+	 * If the mode is null then the viewEntry is used directly.
+	 * If the mode is not null then an OTViewMode is looked up with that
+	 * name.  And a mapping between this viewEntry and another viewEntry is
+	 * searched for.  If no mapping exists then, a default viewEntry is used.
+	 * Initially there will only be one default per map but eventually 
+	 * information from the otObject and the viewEntry could be used to 
+	 * determine an appropriate default.
+	 *   
+	 * @param otObject
+	 * @param viewEntry
+	 * @param mode
+	 * @return
+	 */
+	public OTView getView(OTObject otObject, OTViewEntry viewEntry, String mode);
 	
 	/* (non-Javadoc)
 	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getObjectView(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer)

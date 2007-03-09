@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2007-02-11 01:36:02 $
+ * $Revision: 1.3 $
+ * $Date: 2007-03-09 12:08:05 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -60,8 +60,21 @@ public interface OTFrameManager
 	 * view for the otObject.
 	 *  
 	 * @param otObject
+	 * @param viewEntry
 	 * @param otFrame
 	 */
 	public void putObjectInFrame(OTObject otObject, 
-			OTViewEntry viewEntry, OTFrame otFrame);	
+			OTViewEntry viewEntry, OTFrame otFrame);
+
+	/**
+	 * This will use the viewEntry passed in to get the 
+	 * view for the otObject.
+	 *  
+	 * @param otObject
+	 * @param viewEntry
+	 * @param otFrame
+	 * @param viewMode
+	 */
+	public void putObjectInFrame(OTObject otObject, 
+			OTViewEntry viewEntry, OTFrame otFrame, String viewMode);
 }
