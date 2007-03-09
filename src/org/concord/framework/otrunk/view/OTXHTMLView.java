@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.5 $
+ * $Date: 2007-03-09 05:43:48 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -34,9 +34,33 @@ package org.concord.framework.otrunk.view;
 
 import org.concord.framework.otrunk.OTObject;
 
+/**
+ * If a view implements this interface then the 
+ * getXHTMLText method will be called by the OTCompoundDoc 
+ * This text is then inserted into the document text where the
+ * object reference was.  
+ * 
+ * This is useful if you want to let the document view handle the
+ * layout of the text.  This is also useful if the document is 
+ * exported to html.
+ * 
+ * In the future there should be support so that you can implement
+ * just this type of view, and it will be wrapped with a JComponent
+ * if that is what the container is expecting.
+ * 
+ * @author scott
+ *
+ */
 public interface OTXHTMLView
     extends OTView
 {
+	/**
+	 * Return a string representing the "view" of this object.
+	 * The string has to conform to the xhtml currently supported
+	 * by the HTMLEditor kit of the jdk.  
+	 * 
+	 * @param otObject
+	 * @return
+	 */
     String getXHTMLText(OTObject otObject);
-    String getXHTMLImageText(OTXHTMLHelper helper, float containerDisplayWidth, float containerHeight);
 }
