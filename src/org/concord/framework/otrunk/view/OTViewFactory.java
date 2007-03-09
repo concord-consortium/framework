@@ -73,6 +73,6 @@ public interface OTViewFactory {
 	/* (non-Javadoc)
 	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getObjectView(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer)
 	 */
-	public OTObjectView getObjectView(OTObject otObject,
+	public OTJComponentView getObjectView(OTObject otObject,
 			OTViewContainer container);	
 }
