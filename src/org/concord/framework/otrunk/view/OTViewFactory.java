@@ -23,8 +23,6 @@
  
 package org.concord.framework.otrunk.view;
 
-import java.util.Vector;
-
 import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
@@ -32,8 +30,6 @@ import org.concord.framework.otrunk.OTObject;
 public interface OTViewFactory {
 
     public OTViewFactory createChildViewFactory();
-
-	public void setUserList(Vector userList);
 
 	/* (non-Javadoc)
 	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getComponent(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer, boolean)
@@ -75,4 +71,29 @@ public interface OTViewFactory {
 	 */
 	public OTJComponentView getObjectView(OTObject otObject,
 			OTViewContainer container);	
+	
+	/**
+	 * Use this method to add services to this viewFactory.
+	 * These services will be inherited from the parent factory if there
+	 * is one.
+	 * Views can access these services by using the {@link OTViewServiceProviderAware} 
+	 * interface to get a serviceProvider and then call getViewService on the 
+	 * provider.
+	 * 
+	 * This method might change so a user needs to be explicit about which
+	 * interfaces or class each added service provides.
+	 * 
+	 * @param service
+	 */
+	public void addViewService(Object service);
+	
+	/**
+	 * If all the use cases have been properly taken care of this shouldn't be 
+	 * needed.  The viewServiceProvider should only be available to views which
+	 * have been instanciated by a view factory.  However there are still 
+	 * some cases where views are created manually.
+	 * 
+	 * @return
+	 */
+	public OTViewServiceProvider getViewServiceProvider();
 }
