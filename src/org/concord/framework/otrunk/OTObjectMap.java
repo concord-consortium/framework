@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.4 $
+ * $Date: 2007-03-12 19:14:05 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -46,7 +46,6 @@ import java.util.Vector;
  */
 public interface OTObjectMap
 {
-
 	public int getNumberOfObjects();
 
 	public OTObject getObject(String key);
@@ -54,28 +53,4 @@ public interface OTObjectMap
 	public Vector getObjectKeys();
 
 	public void putObject(String key, OTObject pfObj);
-
-	/* (non-Javadoc)
-	 * @see org.concord.portfolio.objects.PfFolder#addChild(int, org.concord.portfolio.PortfolioObject)
-	 */public void addChild(int index, OTObject pfObject);
-
-	/* (non-Javadoc)
-	 * @see org.concord.portfolio.objects.PfFolder#addChild(org.concord.portfolio.PortfolioObject)
-	 */public void addChild(OTObject pfObject);
-
-	/* (non-Javadoc)
-	 * @see org.concord.portfolio.objects.PfFolder#getChild(int)
-	 */public Object getChild(int index);
-
-	/* (non-Javadoc)
-	 * @see org.concord.portfolio.objects.PfFolder#getChildCount()
-	 */public int getChildCount();
-
-	/* (non-Javadoc)
-	 * @see org.concord.portfolio.objects.PfFolder#removeAllChildren()
-	 */public void removeAllChildren();
-
-	public Vector getChildVector();
-
-	public void setChildVector(Vector childVector);
 }
