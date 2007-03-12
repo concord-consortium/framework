@@ -29,7 +29,6 @@
  */
 package org.concord.framework.otrunk;
 
-import java.util.Vector;
 
 /**
  * This class can be used to create more complex OTObjects.
@@ -49,9 +48,6 @@ public class DefaultOTObject
 	implements OTObject, OTChangeNotifying
 {
 	private OTResourceSchema resources;
-	
-	private Vector changeListeners = new Vector();
-    private OTChangeEvent changeEvent = new OTChangeEvent(this);
 	
 	public DefaultOTObject(OTResourceSchema resources)
 	{
@@ -147,9 +143,7 @@ public class DefaultOTObject
      */
     public void addOTChangeListener(OTChangeListener listener)
     {
-        if(changeListeners.contains(listener)) return;
-        
-        changeListeners.add(listener);
+    	resources.addOTChangeListener(listener);
     }
     
     /* (non-Javadoc)
@@ -157,13 +151,6 @@ public class DefaultOTObject
      */
     public void removeOTChangeListener(OTChangeListener listener)
     {
-        changeListeners.remove(listener);
-    }
-    
-    protected void notifyOTChange()
-    {
-        for(int i=0;i<changeListeners.size(); i++){
-            ((OTChangeListener)changeListeners.get(i)).stateChanged(changeEvent);
-        }
-    }
+    	resources.removeOTChangeListener(listener);
+    }    
 }

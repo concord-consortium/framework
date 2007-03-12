@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2006-05-05 15:44:33 $
+ * $Revision: 1.8 $
+ * $Date: 2007-03-12 20:59:32 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -44,7 +44,7 @@ package org.concord.framework.otrunk;
  * @author scott<p>
  *
  */
-public interface OTResourceSchema
+public interface OTResourceSchema extends OTChangeNotifying
 {
 	public OTID getGlobalId();
 	
