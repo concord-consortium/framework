@@ -45,8 +45,64 @@ public class OTChangeEvent extends EventObject
      */
     private static final long serialVersionUID = 1L;
 
+    public final static String OP_SET = "set";    
+    public final static String OP_ADD = "add";
+    public final static String OP_REMOVE = "remove";
+    public final static String OP_REMOVE_ALL = "removeAll";
+    public final static String OP_CHANGE = "change";
+    public final static String OP_PUT = "put";
+    
+    private String property;
+    
+	private String operation;
+
+	private Object value;
+	
     public OTChangeEvent(OTObject source)
     {
         super(source);
+    }
+    
+    /**
+     * The property which changed
+     */
+    public String getProperty()
+    {
+    	return property;
+    }
+    
+    public void setProperty(String name)
+    {
+    	property = name;
+    }
+    
+    /**
+     * The type of change
+     */
+    public String getOperation()
+    {
+    	return operation;
+    }
+    
+    public void setOperation(String op)
+    {
+    	operation = op;
+    }
+
+	/**
+	 * The effected object it depends on the operation.
+	 * add: the object added
+	 * remove: the object removed
+	 * changed: the object changed
+	 * put: the key of the new entry 
+	 */
+    public Object getValue()
+    {
+    	return value;
+    }
+    
+    public void setValue(Object value)
+    {
+    	this.value = value;
     }
 }
