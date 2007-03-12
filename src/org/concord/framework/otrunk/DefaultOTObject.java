@@ -147,7 +147,6 @@ public class DefaultOTObject
      */
     public void addOTChangeListener(OTChangeListener listener)
     {
-        // TODO Auto-generated method stub
         if(changeListeners.contains(listener)) return;
         
         changeListeners.add(listener);
@@ -158,7 +157,6 @@ public class DefaultOTObject
      */
     public void removeOTChangeListener(OTChangeListener listener)
     {
-        // TODO Auto-generated method stub
         changeListeners.remove(listener);
     }
     
