@@ -67,7 +67,7 @@ public interface OTControllerService {
 	 * is one that can work with this realObject class.  
 	 * The OTController class needs to define a 
 	 * public final static Class [] realObjectClasses 
-	 * field.  If it matches that controller is used to make the
+	 * field.  If it matches, that controller is used to make the
 	 * OTObject.
 	 *  
 	 * The {@link OTController} registerRealObject is called.
@@ -77,10 +77,10 @@ public interface OTControllerService {
 	 * call getOTObject when it needs to save a reference to another
 	 * realObject.  
 	 * 
-	 * Note: this will only call saveRealObject if this is the first time the
+	 * Note: getOTObject will only call saveRealObject if this is the first time the
 	 * realObject is seen by this service.
 	 * 
-	 * The implementation should use a weak map so that if all the 
+	 * Note to implementors: a weak map should be used so that if all the 
 	 * references to the real object are gone then the real object
 	 * can be garbage collected.  If the real object is needed again for
 	 * some reason then it will just be created again.
@@ -89,23 +89,6 @@ public interface OTControllerService {
 	 * @return
 	 */
 	public OTObject getOTObject(Object realObject);
-	
-	/**
-	 * This method allows you to specify exactly which controller should
-	 * be used for a given real object.  This class is only used if the 
-	 * real object doesn't already have a controller.
-	 * 
-	 * This was added as hack to solve an inheritance problem.  It might
-	 * be removable.  It is dangerous to use because using it probably 
-	 * means you have not registered the controller class.  And then when
-	 * the objects are recreated from the database, the OTControllerService
-	 * will not know how to make the real object from the OTObject.
-	 * 
-	 * @param realObject
-	 * @param viewClass
-	 * @return
-	 */
-	public OTObject getOTObject(Object realObject, Class controllerClass);	
 	
 	/**
 	 * Look to see if this realObject has been created already or added with
