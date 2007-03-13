@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2007-02-12 05:37:47 $
+ * $Revision: 1.6 $
+ * $Date: 2007-03-13 03:08:58 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -34,6 +34,14 @@ package org.concord.framework.otrunk;
 
 public interface OTObjectService
 {
+	/**
+	 * Use this method create a new OTObject.  
+	 * 
+	 * @param objectClass - the class or interface of the object to create this class
+	 *   needs to implement OTObject
+	 * @return
+	 * @throws Exception
+	 */
     public OTObject createObject(Class objectClass) throws Exception;
 
     public OTObject getOTObject(OTID childID) throws Exception;

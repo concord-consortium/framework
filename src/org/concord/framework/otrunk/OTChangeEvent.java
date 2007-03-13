@@ -105,4 +105,13 @@ public class OTChangeEvent extends EventObject
     {
     	this.value = value;
     }
+
+	/**
+	 * @return
+	 */
+	public String getDescription() 
+	{
+		return "" + getSource() + "." + getProperty() + " " +
+		 	getOperation() + " " + getValue();
+	}
 }
