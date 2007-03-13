@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.1 $
- * $Date: 2007-01-08 20:06:17 $
+ * $Revision: 1.2 $
+ * $Date: 2007-03-13 17:10:35 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -62,6 +62,12 @@ public interface OTController
 
 	public final static Class [] otObjectClasses = null;
 
+	/**
+	 * This method is called after instanciation. 
+	 * 
+	 * @param otObject
+	 * @param controllerService
+	 */
     public void initialize(OTObject otObject, OTControllerService controllerService);
 	
     public OTObject getOTObject();
