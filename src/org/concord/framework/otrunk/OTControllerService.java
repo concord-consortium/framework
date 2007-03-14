@@ -143,6 +143,27 @@ public interface OTControllerService {
 	 */
 	public void saveRealObject(Object realObject, OTObject otObject);	
 	
+	/**
+	 * This loads the state of this ot object into the realObject.  It needs
+	 * to lookup the controller for this realObject and otObject.  
+	 * 
+	 * This is very similar to getRealObject but getRealObject only calls
+	 * loadRealObject when it's the first time
+	 * 
+	 * TODO it is not clear how much state should be saved here and whether it should
+	 * be recursive.  If listeners are being used on all the sub objects then when
+	 * this is called after the object has been registered it doesn't need to be
+	 * recursive.  If this is called to store a realObject that wasn't created by 
+	 * the controllerservice this will need to recursively save all the sub objects. 
+	 * 
+	 * It should not mess up anything if the method is recursive.  It is just a waste of
+	 * time in some cases.  However there is a danger of infinite loops with circular 
+	 * references.  
+	 * 
+	 * @param otObject
+	 * @param realObject
+	 */
+	public void loadRealObject(OTObject otObject, Object realObject);	
 	
 	/**
 	 * This saves the state of realObject into this ot object.  It needs
