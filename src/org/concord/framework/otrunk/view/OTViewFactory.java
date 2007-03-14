@@ -23,19 +23,11 @@
  
 package org.concord.framework.otrunk.view;
 
-import javax.swing.JComponent;
-
 import org.concord.framework.otrunk.OTObject;
 
 public interface OTViewFactory {
 
     public OTViewFactory createChildViewFactory();
-
-	/* (non-Javadoc)
-	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getComponent(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer, boolean)
-	 */
-	public JComponent getComponent(OTObject otObject,
-			OTViewContainer container, boolean editable);
 
 	public OTView getView(OTObject otObject, Class viewInterface);
 
@@ -66,12 +58,6 @@ public interface OTViewFactory {
 	 */
 	public OTView getView(OTObject otObject, OTViewEntry viewEntry, String mode);
 	
-	/* (non-Javadoc)
-	 * @see org.concord.otrunk.view.OTViewFactoryImpl#getObjectView(org.concord.framework.otrunk.OTObject, org.concord.framework.otrunk.view.OTViewContainer)
-	 */
-	public OTJComponentView getObjectView(OTObject otObject,
-			OTViewContainer container);	
-	
 	/**
 	 * Use this method to add services to this viewFactory.
 	 * These services will be inherited from the parent factory if there
@@ -96,4 +82,6 @@ public interface OTViewFactory {
 	 * @return
 	 */
 	public OTViewServiceProvider getViewServiceProvider();
+	
+	
 }
