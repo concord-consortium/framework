@@ -37,6 +37,16 @@ package org.concord.framework.otrunk;
  */
 public interface OTChangeNotifying
 {
+	/**
+	 * Adds a listener to OT change events
+	 * This method does not keep a strong reference to the listener. 
+	 * So you need to make sure something is keeping a reference to the listener you add,
+	 * otherwise your listener will get garbage collected and won't
+	 * be there to catch the events.   This is likely to happen if you use
+	 * an anonymous class or an inner class for the listener.
+	 * 
+	 * @param listener
+	 */
     public void addOTChangeListener(OTChangeListener listener);
 
     public void removeOTChangeListener(OTChangeListener listener);
