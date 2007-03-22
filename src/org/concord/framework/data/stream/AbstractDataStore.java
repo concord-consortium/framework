@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.6 $
+ * $Date: 2007-03-22 04:46:49 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -187,7 +187,7 @@ public abstract class AbstractDataStore
 	
 	protected void notifyDataRemoved()
 	{
-		DataStoreEvent evt = new DataStoreEvent(this, DataStoreEvent.DATA_ADDED);
+		DataStoreEvent evt = new DataStoreEvent(this, DataStoreEvent.DATA_REMOVED);
 		DataStoreListener l;
 		for (int i=0; i<dataStoreListeners.size(); i++){
 			l = (DataStoreListener)dataStoreListeners.elementAt(i);
@@ -197,7 +197,7 @@ public abstract class AbstractDataStore
 	
 	protected void notifyDataChanged()
 	{
-		DataStoreEvent evt = new DataStoreEvent(this, DataStoreEvent.DATA_ADDED);
+		DataStoreEvent evt = new DataStoreEvent(this, DataStoreEvent.DATA_CHANGED);
 		DataStoreListener l;
 		for (int i=0; i<dataStoreListeners.size(); i++){
 			l = (DataStoreListener)dataStoreListeners.elementAt(i);
