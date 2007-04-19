@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2007-02-23 04:16:03 $
- * $Author: scytacki $
+ * $Revision: 1.5 $
+ * $Date: 2007-04-19 20:19:44 $
+ * $Author: sfentress $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -50,6 +50,10 @@ public interface OTFrame
 	int getHeight();
 	
 	int getWidth();
+	
+	public static int DEFAULT_height = 300;
+	
+	public static int DEFAULT_width = 400;
 	
 	String getTitle();
 }
