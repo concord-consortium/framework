@@ -18,4 +18,7 @@ public interface OTJComponentService
 	
 	public OTJComponentView getObjectView(OTObject otObject,
 			OTViewContainer container);	
+	
+	public OTJComponentView getObjectView(OTObject otObject,
+			OTViewContainer container, String mode);	
 }
