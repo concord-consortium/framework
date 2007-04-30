@@ -25,4 +25,22 @@ public abstract class AbstractOTView implements OTViewServiceProviderAware,
 	{
 		return serviceProvider.getViewService(service);
 	}
+	
+	/**
+	 * Utility class to make it easy to get the frame manager
+	 * @return
+	 */
+	public OTFrameManager getFrameManager() 
+	{
+		return (OTFrameManager) getViewService(OTFrameManager.class);
+	}
+
+	/**
+	 * Utility class to make it easy to get the view factory
+	 * @return
+	 */
+	public OTViewFactory getViewFactory() 
+	{
+		return (OTViewFactory) getViewService(OTViewFactory.class);
+	}
 }
