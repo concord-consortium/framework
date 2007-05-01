@@ -43,7 +43,7 @@ implements OTJComponentView
 	{
 		OTJComponentService jComponentService = getJComponentService();
 		OTJComponentView view = jComponentService.getObjectView(otObject, container, mode);
-		return view.getComponent(otObject, editable);
+		return jComponentService.getComponent(otObject, view, editable);
 	}
 	
 	public OTJComponentView getComponentView(OTObject otObject,

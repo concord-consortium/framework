@@ -13,6 +13,9 @@ import org.concord.framework.otrunk.OTObject;
  */
 public interface OTJComponentService 
 {
+	public JComponent getComponent(OTObject otObject, 
+	       OTJComponentView view, boolean editable);
+	
 	public JComponent getComponent(OTObject otObject,
 			OTViewContainer container, boolean editable);
 	
