@@ -15,9 +15,20 @@ public abstract class AbstractOTJComponentView
 	extends AbstractOTView
 implements OTJComponentView 
 {
+	OTJComponentService jComponentService;
+	
 	public OTJComponentService getJComponentService()
 	{
-		return (OTJComponentService)getViewService(OTJComponentService.class);		
+		// Instead of getting the OTJComponentService directly
+		// we will get an intermediate object and then use that
+		// get the OTJComponentService for this particular view
+		if(jComponentService == null){
+			OTJComponentServiceFactory serviceFactory = 
+				(OTJComponentServiceFactory)getViewService(OTJComponentServiceFactory.class);
+			jComponentService = serviceFactory.createOTJComponentService();
+		}
+		
+		return jComponentService;
 	}
 	
 	public JComponent getChildComponent(OTObject otObject,
