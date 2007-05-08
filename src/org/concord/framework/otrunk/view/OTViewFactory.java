@@ -83,5 +83,12 @@ public interface OTViewFactory {
 	 */
 	public OTViewServiceProvider getViewServiceProvider();
 	
-	
+	/**
+	 * This method was added to enable global mode switching
+	 * it is not really used correctly yet.  It is only used by the root
+	 * view container to set its startup mode.
+	 * 
+	 * @return
+	 */
+	public String getDefaultMode();
 }
