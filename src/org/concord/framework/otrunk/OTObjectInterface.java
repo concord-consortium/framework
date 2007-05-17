@@ -43,7 +43,5 @@ public interface OTObjectInterface extends OTObject, OTChangeNotifying
     
 	public boolean isResourceSet(String name);
 	
-	public void copyInto(OTObjectInterface object);
-	
 	public String getLocalId();
 }

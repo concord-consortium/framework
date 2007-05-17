@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2007-03-13 03:08:58 $
+ * $Revision: 1.7 $
+ * $Date: 2007-05-17 16:05:43 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -60,6 +60,10 @@ public interface OTObjectService
      * create a new OTObject and copy the original object 
      * into that one.    
      * 
+     * This will store orphan objects in the libary of the OTSystem if there is one.
+     * Otherwise orphan objects will not be copied.  See the other copyObject for more
+     * info about orphan objects.
+     * 
      * @param original
      * @param maxDepth how many objects deep to copy, -1 means
      *   every referenced object.  0 means only copy the original
@@ -71,4 +75,28 @@ public interface OTObjectService
      */
     public OTObject copyObject(OTObject original, int maxDepth)
     	throws Exception;
+    
+    /**
+     * create a new OTObject and copy the original object 
+     * into that one.    
+     * 
+     * this has an OTObjectList were the orphan objects will
+     *   be copied into.  Orphan objects occur when there is a reference the object
+     *   but that type of reference cannot contain the object.  The prime example of 
+     *   this is in OTCompoundDoc where an object can be referenced in the bodyText
+     *   using refid="__object_id__".  The object being referenced can be defined anywhere 
+     *   in the otml file.  When doing a deep copy the copy of this reference needs to be 
+     *   defined/stored somewhere.  With this method it is stored in the orphanObjectList
+     *   If the copy code can determine the object is stored somewhere within the copied
+     *   object tree, then it won't be added to the orphanObjectListobject.    
+     *   
+     * @param original the object to be copied.
+     * @param orphanObjectList 
+     * @param maxDepth see other copyObject
+     * @return
+     * @throws Exception
+     */
+	public OTObject copyObject(OTObject original, OTObjectList orphanObjectList, 
+	                           int maxDepth) 
+		throws Exception;
 }

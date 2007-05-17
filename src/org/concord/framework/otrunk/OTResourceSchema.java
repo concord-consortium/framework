@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2007-03-12 20:59:32 $
+ * $Revision: 1.9 $
+ * $Date: 2007-05-17 16:05:43 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -55,10 +55,5 @@ public interface OTResourceSchema extends OTChangeNotifying
 	
 	public boolean isResourceSet(String name);
 	
-	public String getLocalId();
-	
-    /**
-     * Copy this schema into the passed in schema
-     */ 
-	public void copyInto(OTResourceSchema schema);
+	public String getLocalId();	
 }
