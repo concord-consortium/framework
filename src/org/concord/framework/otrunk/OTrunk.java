@@ -84,4 +84,15 @@ public interface OTrunk {
 	 * @return
 	 */
 	public Object getService(Class serviceInterface);
+	
+	/**
+	 * This can be used to register OTPackages.  If you are loading
+	 * in all the state from storage this should not be needed.  
+	 * But if you want create OTObjects dynamically then you should
+	 * register all the packages for the OTObjects you are going to create. 
+	 * 
+	 * @param packageClass
+	 */
+    public void registerPackageClass(Class packageClass);
+
 }
