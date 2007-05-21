@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2007-05-17 16:05:43 $
+ * $Revision: 1.8 $
+ * $Date: 2007-05-21 22:09:08 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -99,4 +99,14 @@ public interface OTObjectService
 	public OTObject copyObject(OTObject original, OTObjectList orphanObjectList, 
 	                           int maxDepth) 
 		throws Exception;
+	
+	/**
+	 * This can be used to register OTPackages.  If you are loading
+	 * in all the state from storage this should not be needed.  
+	 * But if you want create OTObjects dynamically then you should
+	 * register all the packages for the OTObjects you are going to create. 
+	 * 
+	 * @param packageClass
+	 */
+    public void registerPackageClass(Class packageClass);
 }
