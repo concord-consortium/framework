@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2005-09-15 14:00:01 $
- * $Author: swang $
+ * $Revision: 1.8 $
+ * $Date: 2007-05-22 17:26:53 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -221,5 +221,78 @@ public class DataChannelDescription
 		channelDesc.unit = this.unit;
 		channelDesc.usePrecision = this.usePrecision;
 		return channelDesc;
+	}
+	
+	public boolean equals(Object obj)
+	{
+		if(!(obj instanceof DataChannelDescription)){
+			return false;
+		}
+		
+		DataChannelDescription channelDesc = 
+			(DataChannelDescription)obj;
+		
+		if(floatEquals(channelDesc.absoluteMax, this.absoluteMax) &&
+				floatEquals(channelDesc.absoluteMin, this.absoluteMin) &&
+				stringEquals(channelDesc.name, this.name) &&				
+				channelDesc.numericData == this.numericData &&
+				channelDesc.precision == this.precision &&
+				floatEquals(channelDesc.recommendMax, this.recommendMax) &&
+				floatEquals(channelDesc.recommendMin, this.recommendMin) &&
+				floatEquals(channelDesc.tuneValue,this.tuneValue) &&
+				unitEquals(channelDesc.unit,this.unit) &&
+				channelDesc.usePrecision == this.usePrecision){
+			return true;
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * This is separated out so it can be handled by Waba.  Waba will
+	 * most likely not implement Float.compare correctly.
+	 * 
+	 * @param f1
+	 * @param f2
+	 * @return
+	 */
+	public final static boolean floatEquals(float f1, float f2)
+	{
+		return Float.compare(f1, f2) == 0;
+	}
+	
+	public final static boolean stringEquals(String s1, String s2)
+	{
+		// This will handle the null, null case, as well as the trivial
+		// case
+		if(s1 == s2){
+			return true;
+		}
+		
+		// These are special cased because some JVM (waba) don't handle
+		// String.equals(null) 
+		if(s1 != null && s2 == null){
+			return false;
+		}
+		
+		if(s1 == null && s2 != null){
+			return false;
+		}
+		
+		return s1.equals(s2);
+	}
+	
+	public final static boolean unitEquals(DataDimension u1, DataDimension u2)
+	{
+		if(u1 == u2){
+			return true;
+		}
+		
+		if(u1 == null){
+			// u2 has to be != null if we got past the above check
+			return false;
+		}
+		
+		return u1.equals(u2);
 	}
 }
