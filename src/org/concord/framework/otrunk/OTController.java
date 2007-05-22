@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2007-03-13 17:10:35 $
+ * $Revision: 1.3 $
+ * $Date: 2007-05-22 22:10:49 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -125,4 +125,13 @@ public interface OTController
 	 * @param realObject
 	 */
     public void saveRealObject(Object realObject);
+    
+    /**
+     * This might be called when this controller is no longer needed.  It will be called
+     * if the dispose method is called on the controllerService that is managing this
+     * controller.  Not all objects managing controller services actually call dispose
+     * so this is not garunteed to be called.
+     *
+     */
+    public void dispose(Object realObject);
 }
