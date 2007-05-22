@@ -212,4 +212,71 @@ public class DataStreamDescription
 		desc.setDataOffset(this.dataOffset);
 		return desc;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	public boolean equals(Object obj)
+	{
+		if(!(obj instanceof DataStreamDescription)){
+			return false;
+		}
+		
+		DataStreamDescription dDesc = (DataStreamDescription) obj;
+		
+		if(dataType != dDesc.dataType ||
+				!floatEquals(dt,dDesc.dt) ||
+				dataOffset != dDesc.dataOffset){
+			return false;
+		}
+				
+		if(dtChannelDescription == null &&
+				dDesc.dtChannelDescription != null){
+			return false;
+		}				
+		
+		if(dtChannelDescription != null &&
+				!dtChannelDescription.equals(dDesc.dtChannelDescription)){
+			return false;
+		}
+		
+		if(channelDescriptions == null &&
+				dDesc.channelDescriptions != null){
+			return false;
+		}
+						
+		if(channelDescriptions != null){
+			if(dDesc.channelDescriptions == null){
+				return false;
+			}
+						
+			for(int i=0; i<channelDescriptions.length; i++){
+				if(i >= dDesc.channelDescriptions.length){
+					return false;
+				}
+				
+				if(!channelDescriptions[i].equals(dDesc.channelDescriptions[i])){
+					return false;
+				}
+			}
+			
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * This is separated out so it can be handled by Waba.  Waba will
+	 * most likely not implement Float.compare correctly.
+	 * 
+	 * @param f1
+	 * @param f2
+	 * @return
+	 */
+	public final static boolean floatEquals(float f1, float f2)
+	{
+		return Float.compare(f1, f2) == 0;
+	}
+	
+
 }
