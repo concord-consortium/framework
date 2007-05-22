@@ -179,4 +179,11 @@ public interface OTControllerService {
 	 * framework support to be possible. 
 	 */
 	public void registerRealObject(Object realObject, OTObject otObject);
+	
+	/**
+	 * Calling this will call dispose on all of the controllers this controller
+	 * service knows about.  That will give them a chance to clean up any 
+	 * listeners they've added.
+	 */
+	public void dispose();
 }

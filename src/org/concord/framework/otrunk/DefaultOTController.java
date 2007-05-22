@@ -134,4 +134,11 @@ public abstract class DefaultOTController implements OTController
 		return null;
 	}
 	
+	/**
+	 * Do nothing by default, for backwards compatibility
+	 */
+	public void dispose(Object realObject)
+	{
+		
+	}
 }
