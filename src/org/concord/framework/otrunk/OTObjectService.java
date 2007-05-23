@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2007-05-21 22:09:08 $
+ * $Revision: 1.9 $
+ * $Date: 2007-05-23 19:42:08 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -109,4 +109,15 @@ public interface OTObjectService
 	 * @param packageClass
 	 */
     public void registerPackageClass(Class packageClass);
+    
+    /**
+     * Get an OTrunk service, this could be used for example to get the 
+     * scripting service, or the sensor data manger.
+     * 
+     * The default implemention just calls OTrunk.getService
+     * 
+     * @param serviceClass
+     * @return
+     */
+    public Object getOTrunkService(Class serviceInterface);
 }
