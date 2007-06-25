@@ -39,7 +39,13 @@ public interface OTObjectInterface extends OTObject, OTChangeNotifying
 {
     public void setDoNotifyChangeListeners(boolean doNotify);
     
-    public void notifyOTChange();
+    /**
+     * 
+     * @param property
+     * @param operation this should be one of the constants in OTChangeEvent
+     * @param value
+     */
+    public void notifyOTChange(String property, String operation, Object value);
     
 	public boolean isResourceSet(String name);
 	
