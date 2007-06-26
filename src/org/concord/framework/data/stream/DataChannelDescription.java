@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.8 $
- * $Date: 2007-05-22 17:26:53 $
+ * $Revision: 1.9 $
+ * $Date: 2007-06-26 19:07:51 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -58,11 +58,13 @@ public class DataChannelDescription
 
 	// The absolute min and max of the data or NaN if
 	// not available
-	private float absoluteMin, absoluteMax;
+	private float absoluteMin = Float.NaN;
+	private float absoluteMax = Float.NaN;
 
 	// The recommended min and max of the data or NaN if
 	// not available
-	private float recommendMin, recommendMax;
+	private float recommendMin = Float.NaN;
+	private float recommendMax = Float.NaN;
 	
 	//This indicates if the data is numeric, so the precision will have to be used, etc
 	private boolean numericData = true;
