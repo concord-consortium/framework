@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.10 $
- * $Date: 2007-02-05 18:57:46 $
- * $Author: scytacki $
+ * $Revision: 1.11 $
+ * $Date: 2007-07-03 18:35:22 $
+ * $Author: aunger $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -56,5 +56,13 @@ public interface OTViewContainer
 
 	// TODO add a method to specify the viewEntry to use
 	
-	public OTObject getCurrentObject();	
+	public OTObject getCurrentObject();
+    
+    public boolean isUpdateable();
+    public void setUpdateable(boolean b);
+    
+    public void setParentContainer(OTViewContainer c);
+    public OTViewContainer getParentContainer();
+    
+    public OTViewContainer getUpdateableContainer();
 }
