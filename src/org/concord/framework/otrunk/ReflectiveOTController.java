@@ -195,4 +195,10 @@ public class ReflectiveOTController extends DefaultOTController
 		Method getMethod;
 		Method setMethod;
 	}
+
+	public boolean isRealObjectSharable(OTObject otObject, Object realObject) 
+	{	
+		// We'll be safe here and not share the real object.
+		return false;
+	}
 }
