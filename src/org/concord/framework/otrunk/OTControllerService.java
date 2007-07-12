@@ -25,23 +25,17 @@ package org.concord.framework.otrunk;
 
 public interface OTControllerService {	
 	/**
-	 * This method takes a controllerClass.
-	 * Controller classes take OTObjects and create 
-	 * real objects from them. 
+	 * This method is typically not used.  Typically controller classes are 
+	 * registered in a OTPackage implementation.
 	 * 
-	 * This method is probably temporary until this functionaly can be 
-	 * handled elsewhere.
-	 *
-	 * The problematic use case is:
-	 * A GraphView object has an export to otml action.  The GraphView can
-	 * display any type of graphable, most of which it doesn't directly know 
-	 * the classes of.  So the GraphView cannot register controllers for these.
-	 * In this case the controllers need to registered by the application.  In an
-	 * application with a plugin architecure, the initializer of the plugin
-	 * should register the controller.   
+	 * If a controller class is only registered using this method then it will need to be 
+	 * registered each time a new view wants to use it.   If it is registered in the OTPackage
+	 * then new views don't need to worry about registering it.
+	 * 
+	 * This method takes a controllerClass.
+	 * Controller classes take OTObjects and creates 
+	 * real objects from them. 
 	 *  
-	 * Basically wherever the ability to add unknown graphables to the GraphView
-	 * is encoded, that place should also register controllers for those graphables.
 	 */
 	public void registerControllerClass(Class controllerClass);
 	
