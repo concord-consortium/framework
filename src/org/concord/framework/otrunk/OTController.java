@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2007-05-22 22:10:49 $
+ * $Revision: 1.4 $
+ * $Date: 2007-07-12 18:07:52 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -134,4 +134,18 @@ public interface OTController
      *
      */
     public void dispose(Object realObject);
+    
+    /**
+     * This will be called before initialize.  It is used by the controllerService to decide 
+     * if it should manage this real object locally or in a shared list.  The otObject and object
+     * will be set if they are available.  These can be used as hints for the controller to decide
+     * if its real object should be shared.
+     * 
+     * One use of this is for two views in the same compound document to share a single real object.
+     * 
+     * @param otObject
+     * @param realObject
+     * @return
+     */
+    public boolean isRealObjectSharable(OTObject otObject, Object realObject);
 }

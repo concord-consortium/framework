@@ -5,6 +5,7 @@ package org.concord.framework.otrunk.view;
 
 import javax.swing.JComponent;
 
+import org.concord.framework.otrunk.OTControllerService;
 import org.concord.framework.otrunk.OTObject;
 
 /**
@@ -25,10 +26,20 @@ implements OTJComponentView
 		if(jComponentService == null){
 			OTJComponentServiceFactory serviceFactory = 
 				(OTJComponentServiceFactory)getViewService(OTJComponentServiceFactory.class);
-			jComponentService = serviceFactory.createOTJComponentService();
+			jComponentService = serviceFactory.createOTJComponentService(getViewFactory());
 		}
 		
 		return jComponentService;
+	}
+	
+	public OTControllerService createControllerService()
+	{
+		OTControllerServiceFactory controllerServiceFactory = 
+			(OTControllerServiceFactory) getViewService(OTControllerServiceFactory.class);
+		
+    	OTControllerService controllerService = controllerServiceFactory.createControllerService();
+	
+    	return controllerService;
 	}
 	
 	public JComponent getChildComponent(OTObject otObject,

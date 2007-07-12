@@ -135,10 +135,19 @@ public abstract class DefaultOTController implements OTController
 	}
 	
 	/**
-	 * Do nothing by default, for backwards compatibility
+	 * Do nothing by default.  This method is implemented here so subclasses don't need
+	 * implement it.
 	 */
 	public void dispose(Object realObject)
 	{
 		
+	}
+	
+	/**
+	 * Return false by default.  This makes the behavior of subclasses the same as before.
+	 */
+	public boolean isRealObjectSharable(OTObject otObject, Object realObject) 
+	{
+		return false;
 	}
 }

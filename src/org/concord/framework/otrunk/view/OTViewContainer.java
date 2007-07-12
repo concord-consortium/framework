@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.11 $
- * $Date: 2007-07-03 18:35:22 $
- * $Author: aunger $
+ * $Revision: 1.12 $
+ * $Date: 2007-07-12 18:07:52 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -61,7 +61,6 @@ public interface OTViewContainer
     public boolean isUpdateable();
     public void setUpdateable(boolean b);
     
-    public void setParentContainer(OTViewContainer c);
     public OTViewContainer getParentContainer();
     
     public OTViewContainer getUpdateableContainer();

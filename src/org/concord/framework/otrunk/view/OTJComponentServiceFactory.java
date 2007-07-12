@@ -9,5 +9,5 @@ package org.concord.framework.otrunk.view;
  */
 public interface OTJComponentServiceFactory
 {
-	OTJComponentService createOTJComponentService();
+	OTJComponentService createOTJComponentService(OTViewFactory viewFactory);
 }
