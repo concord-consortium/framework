@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2007-04-19 20:19:44 $
+ * $Revision: 1.6 $
+ * $Date: 2007-07-13 16:00:33 $
  * $Author: sfentress $
  *
  * Licence Information
@@ -56,4 +56,8 @@ public interface OTFrame
 	public static int DEFAULT_width = 400;
 	
 	String getTitle();
+	
+	boolean getBorderlessPopup();
+	
+	public static boolean DEFAULT_borderlessPopup = false;
 }

@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2007-03-09 12:08:05 $
- * $Author: scytacki $
+ * $Revision: 1.4 $
+ * $Date: 2007-07-13 16:00:34 $
+ * $Author: sfentress $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -77,4 +77,20 @@ public interface OTFrameManager
 	 */
 	public void putObjectInFrame(OTObject otObject, 
 			OTViewEntry viewEntry, OTFrame otFrame, String viewMode);
+	
+	/**
+	 * This will use the viewEntry passed in to get the 
+	 * view for the otObject.
+	 *  
+	 * @param otObject
+	 * @param viewEntry
+	 * @param otFrame
+	 * @param viewMode
+	 * @param positionX frame's top-left corner x
+	 * @param positionY frame's top-left corner y
+	 */
+	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, OTFrame otFrame, String viewMode, 
+			int positionX, int positionY);
+	
+	public void distroyFrame();
 }
