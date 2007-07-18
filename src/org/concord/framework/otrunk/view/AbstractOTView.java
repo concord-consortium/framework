@@ -8,22 +8,23 @@ package org.concord.framework.otrunk.view;
  * @author scott
  *
  */
-public abstract class AbstractOTView implements OTViewServiceProviderAware,
+public abstract class AbstractOTView implements OTViewContextAware,
 		OTView 
 {
-	protected OTViewServiceProvider serviceProvider;
+	protected OTViewContext viewContext;
+	protected OTViewFactory viewFactory;
 	
 	/* (non-Javadoc)
 	 * @see org.concord.framework.otrunk.view.OTViewServiceProviderAware#setViewServiceProvider(org.concord.framework.otrunk.view.OTViewServiceProvider)
 	 */
-	public void setViewServiceProvider(OTViewServiceProvider serviceProvider) 
+	public void setViewContext(OTViewContext serviceProvider) 
 	{
-		this.serviceProvider = serviceProvider;
+		this.viewContext = serviceProvider;
 	}
 
 	protected Object getViewService(Class service)
 	{
-		return serviceProvider.getViewService(service);
+		return viewContext.getViewService(service);
 	}
 	
 	/**
@@ -41,6 +42,12 @@ public abstract class AbstractOTView implements OTViewServiceProviderAware,
 	 */
 	public OTViewFactory getViewFactory() 
 	{
-		return (OTViewFactory) getViewService(OTViewFactory.class);
+		if(viewFactory != null){
+			return viewFactory;
+		}
+		
+		viewFactory = viewContext.createChildViewFactory();
+		
+		return viewFactory;
 	}
 }

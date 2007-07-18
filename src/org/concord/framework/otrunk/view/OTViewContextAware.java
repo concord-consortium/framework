@@ -9,13 +9,13 @@ package org.concord.framework.otrunk.view;
  * @author scott
  *
  */
-public interface OTViewServiceProviderAware extends OTView 
+public interface OTViewContextAware extends OTView 
 {
 	/**
 	 * This will be called after the view is created before any other
 	 * methods are called on the view.
 	 * 
-	 * @param serviceProvider
+	 * @param viewContext
 	 */
-	public void setViewServiceProvider(OTViewServiceProvider serviceProvider);
+	public void setViewContext(OTViewContext viewContext);
 }
