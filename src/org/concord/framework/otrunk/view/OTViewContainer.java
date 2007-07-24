@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.12 $
- * $Date: 2007-07-12 18:07:52 $
- * $Author: scytacki $
+ * $Revision: 1.13 $
+ * $Date: 2007-07-24 19:56:44 $
+ * $Author: sfentress $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -64,4 +64,6 @@ public interface OTViewContainer
     public OTViewContainer getParentContainer();
     
     public OTViewContainer getUpdateableContainer();
+    
+    public void reloadView();
 }
