@@ -5,6 +5,8 @@ package org.concord.framework.otrunk.view;
 
 import javax.swing.JComponent;
 
+import org.concord.framework.otrunk.OTChangeEvent;
+import org.concord.framework.otrunk.OTChangeListener;
 import org.concord.framework.otrunk.OTControllerService;
 import org.concord.framework.otrunk.OTObject;
 
@@ -14,9 +16,13 @@ import org.concord.framework.otrunk.OTObject;
  */
 public abstract class AbstractOTJComponentView 
 	extends AbstractOTView
-implements OTJComponentView 
+implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 {
 	OTJComponentService jComponentService;
+	protected OTViewEntry viewConfig;
+	protected OTViewContainer viewContainer;
+	private boolean reloadOnViewEntryChange = false;
+	private MyOTChangeListener otListener;
 	
 	public OTJComponentService getJComponentService()
 	{
@@ -62,5 +68,39 @@ implements OTJComponentView
 	{
 		OTJComponentService jComponentService = getJComponentService();
 		return jComponentService.getObjectView(otObject, container, mode);
+	}
+	
+	public void setViewEntry(OTViewEntry viewConfig){
+		this.viewConfig = viewConfig;
+		
+		otListener = new MyOTChangeListener();
+		
+		if (reloadOnViewEntryChange){
+			viewConfig.addOTChangeListener(otListener);
+		}
+	}
+	
+	public void setViewContainer(OTViewContainer container){
+		this.viewContainer = container;
+	}
+	
+	public void setReloadOnViewEntryChange(boolean reload){
+		if (!reloadOnViewEntryChange && reload){
+			viewConfig.addOTChangeListener(otListener);
+		} else if (!reload){
+			viewConfig.removeOTChangeListener(otListener);
+		}
+		
+		reloadOnViewEntryChange = reload;
+	}
+	
+	private class MyOTChangeListener implements OTChangeListener{
+
+		public void stateChanged(OTChangeEvent e) {
+			if (viewContainer != null){
+				viewContainer.reloadView();
+			}
+		}
+		
 	}
 }
