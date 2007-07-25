@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2007-07-13 16:00:33 $
+ * $Revision: 1.7 $
+ * $Date: 2007-07-25 20:58:06 $
  * $Author: sfentress $
  *
  * Licence Information
@@ -60,4 +60,8 @@ public interface OTFrame
 	boolean getBorderlessPopup();
 	
 	public static boolean DEFAULT_borderlessPopup = false;
+	
+	boolean getUseScrollPane();
+	
+	public static boolean DEFAULT_useScrollPane = true;
 }
