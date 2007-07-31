@@ -28,4 +28,6 @@ public interface OTJComponentService
 	public OTJComponentView getObjectView(OTObject otObject,
 	        OTViewContainer container, String mode, OTViewEntry viewEntry);
 	
+	public OTJComponentViewContext getJComponentViewContext();
+	
 }
