@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2007-07-13 16:00:34 $
+ * $Revision: 1.5 $
+ * $Date: 2007-07-31 14:58:26 $
  * $Author: sfentress $
  *
  * Licence Information
@@ -54,6 +54,17 @@ public interface OTFrameManager
 	 * @param otFrame
 	 */
 	public void putObjectInFrame(OTObject otObject, OTFrame otFrame);
+	
+	/**
+	 * This will use the viewFactory to find the default view for
+	 * the otObject.
+	 *  
+	 * @param otObject
+	 * @param otFrame
+	 * @param positionX frame's top-left corner x
+	 * @param positionY frame's top-left corner y
+	 */
+	public void putObjectInFrame(OTObject otObject, OTFrame otFrame, int positionX, int positionY);
 	
 	/**
 	 * This will use the viewEntry passed in to get the 
