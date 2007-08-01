@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2007-05-23 19:42:08 $
+ * $Revision: 1.10 $
+ * $Date: 2007-08-01 13:51:05 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -44,6 +44,15 @@ public interface OTObjectService
 	 */
     public OTObject createObject(Class objectClass) throws Exception;
 
+    /**
+     * This returns an object given an id.  The object returned will
+     * not necessarily have the same id as childID.  This is because of the 
+     * overlay system.
+     * 
+     * @param childID
+     * @return
+     * @throws Exception
+     */
     public OTObject getOTObject(OTID childID) throws Exception;
 
     /**
