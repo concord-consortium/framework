@@ -86,7 +86,7 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	}
 	
 	public void setReloadOnViewEntryChange(boolean reload){
-		if (!reloadOnViewEntryChange && reload && !alreadyAddedListener){
+		if (!reloadOnViewEntryChange && reload && !alreadyAddedListener && viewConfig != null){
 			viewConfig.addOTChangeListener(otListener);
 			alreadyAddedListener = true;
 		} else if (!reload){
