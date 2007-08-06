@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.6 $
+ * $Date: 2007-08-06 18:57:32 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -63,6 +63,8 @@ public interface OTObjectList
 	 */
 	public void add(OTID id);
 
+	public void set(int index, OTObject obj);
+	
 	public int size();
 
 	public void remove(int index);
