@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.10 $
- * $Date: 2007-08-01 13:51:05 $
+ * $Revision: 1.11 $
+ * $Date: 2007-08-07 19:18:32 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -63,6 +63,16 @@ public interface OTObjectService
      */
     public OTID getOTID(String otidStr);
 
+    /**
+     * This will return an string representation of this id, that is valid in this object service context.
+     * "valid" means that if this id is turned back into an OTID, and then getOTObject is called with this
+     * same object service, then the same object will be returned.
+     * 
+     * @param id
+     * @return
+     */
+    public String getExternalID(OTObject object);
+    
     public OTControllerService createControllerService(); 
 
     /**
