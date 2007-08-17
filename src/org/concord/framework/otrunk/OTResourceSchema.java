@@ -23,14 +23,17 @@
 
 /*
  * Last modification information:
- * $Revision: 1.9 $
- * $Date: 2007-05-17 16:05:43 $
+ * $Revision: 1.10 $
+ * $Date: 2007-08-17 13:14:26 $
  * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
 */
 package org.concord.framework.otrunk;
+
+import org.concord.framework.otrunk.otcore.OTClass;
+import org.concord.framework.otrunk.otcore.OTClassProperty;
 
 
 
@@ -55,5 +58,13 @@ public interface OTResourceSchema extends OTChangeNotifying
 	
 	public boolean isResourceSet(String name);
 	
-	public String getLocalId();	
+	public String getLocalId();
+
+    public OTClass otClass();
+    
+    public Object otGet(OTClassProperty property);
+    public void otSet(OTClassProperty property, Object newValue);
+    
+    boolean otIsSet(OTClassProperty property);
+    void otUnSet(OTClassProperty property);	
 }

@@ -29,6 +29,9 @@
  */
 package org.concord.framework.otrunk;
 
+import org.concord.framework.otrunk.otcore.OTClass;
+import org.concord.framework.otrunk.otcore.OTClassProperty;
+
 
 /**
  * This class can be used to create more complex OTObjects.
@@ -152,5 +155,25 @@ public class DefaultOTObject
     public void removeOTChangeListener(OTChangeListener listener)
     {
     	resources.removeOTChangeListener(listener);
-    }    
+    }
+
+	public OTClass otClass() {
+		return resources.otClass();
+	}
+
+	public Object otGet(OTClassProperty property) {
+		return resources.otGet(property);
+	}
+
+	public boolean otIsSet(OTClassProperty property) {
+		return resources.otIsSet(property);
+	}
+
+	public void otSet(OTClassProperty property, Object newValue) {
+		resources.otSet(property, newValue);
+	}
+
+	public void otUnSet(OTClassProperty property) {
+		resources.otUnSet(property);
+	}    
 }

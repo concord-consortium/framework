@@ -29,6 +29,9 @@
  */
 package org.concord.framework.otrunk;
 
+import org.concord.framework.otrunk.otcore.OTClass;
+import org.concord.framework.otrunk.otcore.OTClassProperty;
+
 
 
 //import java.util.Vector;
@@ -61,4 +64,12 @@ public interface OTObject
 	 * @return
 	 */
     public OTObjectService getOTObjectService();
+    
+    public OTClass otClass();
+    
+    public Object otGet(OTClassProperty property);
+    public void otSet(OTClassProperty property, Object newValue);
+    
+    boolean otIsSet(OTClassProperty property);
+    void otUnSet(OTClassProperty property);
 }
