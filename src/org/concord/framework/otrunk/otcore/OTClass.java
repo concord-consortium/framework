@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 public interface OTClass extends OTType
 {
-	public ArrayList getProperties();
+	public ArrayList getOTAllClassProperties();
 		
+	public ArrayList getOTClassProperties();
+	
 	public OTClassProperty getProperty(String resourceName);
+
+	public ArrayList getOTSuperTypes();
 }
