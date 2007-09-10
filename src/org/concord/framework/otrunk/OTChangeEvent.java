@@ -45,10 +45,30 @@ public class OTChangeEvent extends EventObject
      */
     private static final long serialVersionUID = 1L;
 
+    /**
+     * This is the operation when a property has been set, 
+     * or a value has been set in a resource or object list.
+     */
     public final static String OP_SET = "set";    
+    
+    /**
+     * This is the operation when a value has been added to a resource or object list
+     */
     public final static String OP_ADD = "add";
+    
+    /**
+     * This is the operation when a value has been removed from a resource or object list.
+     */    
     public final static String OP_REMOVE = "remove";
+    
+    /**
+     * This is the operation when all of the values have been removed from a resource or object list or map
+     */
     public final static String OP_REMOVE_ALL = "removeAll";
+    
+    /**
+     * This is the operation used when one or more things have been changed all at the same time. 
+     */
     public final static String OP_CHANGE = "change";
     public final static String OP_PUT = "put";
     
