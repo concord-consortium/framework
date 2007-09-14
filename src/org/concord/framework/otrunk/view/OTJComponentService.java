@@ -30,4 +30,6 @@ public interface OTJComponentService
 	
 	public OTJComponentViewContext getJComponentViewContext();
 	
+	public OTViewFactory getViewFactory();
+	
 }
