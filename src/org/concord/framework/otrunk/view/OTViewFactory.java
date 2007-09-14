@@ -26,6 +26,12 @@ package org.concord.framework.otrunk.view;
 import org.concord.framework.otrunk.OTObject;
 
 public interface OTViewFactory {
+	
+	public String getMode();
+	
+	public void setMode(String mode);
+	
+	public static String NULL_MODE = "NULL_MODE";
 
 	public OTView getView(OTObject otObject, Class viewInterface);
 
@@ -66,12 +72,4 @@ public interface OTViewFactory {
 	 */
 	public OTViewContext getViewContext();
 	
-	/**
-	 * This method was added to enable global mode switching
-	 * it is not really used correctly yet.  It is only used by the root
-	 * view container to set its startup mode.
-	 * 
-	 * @return
-	 */
-	public String getDefaultMode();
 }
