@@ -142,13 +142,13 @@ public interface OTControllerService {
 	 * to lookup the controller for this realObject and otObject.  
 	 * 
 	 * This is very similar to getRealObject but getRealObject only calls
-	 * loadRealObject when it's the first time
+	 * loadRealObject when it's called the first time
 	 * 
-	 * TODO it is not clear how much state should be saved here and whether it should
+	 * TODO it is not clear how much state should be loaded here and whether it should
 	 * be recursive.  If listeners are being used on all the sub objects then when
 	 * this is called after the object has been registered it doesn't need to be
-	 * recursive.  If this is called to store a realObject that wasn't created by 
-	 * the controllerservice this will need to recursively save all the sub objects. 
+	 * recursive.  If this is called to load a realObject that wasn't created by 
+	 * the controllerservice this will need to recursively load all the sub objects. 
 	 * 
 	 * It should not mess up anything if the method is recursive.  It is just a waste of
 	 * time in some cases.  However there is a danger of infinite loops with circular 
@@ -164,7 +164,7 @@ public interface OTControllerService {
 	 * to lookup the controller for this realObject and otObject.  
 	 * 
 	 * This method is called both by getOTObject and getRealObject.  You should
-	 * only need to call it explicity if you don't want the other side effects
+	 * only need to call it explicitly if you don't want the other side effects
 	 * of those methods.   For example if the realObject needs to be managed by 
 	 * some parent object instead of the standard controller for the realObject
 	 * 
