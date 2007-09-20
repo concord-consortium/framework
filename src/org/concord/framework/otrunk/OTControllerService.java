@@ -175,6 +175,16 @@ public interface OTControllerService {
 	public void registerRealObject(Object realObject, OTObject otObject);
 	
 	/**
+	 * Return the controller instance that has been or would be be used to create a
+	 * real object.  You should not call any of the public methods of OTController
+	 * these methods should only be called by the controller service.
+	 * 
+	 * @param otObject
+	 * @return
+	 */
+	public OTController getController(OTObject otObject);
+	
+	/**
 	 * Calling this will call dispose on all of the controllers this controller
 	 * service knows about.  That will give them a chance to clean up any 
 	 * listeners they've added.
