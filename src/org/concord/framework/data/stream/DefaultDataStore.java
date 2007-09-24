@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.10 $
- * $Date: 2006-05-05 15:44:33 $
+ * $Revision: 1.11 $
+ * $Date: 2007-09-24 18:36:49 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -61,7 +61,7 @@ public class DefaultDataStore extends AbstractDataStore
 	public Object getValueAt(int numSample, int numChannel)
 	{
 		//Special case: when dt is a channel, it's the channel -1
-		if (numChannel == -1 && isUseDtAsChannel()){
+		if (isIncrementalChannel(numChannel)){
 			return new Float(numSample * dt);
 		}
 		
@@ -192,15 +192,33 @@ public class DefaultDataStore extends AbstractDataStore
     }
     
     /**
-     * @see org.concord.framework.data.stream.DeltaDataStore#isUseDtAsChannel()
+     * @see org.concord.framework.data.stream.AutoIncrementDataStore#isAutoIncrementing()
      */
-    public boolean isUseDtAsChannel()
+    public boolean isAutoIncrementing()
     {
         return !Float.isNaN(dt);
     }
     
+    /**
+     * Keep this method here incase scripts are using it
+     */
     public float getDt()
+    {
+    	return getIncrement();
+    }
+    
+    public float getIncrement()
     {
         return dt;
     }
+
+    /**
+     * If this data store has a dt or increment then that is available 
+     * as channel -1. 
+     * 
+     */
+	public boolean isIncrementalChannel(int channelIndex) 
+	{
+		return channelIndex == -1 && isAutoIncrementing();
+	}
 }

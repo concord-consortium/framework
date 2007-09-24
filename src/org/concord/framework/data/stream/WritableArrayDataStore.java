@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.6 $
+ * $Date: 2007-09-24 18:36:49 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -43,7 +43,7 @@ package org.concord.framework.data.stream;
  *
  */
 public interface WritableArrayDataStore 
-	extends WritableDataStore, DeltaDataStore
+	extends WritableDataStore, AutoIncrementDataStore
 {	
 	public void setValues(int numChannels,float []values, int offset, 
 	        int numSamples, int nextSampleOffset);
