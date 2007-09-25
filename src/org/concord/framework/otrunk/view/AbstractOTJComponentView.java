@@ -50,20 +50,20 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	}
 	
 	public JComponent getChildComponent(OTObject otObject,
-			OTViewContainer container, boolean editable)
+			OTViewContainer container)
 	{
 		OTJComponentService jComponentService = getJComponentService();
-		return jComponentService.getComponent(otObject, container, editable);
+		return jComponentService.getComponent(otObject, container);
 	}
-	
+
 	public JComponent getChildComponent(OTObject otObject,
-			OTViewContainer container, boolean editable, String mode)
+			OTViewContainer container, String mode)
 	{
 		OTJComponentService jComponentService = getJComponentService();
 		OTJComponentView view = jComponentService.getObjectView(otObject, container, mode);
-		return jComponentService.getComponent(otObject, view, editable);
+		return jComponentService.getComponent(otObject, view);
 	}
-	
+
 	public OTJComponentView getComponentView(OTObject otObject,
 			OTViewContainer container, String mode)
 	{
