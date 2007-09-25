@@ -14,10 +14,10 @@ import org.concord.framework.otrunk.OTObject;
 public interface OTJComponentService 
 {
 	public JComponent getComponent(OTObject otObject, 
-	       OTJComponentView view, boolean editable);
-	
+		       OTJComponentView view);
+
 	public JComponent getComponent(OTObject otObject,
-			OTViewContainer container, boolean editable);
+			OTViewContainer container);
 	
 	public OTJComponentView getObjectView(OTObject otObject,
 			OTViewContainer container);	
