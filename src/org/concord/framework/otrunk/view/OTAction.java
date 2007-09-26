@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2006-05-05 15:52:16 $
- * $Author: maven $
+ * $Revision: 1.3 $
+ * $Date: 2007-09-26 18:39:32 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -38,7 +38,7 @@ import org.concord.framework.otrunk.OTObject;
 public interface OTAction
     extends OTObject
 {
-    public void doAction();
+    public void doAction(OTActionContext context);
     
     public String getActionText();
 }
