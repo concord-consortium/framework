@@ -27,11 +27,11 @@ import org.concord.framework.otrunk.OTObject;
 
 public interface OTViewFactory {
 	
-	public String getMode();
+	public String getDefaultViewMode();
 	
-	public void setMode(String mode);
+	public void setDefaultViewMode(String mode);
 	
-	public static String NULL_MODE = "NULL_MODE";
+	public static String NO_VIEW_MODE = "_no_view_mode";
 
 	public OTView getView(OTObject otObject, Class viewInterface);
 
@@ -44,11 +44,25 @@ public interface OTViewFactory {
 	 */
 	public OTView getView(OTObject otObject, Class viewInterface, String mode);
 	
+	/**
+	 * This method is the same as calling getView(otObject, viewEntry, null)
+	 * so the current mode of the viewFactory is used. 
+	 * 
+	 * @param otObject
+	 * @param viewEntry
+	 * @return
+	 */
 	public OTView getView(OTObject otObject, OTViewEntry viewEntry);
 	
 	/**
-	 * If the mode is null then the viewEntry is used directly.
-	 * If the mode is not null then an OTViewMode is looked up with that
+	 * If the mode is null then the current mode of this viewFactory is used.
+	 * If the mode of this viewFactory is null then the mode of the parent view
+	 * factory is used. 
+	 * If the mode is NO_VIEW_MODE then no mode will be used and the 
+	 * viewEntry will be used directly.
+	 * 
+	 * If the looked up view is not null and is not DEFAULT_VIEW_MODE 
+	 * then an OTViewMode is looked up with that
 	 * name.  And a mapping between this viewEntry and another viewEntry is
 	 * searched for.  If no mapping exists then, a default viewEntry is used.
 	 * Initially there will only be one default per map but eventually 
