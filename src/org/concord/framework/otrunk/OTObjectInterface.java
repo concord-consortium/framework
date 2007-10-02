@@ -44,8 +44,9 @@ public interface OTObjectInterface extends OTObject, OTChangeNotifying
      * @param property
      * @param operation this should be one of the constants in OTChangeEvent
      * @param value
+     * @param previousValue TODO
      */
-    public void notifyOTChange(String property, String operation, Object value);
+    public void notifyOTChange(String property, String operation, Object value, Object previousValue);
     
 	public boolean isResourceSet(String name);
 	
