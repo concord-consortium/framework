@@ -78,6 +78,8 @@ public class OTChangeEvent extends EventObject
 
 	private Object value;
 	
+	private Object previousValue;
+	
     public OTChangeEvent(OTObject source)
     {
         super(source);
@@ -115,6 +117,8 @@ public class OTChangeEvent extends EventObject
 	 * remove: the object removed
 	 * changed: the object changed
 	 * put: the key of the new entry 
+	 * set: the object being set.  If the property is a primitive this will the Java object
+	 *   wrapper.
 	 */
     public Object getValue()
     {
@@ -125,6 +129,16 @@ public class OTChangeEvent extends EventObject
     {
     	this.value = value;
     }
+    
+	public Object getPreviousValue() 
+	{
+		return previousValue;
+	}
+
+	public void setPreviousValue(Object previousValue) 
+	{
+		this.previousValue = previousValue;
+	}
 
 	/**
 	 * @return
