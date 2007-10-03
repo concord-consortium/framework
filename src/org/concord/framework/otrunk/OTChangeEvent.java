@@ -146,6 +146,6 @@ public class OTChangeEvent extends EventObject
 	public String getDescription() 
 	{
 		return "" + getSource() + "." + getProperty() + " " +
-		 	getOperation() + " " + getValue();
+		 	getOperation() + " " + getValue() + "(was " + getPreviousValue() + ")";
 	}
 }
