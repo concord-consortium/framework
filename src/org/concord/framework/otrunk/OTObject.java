@@ -44,6 +44,15 @@ import org.concord.framework.otrunk.otcore.OTClassProperty;
  */
 public interface OTObject 
 {
+	/**
+	 * The OTID returned by this method can be turned into a string
+	 * which can be serialized using the OTObjectService.getExternalID method.
+	 * 
+	 * The toString method on the returned OTID should not be used for this
+	 * purpose.
+	 * 
+	 * @return
+	 */
 	public OTID getGlobalId();
 	
 	public String getName();

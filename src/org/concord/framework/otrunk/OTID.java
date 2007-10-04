@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.4 $
+ * $Date: 2007-10-04 21:27:21 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -38,10 +38,10 @@ package org.concord.framework.otrunk;
  * This is a mostly opaque object.  However this abstraction
  * is not currently maintained everywhere.  
  * 
- * The toString() method returns a serialized version of this
- * object.  However to keep the abstraction it would be better 
- * to remove this, so please try not to use it.
- *
+ * The toString() should not be used to get a serialized version 
+ * of the object.
+ * Instead the getExternalID method should be used on the objectService.
+ * 
  * Date created: Dec 5, 2004
  *
  * @author scott<p>
@@ -49,5 +49,14 @@ package org.concord.framework.otrunk;
  */
 public interface OTID
 {
-
+	/**
+	 * Not all IDs can provide a valid external form.  
+	 * Those IDs that can't directly provide an external form
+	 * throw a RuntimeException.
+	 * 
+	 * The method getExternalID on OTObjectService should be used instead.
+	 * 
+	 * @return
+	 */
+	public String toExternalForm();
 }
