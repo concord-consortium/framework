@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.7 $
+ * $Date: 2007-10-04 21:18:11 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -34,9 +34,9 @@ package org.concord.framework.otrunk;
 
 
 /**
- * OTResourceList
+ * OTResourceList<br>
  * Class name and description
- *
+ * <p>
  * Date created: Nov 8, 2004
  *
  * @author scott<p>

@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.3 $
- * $Date: 2005-08-05 16:11:10 $
- * $Author: maven $
+ * $Revision: 1.4 $
+ * $Date: 2007-10-04 21:18:11 $
+ * $Author: scytacki $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -35,18 +35,13 @@ package org.concord.framework.otrunk;
 
 /**
  * OTResourceCollection
- * Class name and description
- *
+ * Currently this is a marker interface to identify resource collections
+ * 
  * Date created: Sep 29, 2004
  *
  * @author scott<p>
  *
  */
-public interface OTResourceCollection
+public interface OTResourceCollection extends OTCollection
 {
-	public int size();
-
-	public void removeAll();
-
-	
 }

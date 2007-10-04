@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.4 $
- * $Date: 2007-03-12 19:14:05 $
+ * $Revision: 1.5 $
+ * $Date: 2007-10-04 21:18:11 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -44,8 +44,12 @@ import java.util.Vector;
  * @author scott<p>
  *
  */
-public interface OTObjectMap
+public interface OTObjectMap extends OTObjectCollection
 {
+	/**
+	 * @deprecated use size() instead.
+	 * @return
+	 */
 	public int getNumberOfObjects();
 
 	public OTObject getObject(String key);
