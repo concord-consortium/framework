@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2007-08-06 18:57:32 $
+ * $Revision: 1.7 $
+ * $Date: 2007-10-04 21:27:22 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -44,7 +44,7 @@ import java.util.Vector;
  * @author scott<p>
  *
  */
-public interface OTObjectList
+public interface OTObjectList extends OTObjectCollection
 {
 
 	public OTObject get(int index);
@@ -65,11 +65,7 @@ public interface OTObjectList
 
 	public void set(int index, OTObject obj);
 	
-	public int size();
-
 	public void remove(int index);
 	
 	public void remove(OTObject obj);
-	
-	public void removeAll();    
 }

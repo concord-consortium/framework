@@ -120,7 +120,7 @@ public class DefaultOTObject
 
     public int hashCode()
     {
-        String str = getClass().getName() + "@" +  getGlobalId();
+        String str = getClass().getName() + "@" +  getGlobalId().hashCode();
         return str.hashCode();
     }
     
