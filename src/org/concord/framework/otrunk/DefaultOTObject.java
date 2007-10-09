@@ -175,5 +175,10 @@ public class DefaultOTObject
 
 	public void otUnSet(OTClassProperty property) {
 		resources.otUnSet(property);
+	}
+
+	public String otExternalId() 
+	{
+		return getOTObjectService().getExternalID(this);
 	}    
 }

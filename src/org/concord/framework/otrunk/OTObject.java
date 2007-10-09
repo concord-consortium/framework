@@ -73,6 +73,17 @@ public interface OTObject
 	 * @return
 	 */
     public OTObjectService getOTObjectService();
+
+    /**
+     * This does the same as this.getOTObjectService().getExternalID(this)
+     * It returns a string that can be used to reference this object.  This string
+     * is relative to the OTObjectService that is managing this particular object.
+     * 
+     * The case of Id matches the case of getGlobalId.
+     * 
+     * @return
+     */
+    public String otExternalId();
     
     public OTClass otClass();
     
