@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.2 $
- * $Date: 2007-02-14 03:55:08 $
+ * $Revision: 1.3 $
+ * $Date: 2007-10-10 03:13:09 $
  * $Author: scytacki $
  *
  * Licence Information
@@ -32,7 +32,6 @@
 */
 package org.concord.framework.otrunk.view;
 
-import org.concord.framework.otrunk.OTObject;
 import org.concord.framework.otrunk.OTObjectInterface;
 
 /**
@@ -52,10 +51,4 @@ public interface OTViewEntry
     
     public String getViewClass();
     public void setViewClass(String viewClass);
-
-    public OTObject getViewConfig();
-    public void setViewConfig();
-
-    public OTViewEntry getAuthorEntry();
-    public void setAuthorEntry(OTViewEntry entry);
 }
