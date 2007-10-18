@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2007-07-25 20:58:06 $
- * $Author: sfentress $
+ * $Revision: 1.8 $
+ * $Date: 2007-10-18 17:32:59 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -47,21 +47,19 @@ import org.concord.framework.otrunk.OTObjectInterface;
 public interface OTFrame
 	extends OTObjectInterface
 {
+	public static int DEFAULT_height = 300;
 	int getHeight();
 	
-	int getWidth();
-	
-	public static int DEFAULT_height = 300;
-	
 	public static int DEFAULT_width = 400;
-	
-	String getTitle();
-	
-	boolean getBorderlessPopup();
+	int getWidth();
+
+	public String getTitle();
 	
 	public static boolean DEFAULT_borderlessPopup = false;
-	
-	boolean getUseScrollPane();
+	public boolean getBorderlessPopup();
 	
 	public static boolean DEFAULT_useScrollPane = true;
+	public boolean getUseScrollPane();
+	
+	public boolean getAlwaysOnTop();
 }
