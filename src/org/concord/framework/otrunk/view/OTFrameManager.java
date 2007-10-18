@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.5 $
- * $Date: 2007-07-31 14:58:26 $
- * $Author: sfentress $
+ * $Revision: 1.6 $
+ * $Date: 2007-10-18 22:34:35 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -103,5 +103,5 @@ public interface OTFrameManager
 	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, OTFrame otFrame, String viewMode, 
 			int positionX, int positionY);
 	
-	public void distroyFrame();
+	public void destroyFrame();
 }
