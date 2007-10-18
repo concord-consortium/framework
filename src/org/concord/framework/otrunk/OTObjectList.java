@@ -23,9 +23,9 @@
 
 /*
  * Last modification information:
- * $Revision: 1.7 $
- * $Date: 2007-10-04 21:27:22 $
- * $Author: scytacki $
+ * $Revision: 1.8 $
+ * $Date: 2007-10-18 21:18:40 $
+ * $Author: imoncada $
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
@@ -59,7 +59,7 @@ public interface OTObjectList extends OTObjectCollection
 	 * It might be best if the users of this list could have all ids hidden from
 	 * them.  However sometimes it is more efficient to add ids directly
 	 * to the list.  If this method wasn't here then the call would have to
-	 * instanciate the object and then call the other add method.
+	 * instantiate the object and then call the other add method.
 	 */
 	public void add(OTID id);
 
@@ -68,4 +68,6 @@ public interface OTObjectList extends OTObjectCollection
 	public void remove(int index);
 	
 	public void remove(OTObject obj);
+	
+	public void removeAll();
 }
