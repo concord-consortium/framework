@@ -23,8 +23,8 @@
 
 /*
  * Last modification information:
- * $Revision: 1.6 $
- * $Date: 2007-10-18 22:34:35 $
+ * $Revision: 1.7 $
+ * $Date: 2007-10-18 23:07:37 $
  * $Author: imoncada $
  *
  * Licence Information
@@ -100,8 +100,28 @@ public interface OTFrameManager
 	 * @param positionX frame's top-left corner x
 	 * @param positionY frame's top-left corner y
 	 */
-	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, OTFrame otFrame, String viewMode, 
-			int positionX, int positionY);
+	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, 
+			OTFrame otFrame, String viewMode, int positionX, int positionY);
 	
+	/**
+	 * This will use the viewEntry passed in to get the 
+	 * view for the otObject.
+	 *  
+	 * @param otObject
+	 * @param viewEntry
+	 * @param otFrame
+	 * @param viewMode
+	 * @param positionX frame's top-left corner x
+	 * @param positionY frame's top-left corner y
+	 * @param forceReloadOTObject indicates whether the frame should reload the
+	 * 		ot object in case it was already created and it had the same ot object 
+	 */
+	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, 
+			OTFrame otFrame, String viewMode, int positionX, int positionY, 
+			boolean forceReloadOTObject);
+	
+	/**
+	 * Disposes the frame and its contents
+	 */
 	public void destroyFrame();
 }
