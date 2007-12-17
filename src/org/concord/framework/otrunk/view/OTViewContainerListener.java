@@ -38,5 +38,5 @@ package org.concord.framework.otrunk.view;
  */
 public interface OTViewContainerListener
 {
-    public void currentObjectChanged(OTViewContainer container);
+    public void currentObjectChanged(OTViewContainerChangeEvent evt);
 }
