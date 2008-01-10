@@ -29,6 +29,8 @@
  */
 package org.concord.framework.otrunk;
 
+import java.util.ArrayList;
+
 import org.concord.framework.otrunk.otcore.OTClass;
 import org.concord.framework.otrunk.otcore.OTClassProperty;
 
@@ -180,5 +182,9 @@ public class DefaultOTObject
 	public String otExternalId() 
 	{
 		return getOTObjectService().getExternalID(this);
+	}
+
+	public ArrayList getOTChangeListeners() {
+		return resources.getOTChangeListeners();
 	}    
 }
