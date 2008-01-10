@@ -29,6 +29,8 @@
  */
 package org.concord.framework.otrunk;
 
+import java.util.ArrayList;
+
 /**
  * @author scott
  *
@@ -50,4 +52,6 @@ public interface OTChangeNotifying
     public void addOTChangeListener(OTChangeListener listener);
 
     public void removeOTChangeListener(OTChangeListener listener);
+    
+    public ArrayList getOTChangeListeners();
 }
