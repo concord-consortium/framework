@@ -32,6 +32,8 @@
 */
 package org.concord.framework.otrunk;
 
+import java.net.URL;
+
 public interface OTObjectService
 {
 	/**
@@ -139,4 +141,15 @@ public interface OTObjectService
      * @return
      */
     public Object getOTrunkService(Class serviceInterface);
+    
+	/**
+	 * There might be relative urls embedded in the content of the passed in OTObject
+	 * This method should return the url that these urls are relative too.  This can
+	 * be used with the method: new URL(codebase, relative_url_string)  
+	 * 
+	 * This method can return null if there isn't anything appropriate to return.
+	 * 
+	 * @return
+	 */
+	public URL getCodebase(OTObject otObject);
 }
