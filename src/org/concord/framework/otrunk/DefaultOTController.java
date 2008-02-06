@@ -150,4 +150,15 @@ public abstract class DefaultOTController implements OTController
 	{
 		return false;
 	}
+	
+	/**
+	 * Look up an instance of this serviceClass
+	 * 
+	 * @param serivceClass
+	 * @return will return null if there is no instance available
+	 */
+	public Object getService(Class serviceClass)
+	{
+		return controllerService.getService(serviceClass);
+	}
 }

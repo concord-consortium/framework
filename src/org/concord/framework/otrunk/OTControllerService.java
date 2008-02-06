@@ -33,7 +33,7 @@ public interface OTControllerService {
 	 * then new views don't need to worry about registering it.
 	 * 
 	 * This method takes a controllerClass.
-	 * Controller classes take OTObjects and creates 
+	 * Controller classes take OTObjects and create 
 	 * real objects from them. 
 	 *  
 	 */
@@ -52,7 +52,7 @@ public interface OTControllerService {
 	
 	
 	/**
-	 * This searches an internal table of realObject to 
+	 * This searches an internal table of realObjects to 
 	 * see if an OTObject has been created for this object.
 	 * It returns it if it has.
 	 * 
@@ -190,4 +190,22 @@ public interface OTControllerService {
 	 * listeners they've added.
 	 */
 	public void dispose();	
+	
+	/**
+	 * provide a service which other controllers can use.
+	 * this allows views which use controllers to provide custom services to those
+	 * controllers. 
+	 * 
+	 * @param serviceClass
+	 * @param service
+	 */
+	public void addService(Class serviceClass, Object service);
+	
+	/**
+	 * Lookup a service that was provided to this controllerService
+	 * 
+	 * @param serviceClass
+	 * @return
+	 */
+	public Object getService(Class serviceClass);
 }
