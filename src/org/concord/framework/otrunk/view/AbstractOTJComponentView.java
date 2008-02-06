@@ -45,7 +45,8 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 			(OTControllerServiceFactory) getViewService(OTControllerServiceFactory.class);
 		
     	OTControllerService controllerService = controllerServiceFactory.createControllerService();
-	
+    	controllerService.addService(OTViewContext.class, viewContext);
+
     	return controllerService;
 	}
 	
