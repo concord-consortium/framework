@@ -108,7 +108,8 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	public void addValues(float[] vals, boolean bSendValues)
 	{
 		if(vals.length != getDataDescription().getChannelsPerSample()) {
-			throw new ArrayStoreException("Size of array doesn't match number of channels");
+			throw new ArrayStoreException("Size of array (" + vals.length + ") " +
+					"doesn't match number of channels (" + getDataDescription().getChannelsPerSample() + ")");
 		}
 		
 		float[] tempValues;
