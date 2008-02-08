@@ -58,6 +58,12 @@ public interface OTViewContainer
 	
 	public OTObject getCurrentObject();
     
+	/**
+	 * This will return null if no view entry was set.
+	 * @return
+	 */
+	public OTViewEntry getCurrentViewEntry();
+	
     public boolean isUpdateable();
     public void setUpdateable(boolean b);
     
