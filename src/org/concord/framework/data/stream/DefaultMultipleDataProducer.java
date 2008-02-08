@@ -96,7 +96,10 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer
 	
 	/**
 	 * The size of the vals array must match the number of channels.
-	 * if it doesn't an ArrayStoreException will be thrown
+	 * if it doesn't an ArrayStoreException will be thrown.
+	 * 
+	 * The number of channels can be changed after initialization using
+	 * getDataDescription().setChannelsPerSample(size)
 	 * 
 	 * if bSendValues is true then the data will be sent on to 
 	 * data consumers listening to this producer.  Otherwise the 
