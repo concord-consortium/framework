@@ -29,5 +29,5 @@ import org.concord.framework.otrunk.OTObject;
 
 public interface OTXHTMLHelper {
 	public String embedComponent(JComponent comp, float scaleX, float scaleY, OTObject otObject);
-	public String embedOTObject(OTObject obj);
+	public String embedOTObject(OTObject obj, OTViewEntry viewEntry);
 }
