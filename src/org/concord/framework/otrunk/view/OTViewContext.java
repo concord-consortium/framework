@@ -56,5 +56,12 @@ public interface OTViewContext
 	 */
     public OTViewFactory createChildViewFactory();
 
-
+    /**
+     * Look up the viewEntry that was used to create a view.  This can be used to customize  
+     * view with the viewEntry. 
+     * 
+     * @param view
+     * @return
+     */
+    public OTViewEntry getViewEntry(OTView view);
 }
