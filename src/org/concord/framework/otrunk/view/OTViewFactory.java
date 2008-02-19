@@ -86,4 +86,14 @@ public interface OTViewFactory {
 	 */
 	public OTViewContext getViewContext();
 	
+	/**
+	 * This will allow other viewBundles to add their view entries to existing
+	 * set of view entries. If the view entries are added to the top of the list,
+	 * they will effectively override existing view entries for the same class.
+	 * 
+	 * @param entry the view entry to be added
+	 * @param addToTop whether the entry should be added to the top of the list
+	 */
+	public void addViewEntry(OTViewEntry entry, boolean addToTop);
+	
 }
