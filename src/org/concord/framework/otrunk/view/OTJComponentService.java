@@ -28,6 +28,9 @@ public interface OTJComponentService
 	public OTJComponentView getObjectView(OTObject otObject,
 	        OTViewContainer container, String mode, OTViewEntry viewEntry);
 	
+	public OTJComponentView getObjectView(OTObject otObject, 
+		OTViewContainer container, String mode, OTViewEntry viewEntry, OTViewContext viewContext);
+	
 	/**
 	 * This returns the OTJComponentViewContext that is passed to children
 	 * views created by this service. 
