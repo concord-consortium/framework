@@ -29,7 +29,7 @@ public interface OTJComponentService
 	        OTViewContainer container, String mode, OTViewEntry viewEntry);
 	
 	public OTJComponentView getObjectView(OTObject otObject, 
-		OTViewContainer container, String mode, OTViewEntry viewEntry, OTViewContext viewContext);
+		OTViewContainer container, String mode, OTViewEntry viewEntry, OTViewContext viewContext, OTJComponentViewContext jComponentViewContext);
 	
 	/**
 	 * This returns the OTJComponentViewContext that is passed to children
