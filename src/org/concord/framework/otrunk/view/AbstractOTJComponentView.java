@@ -60,14 +60,26 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	public JComponent getChildComponent(OTObject otObject,
 		OTViewContainer container, String mode)
     {
-    	return getChildComponent(otObject, container, mode, null);
+    	return getChildComponent(otObject, container, mode, null, null);
     }
+		
+	public JComponent getChildComponent(OTObject otObject,
+		OTViewContainer container, String mode, OTViewContext viewContext)
+	{
+		return getChildComponent(otObject, container, mode, viewContext, null);
+	}
+	
+	public JComponent getChildComponent(OTObject otObject,
+		OTViewContainer container, String mode, OTJComponentViewContext jComponentViewContext)
+	{
+		return getChildComponent(otObject, container, mode, null, jComponentViewContext);
+	}
 
 	public JComponent getChildComponent(OTObject otObject,
-			OTViewContainer container, String mode, OTViewContext viewContext)
+			OTViewContainer container, String mode, OTViewContext viewContext, OTJComponentViewContext jComponentViewContext)
 	{
 		OTJComponentService jComponentService = getJComponentService();
-		OTJComponentView view = jComponentService.getObjectView(otObject, container, mode, null, viewContext);
+		OTJComponentView view = jComponentService.getObjectView(otObject, container, mode, null, viewContext, jComponentViewContext);
 		return jComponentService.getComponent(otObject, view);
 	}
 
