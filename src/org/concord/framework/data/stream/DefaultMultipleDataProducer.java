@@ -147,9 +147,8 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer {
 		}
 	}
 
-	// XIE: this flag specifies whether we should remove all the graphs that
-	// come from the same DataProducer when we press the reset() method is
-	// called.
+	// XIE: this flag specifies whether we should remove all the graphs
+	// when we press the reset() method is called.
 	private boolean clearAll;
 
 	public void setClearAll(boolean b) {
