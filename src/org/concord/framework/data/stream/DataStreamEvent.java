@@ -51,6 +51,7 @@ public class DataStreamEvent extends DataEvent
 	public static final int DATA_DESC_CHANGED   = 1004;
 	public static final int DATA_DESC_RESET     = 1005;
 	public static final int DATA_DESC_ERROR     = 1006;
+	public static final int DATA_REPLACED	    = 1007; //new data replaces old, e.g. for soundDataProducer
 
 	public float 	[]data = null;
 	public int		numSamples = 1;
