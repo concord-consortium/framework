@@ -68,6 +68,9 @@ public class DataChannelDescription
 	
 	//This indicates if the data is numeric, so the precision will have to be used, etc
 	private boolean numericData = true;
+	
+	//Whether a column in a data table representing this channel should be locked
+	private boolean locked;
 
 	/**
 	 * 
@@ -208,6 +211,16 @@ public class DataChannelDescription
 	public boolean isUsePrecision()
 	{
 		return usePrecision;
+	}
+	
+	public boolean isLocked()
+	{
+		return locked;
+	}
+	
+	public void setLocked(boolean locked)
+	{
+		this.locked = locked;
 	}
 	
 	public Object getCopy() {
