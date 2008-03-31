@@ -63,4 +63,13 @@ public interface OTXHTMLView
 	 * @return
 	 */
     String getXHTMLText(OTObject otObject);
+    
+    /**
+     * Return a boolean representing whether or not this XHTML view
+     * should be embedded within a document. 'true' means that the
+     * XHTML will be placed into a document, whereas 'false' means the
+     * JComponent will be embedded.
+     * @return
+     */
+    boolean getEmbedXHTMLView();
 }
