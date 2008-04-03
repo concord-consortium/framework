@@ -6,20 +6,24 @@
  *
  * Licence Information
  * Copyright 2007 The Concord Consortium 
-*/
+ */
 package org.concord.framework.otrunk.view;
 
+import org.concord.framework.otrunk.OTControllerService;
 
 /**
- * OTActionContext
- * Class name and description
- *
+ * OTActionContext Class name and description
+ * 
  * Date created: Sep 26, 2007
- *
- * @author Ingrid Moncada<p>
- *
+ * 
+ * @author Ingrid Moncada
+ *         <p>
+ * 
  */
-public interface OTActionContext
-{
+public interface OTActionContext {
+
 	public OTViewContext getViewContext();
+
+	public OTControllerService getControllerService();
+
 }
