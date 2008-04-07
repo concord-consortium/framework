@@ -24,4 +24,7 @@ public interface OTActionContext {
 
 	public OTViewContext getViewContext();
 
+	// QX
+	public OTControllerService getControllerService();
+
 }
