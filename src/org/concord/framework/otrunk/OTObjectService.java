@@ -75,6 +75,24 @@ public interface OTObjectService
      */
     public String getExternalID(OTObject object);
     
+    /**
+     * This functionality is temporary.  It will not work for all objects.  
+     * 
+     * Mark this object so its UUID is preserved when it is marshalled.  By default this is not done
+     * so the marshalled file doesn't get filled up with unnecessary UUIDs.  
+     * 
+     * Not all objects have UUIDs.  This method will throw an exception if a object without an id 
+     * is passed in.  
+     * 
+     * The goal is to save the object with a id that won't change, so it can be referenced outside of the 
+     * OTrunk system.  In the future all objects should have UUIDs available so they can be referenced
+     * externally without a problem.  Those ids would not be preserved unless a method like this was 
+     * called.  The approach might change when an existing object database or CMS is used. 
+     * 
+     * @param object
+     */
+    public void preserveUUID(OTObject object);
+    
     public OTControllerService createControllerService(); 
 
     /**
