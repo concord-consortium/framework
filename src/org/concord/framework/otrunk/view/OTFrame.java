@@ -53,6 +53,12 @@ public interface OTFrame
 	public static int DEFAULT_width = 400;
 	int getWidth();
 
+	public static int DEFAULT_positionX = 50;
+	int getPositionX();
+	
+	public static int DEFAULT_positionY = 50;
+	int getPositionY();
+
 	public String getTitle();
 	
 	public static boolean DEFAULT_borderlessPopup = false;
