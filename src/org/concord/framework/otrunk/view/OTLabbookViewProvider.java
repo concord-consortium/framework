@@ -36,7 +36,7 @@ public interface OTLabbookViewProvider
 	 * @param otObject
 	 * @return
 	 */
-	public JComponent getThumbnailView(OTObject otObject);
+	public JComponent getThumbnailView(OTObject otObject, int height);
 	/**
 	 * @return True if snapshot album should wrap view with drawtool
 	 */
