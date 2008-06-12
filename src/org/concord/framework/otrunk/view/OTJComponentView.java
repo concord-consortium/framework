@@ -43,6 +43,13 @@ import org.concord.framework.otrunk.OTObject;
  *
  * Date created: Sep 29, 2004
  *
+ * TODO all the methods should get the OTObject so the same view instance can possibly
+ * be used for multiple object.
+ * TODO there should be another method which is something like "save".  This is to handle
+ * the case where a user decides to quit the application so the view needs to save its
+ * state and then the the application can check if there have been any changes.
+ * TODO this should be more unified with the OTController interface.
+ *
  * @author scott<p>
  *
  */
