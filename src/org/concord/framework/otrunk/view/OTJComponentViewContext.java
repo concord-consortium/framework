@@ -3,6 +3,8 @@
  */
 package org.concord.framework.otrunk.view;
 
+import java.util.Vector;
+
 import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
@@ -34,4 +36,11 @@ public interface OTJComponentViewContext
 	 * @return
 	 */
 	public JComponent getComponentByObject(OTObject obj);
+	
+	/**
+	 * This returns all objects within this viewContext
+	 * 
+	 * @return
+	 */
+	public Object[] getAllObjects();
 }
