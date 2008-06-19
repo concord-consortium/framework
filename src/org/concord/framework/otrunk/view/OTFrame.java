@@ -49,9 +49,11 @@ public interface OTFrame
 {
 	public static int DEFAULT_height = 300;
 	int getHeight();
+	void setHeight(int height);
 	
 	public static int DEFAULT_width = 400;
 	int getWidth();
+	void setWidth(int width);	
 
 	public static int DEFAULT_positionX = 50;
 	int getPositionX();
