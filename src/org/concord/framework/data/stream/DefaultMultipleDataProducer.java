@@ -83,6 +83,10 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer {
 		super(dt);
 		getDataDescription().setChannelsPerSample(size);
 	}
+	
+	public void setNumChannels(int size){
+		getDataDescription().setChannelsPerSample(size);
+	}
 
 	public void addValues(float[] vals) {
 		addValues(vals, true);
