@@ -102,6 +102,6 @@ public interface OTViewFactory {
 	 * 
 	 * @return OTObjectList containing list of OTViewModes
 	 */
-	public OTObjectList getModes();
+	public String [] getModeNames();
 	
 }
