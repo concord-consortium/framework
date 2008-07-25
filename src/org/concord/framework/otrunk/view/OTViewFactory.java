@@ -24,7 +24,6 @@
 package org.concord.framework.otrunk.view;
 
 import org.concord.framework.otrunk.OTObject;
-import org.concord.framework.otrunk.OTObjectList;
 
 public interface OTViewFactory {
 	
@@ -98,9 +97,7 @@ public interface OTViewFactory {
 	public void addViewEntry(OTViewEntry entry, boolean addToTop);
 	
 	/**
-	 * This returns a list of view modes offered by the view bundle.
-	 * 
-	 * @return OTObjectList containing list of OTViewModes
+	 * This returns a list of names of the available view modes 
 	 */
 	public String [] getModeNames();
 	
