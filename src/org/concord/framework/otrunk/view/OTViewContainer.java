@@ -54,6 +54,8 @@ public interface OTViewContainer
 	 */
 	public void setCurrentObject(OTObject pfObject);
 
+	public void setCurrentObject(OTObject otObject, OTViewEntry viewEntry);
+
 	// TODO add a method to specify the viewEntry to use
 	
 	public OTObject getCurrentObject();
