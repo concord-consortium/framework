@@ -25,6 +25,16 @@ package org.concord.framework.otrunk.view;
 
 import java.awt.Dimension;
 
-public interface OTPrintDimension {
-	public Dimension getPrintDimention(int width, int height);
+import org.concord.framework.otrunk.OTObject;
+
+public interface OTPrintDimension extends OTJComponentView{
+	/**
+	 * This should be called after getComponent
+	 *  
+	 * @param otObject
+	 * @param width
+	 * @param height
+	 * @return
+	 */
+	public Dimension getPrintDimension(OTObject otObject, int width, int height);
 }
