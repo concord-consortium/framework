@@ -29,7 +29,10 @@ import org.concord.framework.otrunk.OTObject;
 
 public interface OTPrintDimension extends OTJComponentView{
 	/**
-	 * This should be called after getComponent
+	 * This should be called after getComponent.
+	 * If null is returned then the preferred size of the JComponent will
+	 * be used.  However the JComponent will not be added to a layout out, so
+	 * in the preferred size will not be what you expect.
 	 *  
 	 * @param otObject
 	 * @param width
