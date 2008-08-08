@@ -22,7 +22,7 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	protected OTViewEntry viewConfig;
 	protected OTViewContainer viewContainer;
 	private boolean reloadOnViewEntryChange = false;
-	private MyOTChangeListener otListener;
+	private MyOTChangeListener viewConfigListener;
 	private boolean alreadyAddedListener;
 	
 	public OTJComponentService getJComponentService()
@@ -33,7 +33,7 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 		if(jComponentService == null){
 			OTJComponentServiceFactory serviceFactory = 
 				(OTJComponentServiceFactory)getViewService(OTJComponentServiceFactory.class);
-			jComponentService = serviceFactory.createOTJComponentService(getViewFactory());
+			jComponentService = serviceFactory.createOTJComponentService(getViewFactory(), true);
 		}
 		
 		return jComponentService;
@@ -93,10 +93,10 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	public void setViewEntry(OTViewEntry viewConfig){
 		this.viewConfig = viewConfig;
 		
-		otListener = new MyOTChangeListener();
+		viewConfigListener = new MyOTChangeListener();
 		
 		if (reloadOnViewEntryChange){
-			viewConfig.addOTChangeListener(otListener);
+			viewConfig.addOTChangeListener(viewConfigListener);
 		}
 	}
 	
@@ -110,10 +110,10 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	
 	public void setReloadOnViewEntryChange(boolean reload){
 		if (!reloadOnViewEntryChange && reload && !alreadyAddedListener && viewConfig != null){
-			viewConfig.addOTChangeListener(otListener);
+			viewConfig.addOTChangeListener(viewConfigListener);
 			alreadyAddedListener = true;
 		} else if (!reload){
-			viewConfig.removeOTChangeListener(otListener);
+			viewConfig.removeOTChangeListener(viewConfigListener);
 		}
 		
 		reloadOnViewEntryChange = reload;
@@ -125,7 +125,12 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 			if (viewContainer != null){
 				viewContainer.reloadView();
 			}
-		}
-		
+		}		
+	}
+	
+	public void viewClosed()
+	{
+		viewConfig.removeOTChangeListener(viewConfigListener);
+		viewConfigListener = null;
 	}
 }

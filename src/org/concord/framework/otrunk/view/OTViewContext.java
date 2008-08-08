@@ -40,8 +40,14 @@ public interface OTViewContext
 	public void addViewService(Class serviceClass, Object service);
 	
 	/**
-	 * this returns the first view in this context that is viewing
-	 * the passed in obj
+	 * NOT IMPLEMENTED
+	 * 
+	 * This is not implemented yet, if your view is a OTJComponentView then
+	 * your View can implement OTJComponentViewContextAware, and then use
+	 * {@link OTJComponentViewContext#getViewByObject(OTObject)} instead.
+	 * 
+	 * If this was implemented it should this returns the first view in this context that is viewing
+	 * the passed in object.
 	 * 
 	 * @param obj
 	 * @return
@@ -55,13 +61,4 @@ public interface OTViewContext
 	 * @return
 	 */
     public OTViewFactory createChildViewFactory();
-
-    /**
-     * Look up the viewEntry that was used to create a view.  This can be used to customize  
-     * view with the viewEntry. 
-     * 
-     * @param view
-     * @return
-     */
-    public OTViewEntry getViewEntry(OTView view);
 }
