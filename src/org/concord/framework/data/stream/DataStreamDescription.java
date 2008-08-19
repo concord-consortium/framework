@@ -152,8 +152,13 @@ public class DataStreamDescription
 	 */
 	public DataChannelDescription getChannelDescription(int index)
 	{
+		// FIXME: channelDescriptions do not always get set up correctly.
+		// Most functions that request them work fine if returned null.
+		// Returning null instead of throwing an exception seems to solve a
+		// number of problems, though a deeper solution would be better. -SF
 		if (index < 0 || index >= channelDescriptions.length) {
-			throw new IndexOutOfBoundsException("channel index: " + index);
+//			throw new IndexOutOfBoundsException("channel index: " + index);
+			return null;
 		}
 		return channelDescriptions[index];
 	}
