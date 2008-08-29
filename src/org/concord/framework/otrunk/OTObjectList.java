@@ -59,7 +59,7 @@ public interface OTObjectList extends OTObjectCollection
 	 * It might be best if the users of this list could have all ids hidden from
 	 * them.  However sometimes it is more efficient to add ids directly
 	 * to the list.  If this method wasn't here then the call would have to
-	 * instanciate the object and then call the other add method.
+	 * instantiate the object and then call the other add method.
 	 */
 	public void add(OTID id);
 
