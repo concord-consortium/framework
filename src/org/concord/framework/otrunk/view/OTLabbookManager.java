@@ -2,6 +2,7 @@ package org.concord.framework.otrunk.view;
 
 import java.util.Vector;
 
+import org.concord.framework.otrunk.OTChangeListener;
 import org.concord.framework.otrunk.OTObject;
 
 public interface OTLabbookManager
@@ -14,7 +15,7 @@ public interface OTLabbookManager
 	
 	public void addDrawingTool(OTObject drawingTool);
 	
-	public void addQuestion(OTObject question);
+	public void addText(OTObject text);
 	
 	public void remove(OTObject labbookEntry);
 	
@@ -24,9 +25,13 @@ public interface OTLabbookManager
 	
 	public Vector getDrawings();
 	
-	public Vector getQuestions();
+	public Vector getText();
 
 	public Vector getAllEntries();
 	
-	public OTObject getSectionsClass();
+	public boolean isEmpty();
+	
+	public void addLabbookListener(OTChangeListener listener);
+	
+	public void removeLabbookListener(OTChangeListener listener);
 }
