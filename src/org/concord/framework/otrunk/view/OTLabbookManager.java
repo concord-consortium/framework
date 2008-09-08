@@ -4,10 +4,13 @@ import java.util.Vector;
 
 import org.concord.framework.otrunk.OTChangeListener;
 import org.concord.framework.otrunk.OTObject;
+import org.concord.framework.otrunk.OTObjectService;
 
 public interface OTLabbookManager
 {
 	public void add(OTObject otObject);
+	
+	public void add(OTObject otObject, OTObject container);
 	
 	public void addSnapshot(OTObject snapshot);
 	
@@ -34,4 +37,7 @@ public interface OTLabbookManager
 	public void addLabbookListener(OTChangeListener listener);
 	
 	public void removeLabbookListener(OTChangeListener listener);
+
+	public void setOTObjectService(OTObjectService objectService);
+	
 }
