@@ -38,6 +38,6 @@ public interface OTLabbookManager
 	
 	public void removeLabbookListener(OTChangeListener listener);
 
-	public void setOTObjectService(OTObjectService objectService);
+//	public void setOTObjectService(OTObjectService objectService);
 	
 }
