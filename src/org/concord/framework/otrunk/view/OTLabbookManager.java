@@ -8,9 +8,23 @@ import org.concord.framework.otrunk.OTObjectService;
 
 public interface OTLabbookManager
 {
+	/*
+	 * This object will be added directly to an entry, so the original should be cloned, preferably
+	 * using the copy method in the OTLabbookViewProvider for the object
+	 */ 
 	public void add(OTObject otObject);
 	
-	public void add(OTObject otObject, OTObject container);
+	/*
+	 * If a refence to the original object is included, it will be easier to tie the entry back
+	 * to its origins.
+	 */
+	public void add(OTObject otObject, OTObject originalObject);
+	
+	/*
+	 * A container, such as the section the object was in, should be included to allow the lab
+	 * book to sort based on contaner.
+	 */
+	public void add(OTObject otObject, OTObject originalObject, OTObject container);
 	
 	public void addSnapshot(OTObject snapshot);
 	
@@ -37,7 +51,5 @@ public interface OTLabbookManager
 	public void addLabbookListener(OTChangeListener listener);
 	
 	public void removeLabbookListener(OTChangeListener listener);
-
-//	public void setOTObjectService(OTObjectService objectService);
 	
 }
