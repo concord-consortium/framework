@@ -22,8 +22,7 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	protected OTViewEntry viewConfig;
 	protected OTViewContainer viewContainer;
 	private boolean reloadOnViewEntryChange = false;
-	private MyOTChangeListener viewConfigListener;
-	private boolean alreadyAddedListener;
+	private ViewConfigChangeListener viewConfigListener;
 	
 	public OTJComponentService getJComponentService()
 	{
@@ -92,10 +91,9 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	
 	public void setViewEntry(OTViewEntry viewConfig){
 		this.viewConfig = viewConfig;
-		
-		viewConfigListener = new MyOTChangeListener();
-		
+				
 		if (reloadOnViewEntryChange){
+			viewConfigListener = new ViewConfigChangeListener();
 			viewConfig.addOTChangeListener(viewConfigListener);
 		}
 	}
@@ -109,17 +107,18 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	}
 	
 	public void setReloadOnViewEntryChange(boolean reload){
-		if (!reloadOnViewEntryChange && reload && !alreadyAddedListener && viewConfig != null){
+		if (!reloadOnViewEntryChange && reload && viewConfigListener == null && viewConfig != null){
+			viewConfigListener = new ViewConfigChangeListener();
 			viewConfig.addOTChangeListener(viewConfigListener);
-			alreadyAddedListener = true;
-		} else if (!reload){
+		} else if (!reload && viewConfigListener != null){
 			viewConfig.removeOTChangeListener(viewConfigListener);
+			viewConfigListener = null;
 		}
 		
 		reloadOnViewEntryChange = reload;
 	}
 	
-	private class MyOTChangeListener implements OTChangeListener{
+	private class ViewConfigChangeListener implements OTChangeListener{
 
 		public void stateChanged(OTChangeEvent e) {
 			if (viewContainer != null){
@@ -130,7 +129,9 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 	
 	public void viewClosed()
 	{
-		viewConfig.removeOTChangeListener(viewConfigListener);
-		viewConfigListener = null;
+		if(viewConfigListener != null){
+			viewConfig.removeOTChangeListener(viewConfigListener);
+			viewConfigListener = null;
+		}
 	}
 }
