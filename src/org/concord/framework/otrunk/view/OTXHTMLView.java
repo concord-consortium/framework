@@ -55,6 +55,16 @@ public interface OTXHTMLView
     extends OTView
 {
 	/**
+	 * This is a property that can be set in the viewContext.  
+	 * If it it set then if a parent view is embedding a child 
+	 * view that can be both an xhtml view or another view, the parent
+	 * should use the xhtml view.   This essentially tells the parent
+	 * view to ignore the getEmbedXHTMLView value.
+	 */
+	public final static String ALWAYS_EMBED_XHTML_VIEW = 
+		OTXHTMLView.class.getName() + ".ALWAYS_EMBED_XHTML_VIEW"; 
+	
+	/**
 	 * Return a string representing the "view" of this object.
 	 * The string has to conform to the xhtml currently supported
 	 * by the HTMLEditor kit of the jdk.  
