@@ -18,8 +18,8 @@ public interface OTViewContext
 	 * OTFrameManager frameManager = 
 	 *    (OTFrameManager)serviceProvider.getViewService(OTFrameManager.class);
 	 * 
-	 * If this framework is moved to java 1.5 then generics can be used to make
-	 * this easier to use.
+	 * If this viewContext doesn't have the service then the getViewService method
+	 * on the parent view context will be called.
 	 * 
 	 * @param serviceClass this can either be a class or interface.   
 	 * @return the instance of this serviceClass available to a view.  Or null
@@ -29,8 +29,6 @@ public interface OTViewContext
 	
 	/**
 	 * Use this method to add services to this viewContext.
-	 * These services will be inherited from the parent context if there
-	 * is one.
 	 * Views can access these services by using the {@link OTViewContextAware} 
 	 * interface to get a viewContext and then call getViewService on the 
 	 * context.
@@ -61,4 +59,26 @@ public interface OTViewContext
 	 * @return
 	 */
     public OTViewFactory createChildViewFactory();
+
+    /**
+     * Get the value of a property.  If this viewContext doesn't have the property then
+     * getProperty on the parent will be called.  These properties can be used by parent
+     * views to customize their children.
+     * 
+     * @param propertyName
+     * @return
+     */
+    public String getProperty(String propertyName);
+    
+    /**
+     * Add a property to this viewContext.  Setting it to null will override any parent
+     * view context and return null for this property.  Use unsetProperty to remove this
+     * property from this viewContext.
+     * 
+     * @param propertyName
+     * @param propertyValue
+     */
+    public void setProperty(String propertyName, String propertyValue);
+    
+    public void unsetProperty(String propertyName);
 }
