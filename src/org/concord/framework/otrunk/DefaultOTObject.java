@@ -186,5 +186,17 @@ public class DefaultOTObject
 
 	public ArrayList getOTChangeListeners() {
 		return resources.getOTChangeListeners();
-	}    
+	}
+	
+	/**
+	 * This method is mainly for internal use.  The ot prefix
+	 * is used so it doesn't conflict with existing methods
+	 * of the same name.
+	 * 
+	 * @return
+	 */
+	public OTResourceSchema otResourceSchema()
+	{
+		return resources;
+	}
 }
