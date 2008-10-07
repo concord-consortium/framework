@@ -1,6 +1,7 @@
 package org.concord.framework.otrunk.otcore;
 
 
+
 public interface OTClassProperty
 {
 	String getName();
@@ -14,4 +15,12 @@ public interface OTClassProperty
 	boolean isList();
 	
 	boolean isMap();	
+	
+	boolean isOnlyInOverlayProperty();
+	
+	public boolean isOverriddenProperty();
+	
+	public OTClassProperty getOnlyInOverlayProperty();
+	
+	public OTClassProperty getOverriddenProperty();
 }
