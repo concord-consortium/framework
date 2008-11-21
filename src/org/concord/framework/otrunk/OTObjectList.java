@@ -32,6 +32,7 @@
  */
 package org.concord.framework.otrunk;
 
+import java.util.Collection;
 import java.util.Vector;
 
 
@@ -44,11 +45,17 @@ import java.util.Vector;
  * @author scott<p>
  *
  */
-public interface OTObjectList extends OTObjectCollection
+public interface OTObjectList extends OTObjectCollection, Collection
 {
 
 	public OTObject get(int index);
 
+	/**
+	 * This returns a copy of this list in a vector.  Remove, adding, or moving
+	 * elements in the vector will not affect this list. 
+	 * 
+	 * @return
+	 */
 	public Vector getVector();
 
 	public void add(OTObject obj);
