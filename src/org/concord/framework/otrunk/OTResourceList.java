@@ -32,6 +32,8 @@
  */
 package org.concord.framework.otrunk;
 
+import java.util.Collection;
+
 
 /**
  * OTResourceList<br>
@@ -42,12 +44,12 @@ package org.concord.framework.otrunk;
  * @author scott<p>
  *
  */
-public interface OTResourceList extends OTResourceCollection
+public interface OTResourceList extends OTResourceCollection, Collection
 {
 
 	public abstract Object get(int index);
 
-	public abstract void add(Object object);
+	public abstract boolean add(Object object);
 
 	public abstract void add(int index, Object object);
 	
@@ -55,5 +57,5 @@ public interface OTResourceList extends OTResourceCollection
 	
 	public void remove(int index);
 	
-	public void remove(Object obj);
+	public boolean remove(Object obj);
 }
