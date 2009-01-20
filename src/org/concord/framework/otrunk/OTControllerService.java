@@ -37,7 +37,7 @@ public interface OTControllerService {
 	 * real objects from them. 
 	 *  
 	 */
-	public void registerControllerClass(Class controllerClass);
+	public void registerControllerClass(Class<? extends OTController> viewClass);
 	
 	/**
 	 * This is a helper method.  The real object class of a controller class should
@@ -48,7 +48,7 @@ public interface OTControllerService {
 	 * @param controllerClass
 	 * @return
 	 */
-	public Class [] getRealObjectClasses(Class controllerClass);
+	public Class<?> [] getRealObjectClasses(Class<? extends OTController> controllerClass);
 	
 	
 	/**
@@ -199,7 +199,7 @@ public interface OTControllerService {
 	 * @param serviceClass
 	 * @param service
 	 */
-	public void addService(Class serviceClass, Object service);
+	public void addService(Class<?> serviceClass, Object service);
 	
 	/**
 	 * Lookup a service that was provided to this controllerService
@@ -207,5 +207,5 @@ public interface OTControllerService {
 	 * @param serviceClass
 	 * @return
 	 */
-	public Object getService(Class serviceClass);
+	public <T> T getService(Class<T> serviceClass);
 }

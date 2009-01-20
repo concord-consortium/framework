@@ -157,7 +157,7 @@ public abstract class DefaultOTController implements OTController
 	 * @param serivceClass
 	 * @return will return null if there is no instance available
 	 */
-	public Object getService(Class serviceClass)
+	public <T> T getService(Class<T> serviceClass)
 	{
 		return controllerService.getService(serviceClass);
 	}

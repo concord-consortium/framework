@@ -10,10 +10,10 @@ package org.concord.framework.otrunk;
 public interface OTControllerRegistry
 {
 
-	public void registerControllerClass(Class viewClass);
+	public void registerControllerClass(Class<? extends OTController> viewClass);
 
-	public Class getControllerClassByOTObjectClass(Class otObjectClass);
+	public Class<? extends OTController> getControllerClassByOTObjectClass(Class<? extends OTObject> otObjectClass);
 
-	public Class getControllerClassByRealObjectClass(Class realObjectClass);
+	public Class<? extends OTController> getControllerClassByRealObjectClass(Class<?> realObjectClass);
 
 }

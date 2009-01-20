@@ -45,7 +45,7 @@ import java.util.Vector;
  * @author scott<p>
  *
  */
-public interface OTObjectList extends OTObjectCollection, Collection
+public interface OTObjectList extends OTObjectCollection, Collection<OTObject>
 {
 
 	public OTObject get(int index);
@@ -56,9 +56,9 @@ public interface OTObjectList extends OTObjectCollection, Collection
 	 * 
 	 * @return
 	 */
-	public Vector getVector();
+	public Vector<OTObject> getVector();
 
-	public void add(OTObject obj);
+	public boolean add(OTObject obj);
 
 	public void add(int index, OTObject obj);
 
@@ -72,7 +72,5 @@ public interface OTObjectList extends OTObjectCollection, Collection
 
 	public void set(int index, OTObject obj);
 	
-	public void remove(int index);
-	
-	public void remove(OTObject obj);
+	public void remove(int index);	
 }
