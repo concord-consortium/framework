@@ -33,7 +33,7 @@ public interface OTViewFactory {
 	
 	public static String NO_VIEW_MODE = "_no_view_mode";
 
-	public OTView getView(OTObject otObject, Class viewInterface);
+    public <T extends OTView> T getView(OTObject otObject, Class<T> viewInterface);
 
 	/**
 	 * @see #getView(OTObject, OTViewEntry, String)
@@ -42,7 +42,7 @@ public interface OTViewFactory {
 	 * @param mode
 	 * @return
 	 */
-	public OTView getView(OTObject otObject, Class viewInterface, String mode);
+	public <T extends OTView> T getView(OTObject otObject, Class<T> viewInterface, String modeStr);
 	
 	/**
 	 * This method is the same as calling getView(otObject, viewEntry, null)

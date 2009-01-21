@@ -35,7 +35,7 @@ public interface OTViewContext
 	 * 
 	 * @param service
 	 */
-	public void addViewService(Class serviceClass, Object service);
+	public <T> void addViewService(Class<T> serviceClass, T service);
 	
 	/**
 	 * NOT IMPLEMENTED
