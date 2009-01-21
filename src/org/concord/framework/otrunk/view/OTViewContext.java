@@ -25,7 +25,7 @@ public interface OTViewContext
 	 * @return the instance of this serviceClass available to a view.  Or null
 	 *   if there is no service implementing this interface.
 	 */
-	public Object getViewService(Class serviceClass);
+	public <T> T getViewService(Class<T> serviceClass);
 	
 	/**
 	 * Use this method to add services to this viewContext.
