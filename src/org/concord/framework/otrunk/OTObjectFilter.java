@@ -1,6 +1,5 @@
 package org.concord.framework.otrunk;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 /**
@@ -12,16 +11,14 @@ public abstract class OTObjectFilter {
 
 	abstract public boolean keepObject(OTObject obj);
 	
-	public Vector filterList(OTObjectList list) {
-		Vector originalList = list.getVector();
+	public Vector<OTObject> filterList(OTObjectList list) {
+		Vector<OTObject> originalList = list.getVector();
 		return filterList(originalList);
 	}
 	
-	public Vector filterList(Vector list) {
-		Vector filtered = new Vector();
-		Iterator items = list.iterator();
-		while (items.hasNext()) {
-			OTObject obj = (OTObject) items.next();
+	public Vector<OTObject> filterList(Vector<OTObject> list) {
+		Vector<OTObject> filtered = new Vector<OTObject>();
+		for (OTObject obj : list) {
 			if (keepObject(obj)) {
 				filtered.add(obj);
 			}
