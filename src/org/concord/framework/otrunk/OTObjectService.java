@@ -56,6 +56,7 @@ public interface OTObjectService
      * @throws Exception
      */
     public OTObject getOTObject(OTID childID) throws Exception;
+    public OTObject getOTObject(OTID childID, boolean reload) throws Exception;
 
     /**
      * This will create an OTID from the passed in string.
