@@ -44,7 +44,7 @@ public interface OTObjectService
 	 * @return
 	 * @throws Exception
 	 */
-    public OTObject createObject(Class objectClass) throws Exception;
+    public <T extends OTObject> T createObject(Class<T> objectClass) throws Exception;
 
     /**
      * This returns an object given an id.  The object returned will
@@ -147,7 +147,7 @@ public interface OTObjectService
 	 * 
 	 * @param packageClass
 	 */
-    public void registerPackageClass(Class packageClass);
+    public void registerPackageClass(Class<? extends OTPackage> packageClass);
     
     /**
      * Get an OTrunk service, this could be used for example to get the 
@@ -158,7 +158,7 @@ public interface OTObjectService
      * @param serviceClass
      * @return
      */
-    public Object getOTrunkService(Class serviceInterface);
+    public <T> T getOTrunkService(Class<T> serviceInterface);
     
 	/**
 	 * There might be relative urls embedded in the content of the passed in OTObject

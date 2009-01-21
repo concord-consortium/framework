@@ -54,7 +54,7 @@ public interface OTObjectMap extends OTObjectCollection
 
 	public OTObject getObject(String key);
 
-	public Vector getObjectKeys();
+	public Vector<String> getObjectKeys();
 
 	public void putObject(String key, OTObject pfObj);
 }

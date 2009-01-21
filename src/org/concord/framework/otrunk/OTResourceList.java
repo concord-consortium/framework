@@ -44,7 +44,7 @@ import java.util.Collection;
  * @author scott<p>
  *
  */
-public interface OTResourceList extends OTResourceCollection, Collection
+public interface OTResourceList extends OTResourceCollection, Collection<Object>
 {
 
 	public abstract Object get(int index);
