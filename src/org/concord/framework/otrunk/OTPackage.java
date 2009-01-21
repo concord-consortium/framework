@@ -19,7 +19,7 @@ public interface OTPackage
 	 * 
 	 * @return null if there are no dependencies.
 	 */
-	public Class [] getPackageDependencies();
+	public Class<? extends OTPackage> [] getPackageDependencies();
 	
 	public void initialize(OTrunk otrunk);
 	

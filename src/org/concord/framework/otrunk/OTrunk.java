@@ -44,7 +44,7 @@ package org.concord.framework.otrunk;
 public interface OTrunk {
 	/* (non-Javadoc)
 	 */
-	public OTObject createObject(Class objectClass) throws Exception;
+	public <T extends OTObject> T createObject(Class<T> objectClass) throws Exception;
 
 	public void setRoot(OTObject obj) throws Exception;
 
@@ -83,7 +83,7 @@ public interface OTrunk {
 	 * @param serviceInterface
 	 * @return
 	 */
-	public Object getService(Class serviceInterface);
+	public <T> T getService(Class<T> serviceInterface);
 	
 	/**
 	 * This can be used to register OTPackages.  If you are loading
@@ -93,6 +93,6 @@ public interface OTrunk {
 	 * 
 	 * @param packageClass
 	 */
-    public void registerPackageClass(Class packageClass);
+    public void registerPackageClass(Class<? extends OTPackage> packageClass);
 
 }

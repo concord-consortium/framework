@@ -9,7 +9,7 @@ package org.concord.framework.otrunk;
  */
 public interface OTServiceContext
 {
-	public void addService(Class serviceClass, Object service);
+	public <T> void addService(Class<T> serviceClass, T service);
 
-	public Object getService(Class serviceClass);
+	public <T> T getService(Class<T> serviceClass);
 }
