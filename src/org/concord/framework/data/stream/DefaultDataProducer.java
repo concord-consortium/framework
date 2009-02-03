@@ -24,7 +24,8 @@
 package org.concord.framework.data.stream;
 
 import java.util.Vector;
-import org.concord.framework.data.*;
+
+import org.concord.framework.data.DataDimension;
 import org.concord.framework.util.Copyable;
 
 public class DefaultDataProducer
@@ -35,6 +36,8 @@ public class DefaultDataProducer
 	protected float [] values = new float [1];
 	protected DataStreamDescription dataDesc;
 	protected DataStreamEvent dataEvent;
+	
+	protected boolean running = false;
 
 	public DefaultDataProducer()
 	{
@@ -70,6 +73,7 @@ public class DefaultDataProducer
 	 */
 	public void stop()
 	{
+		running = false;
 	}
 
 	/**
@@ -77,13 +81,15 @@ public class DefaultDataProducer
 	 */
 	public void start()
 	{
+		running = true;
 	}
 	
 	/**
 	 * @see org.concord.framework.data.DataFlow#reset()
 	 */
 	public void reset()
-	{		
+	{
+		running = false;
 	}
 	
 	protected void notifyDataStreamEvent(int type)
@@ -133,11 +139,14 @@ public class DefaultDataProducer
 	public Object getCopy() {
 		DefaultDataProducer producer = new DefaultDataProducer();
 		producer.dataDesc = (DataStreamDescription)this.dataDesc.getCopy();
-		producer.dataEvent = (DataStreamEvent)this.dataEvent.clone(new DataStreamEvent());
+		producer.dataEvent = this.dataEvent.clone(new DataStreamEvent());
 		//producer.dataListeners = this.dataListeners;
 		producer.values = this.values;
 		// TODO Auto-generated method stub
 		return producer;
 	}
 
+	public boolean isRunning() {
+		return running;
+	}
 }
