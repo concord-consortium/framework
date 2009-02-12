@@ -38,6 +38,24 @@ implements OTJComponentView, OTViewEntryAware, OTViewContainerAware
 		return jComponentService;
 	}
 	
+	public OTControllerService createControllerService(OTObject baseObject)
+	{
+		OTControllerServiceFactory controllerServiceFactory = 
+			(OTControllerServiceFactory) getViewService(OTControllerServiceFactory.class);
+		
+    	OTControllerService controllerService = 
+    		controllerServiceFactory.createControllerService(baseObject.getOTObjectService());
+    	controllerService.addService(OTViewContext.class, viewContext);
+
+    	return controllerService;
+		
+	}
+	
+	/**
+	 * @deprecated if the OTObject is not passed in then applications which use 
+     * multiple overlays will not work properly. 
+	 * @return
+	 */
 	public OTControllerService createControllerService()
 	{
 		OTControllerServiceFactory controllerServiceFactory = 
