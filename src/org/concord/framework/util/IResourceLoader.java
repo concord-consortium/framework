@@ -1,6 +1,8 @@
 package org.concord.framework.util;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.net.URL;
 
 /**
@@ -11,6 +13,9 @@ import java.net.URL;
  *
  */
 public interface IResourceLoader {
-	public InputStream getRemoteResource(URL resourceUrl);
+	public InputStream getInputStream() throws IOException;
 	public long getLastModified();
+	public void writeResourceErrorDetails(PrintWriter writer, boolean printBody);
+	public int getHttpResponseCode();
+	public URL getURL();
 }
