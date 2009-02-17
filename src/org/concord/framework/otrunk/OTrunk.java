@@ -83,7 +83,7 @@ public interface OTrunk {
      * @return
      * @throws Exception
      */
-    public OTObject getRuntimeAuthoredObject(OTObject otObject) throws Exception;
+    public <T extends OTObject> T getRuntimeAuthoredObject(T otObject) throws Exception;
     
     /**
      * Returns the base "authored" object for a given object.
@@ -92,7 +92,7 @@ public interface OTrunk {
      * @return
      * @throws Exception
      */
-    public OTObject getRuntimeAuthoredObject(OTObject otObject, OTObjectService objectService) throws Exception;
+    public <T extends OTObject> T getRuntimeAuthoredObject(T otObject, OTObjectService objectService) throws Exception;
     
 	/** 
 	 * All the services will be checked to see which is an instanceof this 
