@@ -76,6 +76,24 @@ public interface OTrunk {
     public boolean hasUserModified(OTObject authoredObject, OTUser user)
         throws Exception;
     
+    /**
+     * Returns the base "authored" object for a given object.
+     * This method uses the root object service to resolve the given object.
+     * @param otObject
+     * @return
+     * @throws Exception
+     */
+    public OTObject getRuntimeAuthoredObject(OTObject otObject) throws Exception;
+    
+    /**
+     * Returns the base "authored" object for a given object.
+     * This method uses the given object service to resolve the given object.
+     * @param otObject
+     * @return
+     * @throws Exception
+     */
+    public OTObject getRuntimeAuthoredObject(OTObject otObject, OTObjectService objectService) throws Exception;
+    
 	/** 
 	 * All the services will be checked to see which is an instanceof this 
 	 * serviceInterface.
