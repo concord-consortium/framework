@@ -32,6 +32,8 @@
 */
 package org.concord.framework.data.stream;
 
+import java.util.ArrayList;
+
 import org.concord.framework.data.DataDimension;
 
 
@@ -71,6 +73,9 @@ public class DataChannelDescription
 	
 	//Whether a column in a data table representing this channel should be locked
 	private boolean locked;
+	
+	// Possible values for this data channel
+	private ArrayList<Object> possibleValues = new ArrayList<Object>();
 
 	/**
 	 * 
@@ -223,6 +228,14 @@ public class DataChannelDescription
 		this.locked = locked;
 	}
 	
+	public ArrayList<Object> getPossibleValues() {
+		return this.possibleValues;
+	}
+	
+	public void setPossibleValues(ArrayList<Object> values) {
+		this.possibleValues = values;
+	}
+	
 	public Object getCopy() {
 		DataChannelDescription channelDesc = new DataChannelDescription();
 		channelDesc.absoluteMax = this.absoluteMax;
@@ -235,6 +248,7 @@ public class DataChannelDescription
 		channelDesc.tuneValue = this.tuneValue;
 		channelDesc.unit = this.unit;
 		channelDesc.usePrecision = this.usePrecision;
+		channelDesc.possibleValues = this.possibleValues;
 		return channelDesc;
 	}
 	
@@ -256,7 +270,8 @@ public class DataChannelDescription
 				floatEquals(channelDesc.recommendMin, this.recommendMin) &&
 				floatEquals(channelDesc.tuneValue,this.tuneValue) &&
 				unitEquals(channelDesc.unit,this.unit) &&
-				channelDesc.usePrecision == this.usePrecision){
+				channelDesc.usePrecision == this.usePrecision &&
+				channelDesc.possibleValues.equals(this.possibleValues)){
 			return true;
 		}
 		
