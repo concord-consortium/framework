@@ -23,6 +23,8 @@
 
 package org.concord.framework.otrunk;
 
+import java.util.Vector;
+
 public interface OTControllerService {	
 	/**
 	 * This method is typically not used.  Typically controller classes are 
@@ -112,6 +114,16 @@ public interface OTControllerService {
 	 * @param otObject
 	 */
 	public Object getRealObject(OTObject otObject, Object realObject);
+	
+	/**
+	 * A helper method to get a Vector of real objects from an
+	 * OTObjectList, so that we don't have to first get the OTObjectList
+	 * and then create all the RealObjects ourselves.
+	 * 
+	 * @param otObjectList
+	 * @return
+	 */
+	public Vector<Object> getRealObjects(OTObjectList otObjectList);
 	
 	/**
 	 * This saves the state of realObject into this ot object.  It needs
