@@ -68,6 +68,9 @@ public class SimpleLogFormatter extends Formatter {
 			while (s_out.length() < 6) {
 				s_out += "0";
 			}
+			if (s_out.length() > 6) {
+				s_out = s_out.substring(0,6);
+			}
 			out += s_out;
 			return out;
 		}
