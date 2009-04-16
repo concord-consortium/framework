@@ -19,7 +19,7 @@ public abstract class OTObjectFilter {
 	public Vector<OTObject> filterList(Vector<OTObject> list) {
 		Vector<OTObject> filtered = new Vector<OTObject>();
 		for (OTObject obj : list) {
-			if (keepObject(obj)) {
+			if (obj != null && keepObject(obj)) {
 				filtered.add(obj);
 			}
 		}
