@@ -154,7 +154,7 @@ public interface OTControllerService {
 	 * to lookup the controller for this realObject and otObject.  
 	 * 
 	 * This is very similar to getRealObject but getRealObject only calls
-	 * loadRealObject when it's called the first time
+	 * loadRealObject on the controller when it's called the first time
 	 * 
 	 * TODO it is not clear how much state should be loaded here and whether it should
 	 * be recursive.  If listeners are being used on all the sub objects then when
