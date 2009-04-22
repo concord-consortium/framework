@@ -28,20 +28,24 @@ package org.concord.framework.data;
  *
  */
 public interface DataFlow {
-	
-/** reset
- * reset simulation
- */
+
+	/** 
+	 * reset simulation, model, sensor, graph, ...
+	 */
 	void reset();
-	
-/** stop
- * stop simulation
- */
+
+	/** 
+	 * stop simulation, model, sensor, graph, ...
+	 */
 	void stop();
 
-/** start
- * start simulation
- */
+	/** 
+	 * start simulation, model, sensor, graph, ...
+	 */
 	void start();
 
+	/** 
+	 * check if the simulation, model, sensor, graph, ... is running.
+	 */
+	boolean isRunning();
 }

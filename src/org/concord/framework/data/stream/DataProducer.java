@@ -34,6 +34,4 @@ public interface DataProducer
 
 	public DataStreamDescription getDataDescription();
 	
-	public boolean isRunning();
-	
 }
