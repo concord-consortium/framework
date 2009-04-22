@@ -27,45 +27,38 @@ import org.concord.framework.data.DataFlow;
 
 public interface Simulation extends DataFlow{
 
-public static final int SIM_UNDEF_STATE 	= 0;
-public static final int SIM_RESET_STATE 	= 1;
-public static final int SIM_STOP_STATE 		= 2;
-public static final int SIM_RUN_STATE 		= 3;
+	public static final int SIM_UNDEF_STATE 	= 0;
+	public static final int SIM_RESET_STATE 	= 1;
+	public static final int SIM_STOP_STATE 		= 2;
+	public static final int SIM_RUN_STATE 		= 3;
 
-	
-	
-/** isRunning
- * @return <code>true</code> if simulation is running
- *     or <code>false</code> if simulation was reset
- *
-*/
-	public boolean isRunning();
 
-/** nextStep
- * calculates next simulation's step
- *
-*/
+
+	/** nextStep
+	 * calculates next simulation's step
+	 *
+	 */
 	public void nextStep();
-	
-/** continueSteps
- * continues simulation
-*/
+
+	/** continueSteps
+	 * continues simulation
+	 */
 	public void continueSteps();
-	
-/** doOneStep
- * does only one step
-*/
+
+	/** doOneStep
+	 * does only one step
+	 */
 	public void doOneStep();
-	
-	
+
+
 	public int getSimulationState();
-	
+
 	public int getAvailableSteps();
-	
+
 	public int getCurrentStepNumber();
-	
+
 	public void goToStep(int stepNumber);
-	
+
 	public void gotoPreviousStep();
 
 	/**
