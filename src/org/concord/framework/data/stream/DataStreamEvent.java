@@ -29,140 +29,128 @@
  *
  * Licence Information
  * Copyright 2004 The Concord Consortium 
-*/
+ */
 package org.concord.framework.data.stream;
 
-
 /**
- * DataStreamEvent
- * Class name and description
- *
+ * DataStreamEvent Class name and description
+ * 
  * Date created: Aug 24, 2004
- *
- * @author imoncada<p>
- *
+ * 
+ * @author imoncada
+ *         <p>
+ * 
  */
-public class DataStreamEvent extends DataEvent
-{
-	public static final int DATA_RECEIVED 		= 1000;
-	public static final int DATA_COLLECTING 	= 1001;
-	public static final int DATA_READY_TO_START = 1002;
-	public static final int DATA_STOPPED        = 1003;
-	public static final int DATA_DESC_CHANGED   = 1004;
-	public static final int DATA_DESC_RESET     = 1005;
-	public static final int DATA_DESC_ERROR     = 1006;
-	public static final int DATA_REPLACED	    = 1007; //new data replaces old, e.g. for soundDataProducer
+public class DataStreamEvent extends DataEvent {
+	public static final int DATA_RECEIVED = 1000;
+	// this is legacy from waba when things were single threaded and the data producer 
+	// needed to notify data listeners so they'd have a chance to update themselves
+	// because these are static and final the ids shouldn't change 
+	// public static final int DATA_COLLECTING = 1001;
+	public static final int DATA_STARTED = 1002;
+	public static final int DATA_STOPPED = 1003;
+	public static final int DATA_DESC_CHANGED = 1004;
+	public static final int DATA_DESC_RESET = 1005;
+	public static final int DATA_DESC_ERROR = 1006;
+	public static final int DATA_REPLACED = 1007; // new data replaces old, e.g.
+													// for soundDataProducer
+	public static final int DATA_RESET = 1008;
 
-	public float 	[]data = null;
-	public int		numSamples = 1;
-	public int	 	[]intData = null;
-	public float    refVal = 0;
+	public float[] data = null;
+	public int numSamples = 1;
+	public int[] intData = null;
+	public float refVal = 0;
 
 	// hooks for storing profile data
 	// as the event is processed timestamps might be stored here which
-	// could be logged latter.  This would be an ideal use for AspectJ
-    // public int [] pTimes = new int [10];
-    // public int numPTimes = 0;
-    
-    Object      source;
-    Object      additionalInfo;
+	// could be logged latter. This would be an ideal use for AspectJ
+	// public int [] pTimes = new int [10];
+	// public int numPTimes = 0;
 
+	Object source;
+	Object additionalInfo;
 
-	public DataStreamEvent()
-	{
+	public DataStreamEvent() {
 		this(DATA_RECEIVED, null, null, null);
 	}
 
-	public DataStreamEvent(int type)
-	{
+	public DataStreamEvent(int type) {
 		this(type, null, null, null);
 	}
 
-	public DataStreamEvent(int type, float[] data, DataStreamDescription dataDesc)
-	{
+	public DataStreamEvent(int type, float[] data,
+			DataStreamDescription dataDesc) {
 		this(type, data, null, dataDesc);
 	}
-	
-	public DataStreamEvent(int type, float[] data, int[] intData, DataStreamDescription dataDesc)
-	{
-		this.type 		= type;
-		this.data 		= data;
-		this.intData 	= intData;
-		this.dataDesc 	= dataDesc;
+
+	public DataStreamEvent(int type, float[] data, int[] intData,
+			DataStreamDescription dataDesc) {
+		this.type = type;
+		this.data = data;
+		this.intData = intData;
+		this.dataDesc = dataDesc;
 	}
-	
-	public void setData(float[] data)
-	{
+
+	public void setData(float[] data) {
 		this.data = data;
 	}
 
-	public float[] getData()
-	{
+	public float[] getData() {
 		return data;
 	}
 
-	public void setIntData(int[] data)
-	{
+	public void setIntData(int[] data) {
 		this.intData = data;
 	}
 
-	public int[] getIntData()
-	{
+	public int[] getIntData() {
 		return intData;
 	}
 
-	public void setNumSamples(int numSamples)
-	{
+	public void setNumSamples(int numSamples) {
 		this.numSamples = numSamples;
 	}
 
-	public int getNumSamples()
-	{
+	public int getNumSamples() {
 		return numSamples;
 	}
-	
-    public Object getSource()
-    {
-        return source;
-    }
-    
-    public void setSource(Object source)
-    {
-        this.source = source;
-    }
 
-    public Object getAdditionalInfo()
-    {
-        return additionalInfo;
-    }
+	public Object getSource() {
+		return source;
+	}
 
-    public void  setAdditionalInfo(Object additionalInfo)
-    {
-        this.additionalInfo = additionalInfo;
-    }
-    
-    /**
-     * Copy this object into the passed in object and return 
-     * it.  If the passed in object is null then it will create a
-     * new object
-     * 
-     * @param output
-     * @return
-     */
-    public DataStreamEvent clone(DataStreamEvent output)
-    {
-        if(output == null) {
-            output = new DataStreamEvent();
-        }
-        
-        output.setData(getData());
-        output.setIntData(getIntData());
-        output.setNumSamples(getNumSamples());
-        output.setSource(getSource());
-        output.setAdditionalInfo(getAdditionalInfo());
-        output.setType(getType());
-        output.setDataDescription(getDataDescription());
-        
-        return output;
-    }
+	public void setSource(Object source) {
+		this.source = source;
+	}
+
+	public Object getAdditionalInfo() {
+		return additionalInfo;
+	}
+
+	public void setAdditionalInfo(Object additionalInfo) {
+		this.additionalInfo = additionalInfo;
+	}
+
+	/**
+	 * Copy this object into the passed in object and return it. If the passed
+	 * in object is null then it will create a new object
+	 * 
+	 * @param output
+	 * @return
+	 */
+	public DataStreamEvent clone(DataStreamEvent output) {
+		if (output == null) {
+			output = new DataStreamEvent();
+		}
+
+		output.setData(getData());
+		output.setIntData(getIntData());
+		output.setNumSamples(getNumSamples());
+		output.setSource(getSource());
+		output.setAdditionalInfo(getAdditionalInfo());
+		output.setType(getType());
+		output.setDataDescription(getDataDescription());
+
+		return output;
+	}
 }
