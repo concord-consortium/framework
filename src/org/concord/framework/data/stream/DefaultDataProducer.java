@@ -38,7 +38,8 @@ public class DefaultDataProducer
 	protected DataStreamEvent dataEvent;
 	
 	protected boolean running = false;
-
+	protected boolean inInitialState = true;
+	
 	public DefaultDataProducer()
 	{
 		this(1.0f);
@@ -74,6 +75,7 @@ public class DefaultDataProducer
 	public void stop()
 	{
 		running = false;
+		notifyDataStreamEvent(DataStreamEvent.DATA_STOPPED);
 	}
 
 	/**
@@ -82,6 +84,8 @@ public class DefaultDataProducer
 	public void start()
 	{
 		running = true;
+		inInitialState = false;
+		notifyDataStreamEvent(DataStreamEvent.DATA_STARTED);
 	}
 	
 	/**
@@ -90,6 +94,8 @@ public class DefaultDataProducer
 	public void reset()
 	{
 		running = false;
+		inInitialState = true;
+		notifyDataStreamEvent(DataStreamEvent.DATA_RESET);
 	}
 	
 	protected void notifyDataStreamEvent(int type)
@@ -148,5 +154,9 @@ public class DefaultDataProducer
 
 	public boolean isRunning() {
 		return running;
+	}
+
+	public boolean isInInitialState() {
+		return inInitialState;
 	}
 }
