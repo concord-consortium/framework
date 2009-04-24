@@ -2,6 +2,7 @@ package org.concord.framework.logging;
 
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
 public class SimpleLogFormatter extends Formatter {
 	private static final long startMillis = System.currentTimeMillis();
@@ -11,7 +12,7 @@ public class SimpleLogFormatter extends Formatter {
 		String output = "";
 		output += ConsoleLogTimeConverter.getTime(record.getMillis() - startMillis);
 		output += " " + record.getLevel().toString().substring(0, 4);
-		output += " " + record.getSourceClassName();
+		output += " " + getSourceClassString(record);
 		output += "." + record.getSourceMethodName();
 		output += ": " + record.getMessage();
 		output += "\n";
@@ -24,6 +25,11 @@ public class SimpleLogFormatter extends Formatter {
 			}
 		}
 		return output;
+	}
+
+	protected String getSourceClassString(LogRecord record)
+	{
+		return record.getSourceClassName();
 	}
 	
 	private static class ConsoleLogTimeConverter {
