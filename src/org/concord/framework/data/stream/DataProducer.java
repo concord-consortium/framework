@@ -23,16 +23,14 @@
 
 package org.concord.framework.data.stream;
 
-import org.concord.framework.data.DataFlow;
+import org.concord.framework.startable.Startable;
 
 public interface DataProducer 
-	extends DataFlow
+	extends Startable
 {
 	public void addDataListener(DataListener listener);
 	
 	public void removeDataListener(DataListener listener);
 
-	public DataStreamDescription getDataDescription();
-	
-	public boolean isInInitialState();
+	public DataStreamDescription getDataDescription();	
 }

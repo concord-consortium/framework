@@ -47,15 +47,11 @@ public class DataStreamEvent extends DataEvent {
 	// needed to notify data listeners so they'd have a chance to update themselves
 	// because these are static and final the ids shouldn't change 
 	// public static final int DATA_COLLECTING = 1001;
-	public static final int DATA_STARTED = 1002;
-	public static final int DATA_STOPPED = 1003;
 	public static final int DATA_DESC_CHANGED = 1004;
 	public static final int DATA_DESC_RESET = 1005;
 	public static final int DATA_DESC_ERROR = 1006;
 	public static final int DATA_REPLACED = 1007; // new data replaces old, e.g.
 													// for soundDataProducer
-	public static final int DATA_RESET = 1008;
-
 	public float[] data = null;
 	public int numSamples = 1;
 	public int[] intData = null;
