@@ -26,9 +26,11 @@ package org.concord.framework.data.stream;
 import java.util.Vector;
 
 import org.concord.framework.data.DataDimension;
+import org.concord.framework.startable.AbstractStartable;
+import org.concord.framework.startable.StartableEvent.StartableEventType;
 import org.concord.framework.util.Copyable;
 
-public class DefaultDataProducer
+public class DefaultDataProducer extends AbstractStartable
 	implements DataProducer, Copyable
 {
 	protected Vector dataListeners = new Vector();
@@ -38,7 +40,6 @@ public class DefaultDataProducer
 	protected DataStreamEvent dataEvent;
 	
 	protected boolean running = false;
-	protected boolean inInitialState = true;
 	
 	public DefaultDataProducer()
 	{
@@ -75,7 +76,7 @@ public class DefaultDataProducer
 	public void stop()
 	{
 		running = false;
-		notifyDataStreamEvent(DataStreamEvent.DATA_STOPPED);
+		notifyStartableListeners(StartableEventType.STOPPED);
 	}
 
 	/**
@@ -84,8 +85,7 @@ public class DefaultDataProducer
 	public void start()
 	{
 		running = true;
-		inInitialState = false;
-		notifyDataStreamEvent(DataStreamEvent.DATA_STARTED);
+		notifyStartableListeners(StartableEventType.STARTED);
 	}
 	
 	/**
@@ -94,8 +94,7 @@ public class DefaultDataProducer
 	public void reset()
 	{
 		running = false;
-		inInitialState = true;
-		notifyDataStreamEvent(DataStreamEvent.DATA_RESET);
+		notifyStartableListeners(StartableEventType.RESET);
 	}
 	
 	protected void notifyDataStreamEvent(int type)
@@ -154,9 +153,5 @@ public class DefaultDataProducer
 
 	public boolean isRunning() {
 		return running;
-	}
-
-	public boolean isInInitialState() {
-		return inInitialState;
 	}
 }
