@@ -35,8 +35,28 @@ public abstract class AbstractStartable implements Startable
 	public boolean isInInitialState() {
 		return true;
 	}
+
+	protected void notifyStarted(boolean wasInInitialState)
+	{
+		startableEvent.setWasInInitialState(wasInInitialState);
+		notifyStartableListeners(StartableEventType.STARTED);
+		
+		// set it back to its default value 
+		startableEvent.setWasInInitialState(false);		
+	}
+
+	protected void notifyStopped()
+	{
+		notifyStartableListeners(StartableEventType.STOPPED);		
+	}
 	
-	protected void notifyStartableListeners(StartableEventType eventType)
+	protected void notifyReset()
+	{
+		notifyStartableListeners(StartableEventType.RESET);		
+	}
+	
+
+	private void notifyStartableListeners(StartableEventType eventType)
 	{
 		startableEvent.setType(eventType);
 		for (StartableListener listener : startableListeners) {

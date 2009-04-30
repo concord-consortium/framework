@@ -23,16 +23,9 @@
 
 package org.concord.framework.simulation;
 
-import org.concord.framework.data.DataFlow;
+import org.concord.framework.startable.Startable;
 
-public interface Simulation extends DataFlow{
-
-	public static final int SIM_UNDEF_STATE 	= 0;
-	public static final int SIM_RESET_STATE 	= 1;
-	public static final int SIM_STOP_STATE 		= 2;
-	public static final int SIM_RUN_STATE 		= 3;
-
-
+public interface Simulation extends Startable {
 
 	/** nextStep
 	 * calculates next simulation's step
@@ -50,9 +43,6 @@ public interface Simulation extends DataFlow{
 	 */
 	public void doOneStep();
 
-
-	public int getSimulationState();
-
 	public int getAvailableSteps();
 
 	public int getCurrentStepNumber();
@@ -60,16 +50,4 @@ public interface Simulation extends DataFlow{
 	public void goToStep(int stepNumber);
 
 	public void gotoPreviousStep();
-
-	/**
-	 * Add a simulation listener 
-	 * @param l	simulation listener to add
-	 */
-	public void addSimulationListener(SimulationListener l);	
-
-	/**
-	 * Remove a simulation listener 
-	 * @param l	simulation listener to remove
-	 */
-	public void removeSimulationListener(SimulationListener l);	
 }

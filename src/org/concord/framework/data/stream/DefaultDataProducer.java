@@ -76,7 +76,7 @@ public class DefaultDataProducer extends AbstractStartable
 	public void stop()
 	{
 		running = false;
-		notifyStartableListeners(StartableEventType.STOPPED);
+		notifyStopped();
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class DefaultDataProducer extends AbstractStartable
 	public void start()
 	{
 		running = true;
-		notifyStartableListeners(StartableEventType.STARTED);
+		notifyStarted(isInInitialState());
 	}
 	
 	/**
@@ -94,7 +94,7 @@ public class DefaultDataProducer extends AbstractStartable
 	public void reset()
 	{
 		running = false;
-		notifyStartableListeners(StartableEventType.RESET);
+		notifyReset();
 	}
 	
 	protected void notifyDataStreamEvent(int type)
