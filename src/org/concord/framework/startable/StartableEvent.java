@@ -8,6 +8,9 @@ public class StartableEvent {
 	StartableEventType type;
 	Startable startable;
 
+	// This is helpful to know for a started event
+	boolean wasInInitialState;
+	
 	public StartableEvent() {
 	}
 	
@@ -30,5 +33,13 @@ public class StartableEvent {
 	
 	public Startable getStartable() {
 		return startable;
+	}
+	
+	public void setWasInInitialState(boolean wasInInitialState) {
+		this.wasInInitialState = wasInInitialState;
+	}
+	
+	public boolean getWasInInitialState() {
+		return wasInInitialState;
 	}
 }
