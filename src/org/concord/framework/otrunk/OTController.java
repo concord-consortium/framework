@@ -130,7 +130,10 @@ public interface OTController
      * This might be called when this controller is no longer needed.  It will be called
      * if the dispose method is called on the controllerService that is managing this
      * controller.  Not all objects managing controller services actually call dispose
-     * so this is not garunteed to be called.
+     * so this is not guaranteed to be called.
+     * 
+     * If inside of this method, calls are made to the controllerService, some of them 
+     * behave differently.  See the OTControllerService documentation. 
      *
      */
     public void dispose(Object realObject);

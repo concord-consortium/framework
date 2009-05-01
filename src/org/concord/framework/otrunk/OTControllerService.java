@@ -99,6 +99,9 @@ public interface OTControllerService {
 	 * can be garbage collected.  If the real object is needed again for
 	 * some reason then it will just be created again.
 	 * 
+	 * If the controller service is in the middle of disposing then this will
+	 * return null for real objects that haven't already been created.
+	 * 
 	 * @param otObject
 	 * @return
 	 */
