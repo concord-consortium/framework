@@ -2,7 +2,7 @@ package org.concord.framework.logging;
 
 import java.util.logging.LogRecord;
 
-public class SimpleLogFormatterNoPackage extends SimpleLogFormatter 
+public class SimpleLogFormatterCondensed extends SimpleLogFormatter 
 {
 	@Override
 	protected String getSourceClassString(LogRecord record) {

@@ -2,7 +2,6 @@ package org.concord.framework.logging;
 
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 public class SimpleLogFormatter extends Formatter {
 	private static final long startMillis = System.currentTimeMillis();
@@ -35,12 +34,12 @@ public class SimpleLogFormatter extends Formatter {
 	private static class ConsoleLogTimeConverter {
 
 		public static String getTime(long elapsedMs) {
-			long sec = elapsedMs/1000;
+			long elapsedSec = elapsedMs/1000;
 			double s = elapsedMs/1000.0d % 60;
-			long tot_min = sec/60;
-			int m = (int) (tot_min % 60);
-			long tot_hour = m/60;
-			int h = (int) (tot_hour % 60);
+			long elapsedMin = elapsedSec/60;
+			int m = (int) (elapsedMin % 60);
+			long elapsedHour = m/60;
+			int h = (int) (elapsedHour % 60);
 			String pad = " ";
 			String out = "";
 			if (h > 10) {
