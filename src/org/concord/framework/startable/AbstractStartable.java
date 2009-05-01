@@ -55,7 +55,11 @@ public abstract class AbstractStartable implements Startable
 		notifyStartableListeners(StartableEventType.RESET);		
 	}
 	
-
+	protected void notifyUpdated()
+	{
+		notifyStartableListeners(StartableEventType.UPDATED);		
+	}
+	
 	private void notifyStartableListeners(StartableEventType eventType)
 	{
 		startableEvent.setType(eventType);

@@ -2,7 +2,29 @@ package org.concord.framework.startable;
 
 public class StartableEvent {
 	public enum StartableEventType{
-		STARTED, STOPPED, RESET 
+		/**
+		 * This startable has just started running, usually this is sent after the start method of the 
+		 * startable is called.
+		 */
+		STARTED,
+
+		/**
+		 * This startable has just stopped running, usually this is sent after the stop method of the 
+		 * startable is called.
+		 */
+		STOPPED,
+		
+		/**
+		 * This startable has just been reset, usually this is sent after the reset method of the 
+		 * startable is called.
+		 */
+		RESET,
+		
+		/**
+		 * The startable was updated in some way outside of the usual start, stop, reset events so its
+		 * isRunning, isInInitialState, and getStartableInfo might have changed.
+		 */
+		UPDATED 
 	}
 	
 	StartableEventType type;
