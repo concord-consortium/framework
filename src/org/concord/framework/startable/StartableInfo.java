@@ -1,6 +1,7 @@
 package org.concord.framework.startable;
 
 public class StartableInfo {
+	public boolean enabled = true;
 	public boolean canResetWhileRunning = false;
 	public boolean canRestartWithoutReset = false;
 	public String label;
