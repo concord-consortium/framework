@@ -64,4 +64,10 @@ public class StartableEvent {
 	public boolean getWasInInitialState() {
 		return wasInInitialState;
 	}
+	
+	public StartableEvent clone() {
+		StartableEvent clone = new StartableEvent(type, startable);
+		clone.setWasInInitialState(wasInInitialState);
+		return clone;
+	}
 }
