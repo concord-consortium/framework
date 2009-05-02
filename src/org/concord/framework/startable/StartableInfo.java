@@ -9,8 +9,16 @@ public class StartableInfo {
 	 * buttons.
 	 */
 	public boolean sendsEvents;
-	public boolean canResetWhileRunning = false;
-	public boolean canRestartWithoutReset = false;
+
+	/**
+	 * This will only have an effect if the sendEvents is true
+	 */
+	public boolean canResetWhileRunning = true;
+	
+	/**
+	 * This will only have an effect if the sendEvents is true
+	 */
+	public boolean canRestartWithoutReset = true;
 	
 	public String startVerb;
 	public String stopVerb;
