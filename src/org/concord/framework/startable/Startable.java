@@ -23,7 +23,6 @@
 
 package org.concord.framework.startable;
 
-import org.concord.framework.data.DataFlow;
 
 /**
  * This temporarily extends DataFlow.  To make it easier to do the migration to it.
@@ -31,7 +30,7 @@ import org.concord.framework.data.DataFlow;
  * @author scytacki
  *
  */
-public interface Startable extends DataFlow{
+public interface Startable{
 
 	/** 
 	 * start the startable
