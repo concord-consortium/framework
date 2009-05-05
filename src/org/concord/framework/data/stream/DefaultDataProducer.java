@@ -27,7 +27,6 @@ import java.util.Vector;
 
 import org.concord.framework.data.DataDimension;
 import org.concord.framework.startable.AbstractStartable;
-import org.concord.framework.startable.StartableEvent.StartableEventType;
 import org.concord.framework.util.Copyable;
 
 public class DefaultDataProducer extends AbstractStartable
@@ -71,7 +70,7 @@ public class DefaultDataProducer extends AbstractStartable
 	}
 
 	/**
-	 * @see org.concord.framework.data.DataFlow#stop()
+	 * @see org.concord.framework.startable.Startable#stop()
 	 */
 	public void stop()
 	{
@@ -80,7 +79,7 @@ public class DefaultDataProducer extends AbstractStartable
 	}
 
 	/**
-	 * @see org.concord.framework.data.DataFlow#start()
+	 * @see org.concord.framework.startable.Startable#start()
 	 */
 	public void start()
 	{
@@ -89,7 +88,7 @@ public class DefaultDataProducer extends AbstractStartable
 	}
 	
 	/**
-	 * @see org.concord.framework.data.DataFlow#reset()
+	 * @see org.concord.framework.startable.Startable#reset()
 	 */
 	public void reset()
 	{
