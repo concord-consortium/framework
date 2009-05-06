@@ -1,6 +1,7 @@
 package org.concord.framework.logging;
 
 import java.util.logging.Formatter;
+import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 public class SimpleLogFormatter extends Formatter {
@@ -10,7 +11,7 @@ public class SimpleLogFormatter extends Formatter {
 	public synchronized String format(LogRecord record) {
 		String output = "";
 		output += ConsoleLogTimeConverter.getTime(record.getMillis() - startMillis);
-		output += " " + record.getLevel().toString().substring(0, 4);
+		output += " " + getLevelShortString(record.getLevel());
 		output += " " + getSourceClassString(record);
 		output += "." + record.getSourceMethodName();
 		output += ": " + record.getMessage();
@@ -26,6 +27,16 @@ public class SimpleLogFormatter extends Formatter {
 		return output;
 	}
 
+	protected String getLevelShortString(Level level){
+		if(level == Level.FINER){
+			return "FNER";
+		} else if(level == Level.FINEST){
+			return "FNST";
+		} else {
+			return level.toString().substring(0, 4);
+		}
+	}
+	
 	protected String getSourceClassString(LogRecord record)
 	{
 		return record.getSourceClassName();
