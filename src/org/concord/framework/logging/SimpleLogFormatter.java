@@ -9,6 +9,7 @@ public class SimpleLogFormatter extends Formatter {
 	private static final long startMillis = System.currentTimeMillis();
 
 	private static final String indentStr = "              ";
+	private static final boolean showPackageNames = false;
 	
 	@Override
 	public synchronized String format(LogRecord record) {
@@ -55,7 +56,16 @@ public class SimpleLogFormatter extends Formatter {
 	
 	protected String getSourceClassString(LogRecord record)
 	{
-		return record.getSourceClassName();
+		if (showPackageNames) {
+			return record.getSourceClassName();
+		}
+		
+		String sourceClassName = record.getSourceClassName();
+		int dotIndex = sourceClassName.lastIndexOf('.');
+		if(dotIndex != -1){
+			sourceClassName = sourceClassName.substring(dotIndex+1);
+		}
+		return sourceClassName;
 	}
 	
 	private static class ConsoleLogTimeConverter {
