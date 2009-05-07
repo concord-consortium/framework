@@ -1,5 +1,6 @@
 package org.concord.framework.logging;
 
+import java.util.StringTokenizer;
 import java.util.logging.Formatter;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -7,26 +8,41 @@ import java.util.logging.LogRecord;
 public class SimpleLogFormatter extends Formatter {
 	private static final long startMillis = System.currentTimeMillis();
 
+	private static final String indentStr = "              ";
+	
 	@Override
 	public synchronized String format(LogRecord record) {
-		String output = "";
-		output += ConsoleLogTimeConverter.getTime(record.getMillis() - startMillis);
-		output += " " + getLevelShortString(record.getLevel());
-		output += " " + getSourceClassString(record);
-		output += "." + record.getSourceMethodName();
-		output += ": " + record.getMessage();
-		output += "\n";
+		StringBuffer sb = new StringBuffer();
+		sb.append(ConsoleLogTimeConverter.getTime(record.getMillis() - startMillis));
+		sb.append(" ").append(getLevelShortString(record.getLevel()));
+		sb.append(" ").append(getSourceClassString(record));
+		sb.append(".").append(record.getSourceMethodName());
+		sb.append(": ");
+		handleMultiLine(record.getMessage(), sb);
 		if (record.getThrown() != null) {
-			Throwable t = record.getThrown();
-			output += t.toString();
-			output += "\n";
+			Throwable t = record.getThrown();			
+			sb.append(indentStr).append(t.toString()).append('\n');
 			for (StackTraceElement e : t.getStackTrace()) {
-				output += "   " + e.toString() + "\n";
+				sb.append(indentStr).append("   ").append(e.toString()).append('\n');
 			}
 		}
-		return output;
+		return sb.toString();
 	}
 
+	protected void handleMultiLine(String message, StringBuffer sb){
+		if(message == null || message.length() == 0){
+			sb.append('\n');
+			return;
+		}
+		
+		StringTokenizer st = new StringTokenizer(message, "\n");
+		sb.append(st.nextToken()).append('\n');
+		while(st.hasMoreTokens()){
+			sb.append(indentStr).append("-").append(st.nextToken()).append('\n');
+		}
+		return;
+	}
+	
 	protected String getLevelShortString(Level level){
 		if(level == Level.FINER){
 			return "FNER";
