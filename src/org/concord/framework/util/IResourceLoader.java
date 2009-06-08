@@ -18,4 +18,5 @@ public interface IResourceLoader {
 	public void writeResourceErrorDetails(PrintWriter writer, boolean printBody);
 	public int getHttpResponseCode();
 	public URL getURL();
+	public int getContentLength();
 }
