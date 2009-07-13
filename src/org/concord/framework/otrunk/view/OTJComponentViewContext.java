@@ -3,8 +3,6 @@
  */
 package org.concord.framework.otrunk.view;
 
-import java.util.Vector;
-
 import javax.swing.JComponent;
 
 import org.concord.framework.otrunk.OTObject;
@@ -22,7 +20,7 @@ public interface OTJComponentViewContext
 	 * @param obj
 	 * @return
 	 */
-	public OTView getViewByObject(OTObject obj);
+	public OTJComponentView getViewByObject(OTObject obj);
 	
 	
 	/**
