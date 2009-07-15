@@ -100,7 +100,7 @@ public class SimpleLogFormatter extends Formatter {
 			}
 			
 			String s_out = "";
-			if (s > 10) {
+			if (s > 9) {
 				s_out += s;
 			} else if (s > 0) {
 				s_out += pad + s;
