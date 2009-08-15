@@ -200,7 +200,7 @@ public class DefaultDataStore extends AbstractDataStore
     }
     
     /**
-     * Keep this method here incase scripts are using it
+     * Keep this method here in case scripts are using it
      */
     public float getDt()
     {
