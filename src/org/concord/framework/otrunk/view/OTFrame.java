@@ -60,6 +60,10 @@ public interface OTFrame
 	
 	public static int DEFAULT_positionY = 50;
 	int getPositionY();
+	
+	public static boolean DEFAULT_OpenMaximized = false;
+	boolean getOpenMaximized();
+	void setOpenMaximized(boolean openMaximized);
 
 	public String getTitle();
 	
