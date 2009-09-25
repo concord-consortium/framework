@@ -4,7 +4,6 @@ import java.util.Vector;
 
 import org.concord.framework.otrunk.OTChangeListener;
 import org.concord.framework.otrunk.OTObject;
-import org.concord.framework.otrunk.OTObjectService;
 
 public interface OTLabbookManager
 {
@@ -51,5 +50,7 @@ public interface OTLabbookManager
 	public void addLabbookListener(OTChangeListener listener);
 	
 	public void removeLabbookListener(OTChangeListener listener);
+	
+	public boolean getEmbedInDrawTool();
 	
 }
