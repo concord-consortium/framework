@@ -81,5 +81,5 @@ public interface OTXHTMLView
      * JComponent will be embedded.
      * @return
      */
-    boolean getEmbedXHTMLView();
+    boolean getEmbedXHTMLView(OTObject otObject);
 }
