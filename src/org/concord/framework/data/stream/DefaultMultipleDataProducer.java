@@ -84,6 +84,10 @@ public class DefaultMultipleDataProducer extends DefaultDataProducer {
 		getDataDescription().setChannelsPerSample(size);
 	}
 	
+	public int getNumChannels() {
+		return getDataDescription().getChannelsPerSample();
+	}
+	
 	public void setNumChannels(int size){
 		getDataDescription().setChannelsPerSample(size);
 	}
