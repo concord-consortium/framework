@@ -32,6 +32,7 @@
 */
 package org.concord.framework.data.stream;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import org.concord.framework.data.DataDimension;
@@ -76,6 +77,8 @@ public class DataChannelDescription
 	
 	// Possible values for this data channel
 	private ArrayList<Object> possibleValues = new ArrayList<Object>();
+
+	private Color color;
 
 	/**
 	 * 
@@ -234,6 +237,19 @@ public class DataChannelDescription
 	
 	public void setPossibleValues(ArrayList<Object> values) {
 		this.possibleValues = values;
+	}
+	
+	/**
+	 * For multi-channel bar graphs, we can set the color of
+	 * each channel/bar here.
+	 * @return
+	 */
+	public Color getColor(){
+		return color;
+	}
+	
+	public void setColor(Color color){
+		this.color = color;
 	}
 	
 	public Object getCopy() {
