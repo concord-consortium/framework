@@ -32,6 +32,8 @@
 */
 package org.concord.framework.otrunk.view;
 
+import javax.swing.JFrame;
+
 import org.concord.framework.otrunk.OTObject;
 
 
@@ -119,6 +121,16 @@ public interface OTFrameManager
 	public void putObjectInFrame(OTObject otObject, OTViewEntry viewEntry, 
 			OTFrame otFrame, String viewMode, int positionX, int positionY, 
 			boolean forceReloadOTObject);
+	
+	/**
+	 * Gets the main frame
+	 */
+	public JFrame getMainFrame();
+	
+	/**
+	 * Sets the main frame
+	 */
+	public void setMainFrame(JFrame frame);
 	
 	/**
 	 * Disposes the frame and its contents
