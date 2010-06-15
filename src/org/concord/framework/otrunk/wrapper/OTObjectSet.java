@@ -2,6 +2,8 @@ package org.concord.framework.otrunk.wrapper;
 
 import org.concord.framework.otrunk.OTObjectInterface;
 import org.concord.framework.otrunk.OTObjectList;
+import org.concord.framework.otrunk.OTResourceList;
+import org.concord.framework.otrunk.OTResourceMap;
 
 /**
  * This is essentially just a wrapper for an OTObjectList, but it extends OTObjectInterface
@@ -14,4 +16,10 @@ public interface OTObjectSet
     extends OTObjectInterface
 {
 	public OTObjectList getObjects();
+	
+	
+	// more wrappers. No views for these (yet)
+	public OTResourceList getList();
+	
+	public OTResourceMap getMap();
 }
