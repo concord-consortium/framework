@@ -59,4 +59,10 @@ public interface OTID
 	 * @return
 	 */
 	public String toExternalForm();
+	
+	/**
+	 * Some ID's are derived from another id. This method should return the id from which the current id is derived.
+	 * @return
+	 */
+	public OTID getMappedId();
 }
