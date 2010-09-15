@@ -73,7 +73,7 @@ public class DataStreamDescription
 	/**
 	 * This sets the number of channels per sample
 	 * Warning: It will reset all the channel descriptions to null.  And
-	 *  then create one new channel description for the 1st channel.
+	 *  then create a new channel description for each channel.
 	 * 
 	 * @param chPerSample
 	 */
@@ -84,8 +84,10 @@ public class DataStreamDescription
 			channelDescriptions = new DataChannelDescription [chPerSample];
 
 			//Make sure we have at least one channel description
-			DataChannelDescription channelDesc = new DataChannelDescription();
-			channelDescriptions[0] = channelDesc;
+			for (int i = 0; i < chPerSample; i++) {
+			    DataChannelDescription channelDesc = new DataChannelDescription();
+			    channelDescriptions[i] = channelDesc;
+			}
 
 		}
 	}
@@ -221,7 +223,8 @@ public class DataStreamDescription
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	public boolean equals(Object obj)
+	@Override
+    public boolean equals(Object obj)
 	{
 		if(!(obj instanceof DataStreamDescription)){
 			return false;
