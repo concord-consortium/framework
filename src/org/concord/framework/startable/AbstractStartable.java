@@ -35,6 +35,17 @@ public abstract class AbstractStartable implements Startable
 	public boolean isInInitialState() {
 		return true;
 	}
+	
+	public boolean isAtEndOfStream() {
+	    if (isInInitialState() || isRunning()) {
+	        return false;
+	    }
+	    StartableInfo info = getStartableInfo();
+	    if (info != null && info.canRestartWithoutReset) {
+	        return false;
+	    }
+	    return true;
+	}
 
 	protected void notifyStarted(boolean wasInInitialState)
 	{
