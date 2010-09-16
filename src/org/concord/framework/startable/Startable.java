@@ -61,7 +61,15 @@ public interface Startable{
 	 * doesn't have an initial state then this should return true all of 
 	 * the time. 
 	 */
-	public boolean isInInitialState();	
+	public boolean isInInitialState();
+	
+	/**
+	 * check if the startable is at the end of its data stream. If true, the startable
+	 * can potentially started from its current state. If false, it cannot be started until
+	 * it has been reset.
+	 * @return
+	 */
+	public boolean isAtEndOfStream();
 	
 	/**
 	 * @return information about this startable to customize controls for it.
