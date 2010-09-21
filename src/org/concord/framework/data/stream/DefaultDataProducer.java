@@ -139,6 +139,10 @@ public class DefaultDataProducer extends AbstractStartable
 		dataDesc.setDt(dt);
 		notifyDataStreamEvent(DataEvent.DATA_DESC_CHANGED);
 	}
+	
+	public float getDt() {
+	    return dataDesc.getDt();
+	}
 
 	public Object getCopy() {
 		DefaultDataProducer producer = new DefaultDataProducer();
