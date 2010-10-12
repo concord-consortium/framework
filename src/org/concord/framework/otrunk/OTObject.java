@@ -92,4 +92,6 @@ public interface OTObject
     
     boolean otIsSet(OTClassProperty property);
     void otUnSet(OTClassProperty property);
+    
+    public OTObjectMap getAnnotations();
 }
