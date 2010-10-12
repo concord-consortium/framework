@@ -120,13 +120,15 @@ public class DefaultOTObject
     	}
 	}	
 
+    @Override
     public int hashCode()
     {
         String str = getClass().getName() + "@" +  getGlobalId().hashCode();
         return str.hashCode();
     }
     
-	public boolean equals(Object other)
+	@Override
+    public boolean equals(Object other)
 	{
 		if(!(other instanceof OTObject)){
 			return false;
@@ -186,6 +188,10 @@ public class DefaultOTObject
 
 	public ArrayList getOTChangeListeners() {
 		return resources.getOTChangeListeners();
+	}
+	
+	public OTObjectMap getAnnotations() {
+	    return resources.getAnnotations();
 	}
 	
 	/**

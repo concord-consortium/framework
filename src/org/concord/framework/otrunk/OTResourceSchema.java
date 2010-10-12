@@ -66,5 +66,7 @@ public interface OTResourceSchema extends OTChangeNotifying
     public void otSet(OTClassProperty property, Object newValue);
     
     boolean otIsSet(OTClassProperty property);
-    void otUnSet(OTClassProperty property);	
+    void otUnSet(OTClassProperty property);
+
+    public OTObjectMap getAnnotations();
 }
