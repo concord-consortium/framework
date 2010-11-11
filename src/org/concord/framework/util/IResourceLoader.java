@@ -19,4 +19,5 @@ public interface IResourceLoader {
 	public int getHttpResponseCode();
 	public URL getURL();
 	public int getContentLength();
+	public String getETag();
 }
