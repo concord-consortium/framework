@@ -12,6 +12,8 @@ public interface OTModelEvent extends OTObjectInterface {
      *
      */
     public static enum EventType {
+        // types of events MW logs
+        MW_EVENT,
         // types of events Netlogo logs
         NL_GLOBAL, NL_GREEN, NL_CODE, NL_WIDGET, NL_BUTTON, NL_SPEED_SLIDER, NL_TURTLE, NL_LINK,
         // some default types for startable models
