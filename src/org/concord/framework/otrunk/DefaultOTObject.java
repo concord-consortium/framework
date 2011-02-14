@@ -30,6 +30,8 @@
 package org.concord.framework.otrunk;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.concord.framework.otrunk.otcore.OTClass;
 import org.concord.framework.otrunk.otcore.OTClassProperty;
@@ -52,6 +54,7 @@ import org.concord.framework.otrunk.otcore.OTClassProperty;
 public class DefaultOTObject 
 	implements OTObject, OTChangeNotifying
 {
+    private static final Logger logger = Logger.getLogger(DefaultOTObject.class.getName());
 	private OTResourceSchema resources;
 	
 	public DefaultOTObject(OTResourceSchema resources)
@@ -139,7 +142,13 @@ public class DefaultOTObject
 		}
 		
 		if(((OTObject)other).getGlobalId().equals(getGlobalId())) {
-			System.err.println("compared two ot objects with the same ID but different instances");
+		    String msg = "compared two ot objects with the same ID but different instances";
+		    if (logger.isLoggable(Level.FINER)) {
+		        Throwable t = new Throwable("stacktrace");
+		        logger.log(Level.INFO, msg, t);
+		    } else {
+		        logger.info(msg);
+		    }
 			return true;
 		}
 		return false;
