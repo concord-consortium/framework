@@ -66,6 +66,7 @@ public interface OTFrame
 	void setOpenMaximized(boolean openMaximized);
 
 	public String getTitle();
+	public void setTitle(String title);
 	
 	public static boolean DEFAULT_borderlessPopup = false;
 	public boolean getBorderlessPopup();
