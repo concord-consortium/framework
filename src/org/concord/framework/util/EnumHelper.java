@@ -29,7 +29,9 @@ public class EnumHelper {
              if(ret != null){
                  return ret;
              }
-        } catch(NumberFormatException e) { }
+        } catch(NumberFormatException e) {
+            e.printStackTrace();
+        }
 
         Object ret = getValueByName(klass, value.trim());
         if(ret != null){
@@ -39,6 +41,7 @@ public class EnumHelper {
         return null;
     }
     
+    /* FIXME This method isn't working right now... */
     public static Object getValue(String className, String value) {
         Class<?> klass;
         try {
@@ -46,7 +49,9 @@ public class EnumHelper {
             if (klass.isAssignableFrom(Enum.class)) {
                 return getValue((Class<Enum>) klass, value);
             }
-        } catch (ClassNotFoundException e) { }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

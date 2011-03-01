@@ -26,7 +26,7 @@ public class OTEnumValue extends DefaultOTObject {
     }
     
     public void setValue(Enum value) {
-        resources.setType(value.getClass().getSimpleName());
+        resources.setType(value.getClass().getCanonicalName());
         resources.setValue(value.name());
     }
 }
