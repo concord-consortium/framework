@@ -15,4 +15,8 @@ public class TimeProviderImpl implements TimeProvider {
         return 0;
     }
 
+    public long adjustTime(long time) {
+        return time;
+    }
+
 }
