@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 public class SimpleLogFormatter extends Formatter {
-	private static final long startMillis = System.currentTimeMillis();
+	private static long startMillis = System.currentTimeMillis();
 
 	private static final String indentStr = "              ";
 	private static final boolean showPackageNames = false;
@@ -14,6 +14,9 @@ public class SimpleLogFormatter extends Formatter {
 	@Override
 	public synchronized String format(LogRecord record) {
 		StringBuffer sb = new StringBuffer();
+		if (record.getMillis() < startMillis) {
+		    startMillis = record.getMillis();
+		}
 		sb.append(ConsoleLogTimeConverter.getTime(record.getMillis() - startMillis));
 		sb.append(" ").append(getLevelShortString(record.getLevel()));
 		sb.append(" ").append(getSourceClassString(record));
