@@ -1,6 +1,7 @@
 package org.concord.otrunk.logging;
 
 import org.concord.framework.otrunk.OTObjectInterface;
+import org.concord.framework.otrunk.OTObjectMap;
 import org.concord.framework.otrunk.OTResourceMap;
 
 public interface OTModelEvent extends OTObjectInterface {
@@ -30,6 +31,10 @@ public interface OTModelEvent extends OTObjectInterface {
     public long getTimestamp();
     public void setTimestamp(long millis);
     
+    @Deprecated
+    /** use getInfo() instead */
     public OTResourceMap getDetails();
+    
+    public OTObjectMap getInfo();
 
 }

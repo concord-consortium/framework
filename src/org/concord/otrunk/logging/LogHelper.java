@@ -3,6 +3,7 @@ package org.concord.otrunk.logging;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
+import org.concord.framework.otrunk.OTObject;
 import org.concord.framework.otrunk.OTObjectList;
 import org.concord.framework.util.TimeProvider;
 import org.concord.otrunk.logging.OTModelEvent.EventType;
@@ -23,7 +24,7 @@ public class LogHelper {
 	 * @param type
 	 * @param details
 	 */
-	public static void add(OTModelLogging model, EventType type, HashMap<String, String> details) {
+	public static void add(OTModelLogging model, EventType type, HashMap<String, OTObject> details) {
 		try {
 		    TimeProvider timeProvider = model.getOTObjectService().getOTrunkService(TimeProvider.class);
 			OTModelEvent item = model.getOTObjectService().createObject(OTModelEvent.class);
@@ -31,8 +32,8 @@ public class LogHelper {
 			item.setTimestamp(timeProvider.currentTimeMillis());
 			
 			if (details != null) {
-    			for (Entry<String, String> e : details.entrySet()) {
-    			    item.getDetails().put(e.getKey(), e.getValue());
+    			for (Entry<String, OTObject> e : details.entrySet()) {
+    			    item.getInfo().putObject(e.getKey(), e.getValue());
     			}
 			}
 			model.getLog().add(item);
