@@ -52,5 +52,7 @@ public interface OTLabbookManager
 	public void removeLabbookListener(OTChangeListener listener);
 	
 	public boolean getEmbedInDrawTool();
+
+	public boolean getScaleDrawTools();
 	
 }
