@@ -61,13 +61,17 @@ public class LogHelper {
 		long start = 0;
 		for (int i = 0; i < items.size(); ++i) {
 		    OTModelEvent item = (OTModelEvent) items.get(i);
-			EventType name = item.getType();
-			if (name.equals(EventType.START)) {
-				start = item.getTimestamp();
-			}
-			else if (name.equals(EventType.STOP)) {
-				sum += item.getTimestamp() - start;
-			}
+		    if (item != null) {
+    			EventType name = item.getType();
+    			if (name != null) {
+        			if (name.equals(EventType.START)) {
+        				start = item.getTimestamp();
+        			}
+        			else if (name.equals(EventType.STOP)) {
+        				sum += item.getTimestamp() - start;
+        			}
+    			}
+		    }
 		}
 		return sum;
 	}
