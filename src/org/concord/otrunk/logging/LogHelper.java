@@ -48,7 +48,7 @@ public class LogHelper {
 		int cnt = 0;
 		for (int i = 0; i < items.size(); ++i) {
 		    OTModelEvent item = (OTModelEvent) items.get(i);
-			if (item.getType().equals(EventType.START)) {
+			if (item != null && item.getType() != null && item.getType().equals(EventType.START)) {
 				++cnt;
 			}
 		}
