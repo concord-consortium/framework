@@ -330,10 +330,29 @@ public class OTrunkUtil
 	 * false in some cases when the objects are the same.  So use with caution.
 	 * @param obj1
 	 * @param obj2
+	 * @param compareXMLStrings
 	 * @return true if the same, false if different
 	 */
 	public static boolean compareObjects(OTObject obj1, OTObject obj2, boolean compareXMLStrings)
 	{
+		return compareObjects(obj1, obj2, compareXMLStrings, -1);
+	}
+	
+	/**
+	 * Compare the content of the 2 objects.  This isn't complete, it will probably return
+	 * false in some cases when the objects are the same.  So use with caution.
+	 * @param obj1
+	 * @param obj2
+	 * @param compareXMLStrings
+	 * @param depth
+	 * @return true if the same, false if different
+	 */
+	public static boolean compareObjects(OTObject obj1, OTObject obj2, boolean compareXMLStrings, int depth)
+	{
+		int nextDepth = depth - 1;
+		if (depth == -1) {
+			nextDepth = -1;
+		}
 		// if only one is null, return false. If both are null, return true
 		if (obj1 == null && obj2 == null){
 			return true;
@@ -345,6 +364,12 @@ public class OTrunkUtil
 		if(!otClass.equals(obj2.otClass())){
 			logger.fine("Object classes don't match: " + otClass + " != " + obj2.otClass());
 			return false;
+		}
+		
+		if (depth == 0) {
+			// Since we can't check children at this depth setting, return true.
+			// They are both not null and of the same type.
+			return true;
 		}
 		
 		ArrayList<OTClassProperty> allClassProperties = otClass.getOTAllClassProperties();
@@ -378,7 +403,7 @@ public class OTrunkUtil
 			Object value2 = obj2.otGet(property);
 
 			if(value1 instanceof OTObject && value2 instanceof OTObject){
-				if(!compareObjects((OTObject)value1, (OTObject)value2)){
+				if(!compareObjects((OTObject)value1, (OTObject)value2, compareXMLStrings, nextDepth)){
 					logFiner(property, "Child objects are not the same");
 					return false;
 				}
@@ -406,7 +431,7 @@ public class OTrunkUtil
 				}
 				
 				for(int j=0; j<list1.size(); j++){
-					if(!compareObjects(list1.get(j), list2.get(j))){
+					if(!compareObjects(list1.get(j), list2.get(j), compareXMLStrings, nextDepth)){
 						logFiner(property, "object list item " + j + " is not the same");
 						return false;
 					}
@@ -440,7 +465,7 @@ public class OTrunkUtil
 				Vector<String> objectKeys = map1.getObjectKeys();
 				for(int j=0; j<objectKeys.size(); j++){
 					String key = objectKeys.get(j);
-					if(!compareObjects(map1.getObject(key), map2.getObject(key))){
+					if(!compareObjects(map1.getObject(key), map2.getObject(key), compareXMLStrings, nextDepth)){
 						logFiner(property, "object map item with key '" + key + "' is not the same");
 						return false;
 					}
