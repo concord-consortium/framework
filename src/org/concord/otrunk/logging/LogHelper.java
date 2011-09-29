@@ -43,12 +43,24 @@ public class LogHelper {
 		}
 	}
 	
-	public static int getNumCollections(OTModelLogging model) {
+	public static int getNumStarts(OTModelLogging model) {
+		return getNumEvents(model, EventType.START);
+	}
+	
+	public static int getNumPlaybackStarts(OTModelLogging model) {
+		return getNumEvents(model, EventType.PLAYBACK_START);
+	}
+	
+	public static int getNumResets(OTModelLogging model) {
+		return getNumEvents(model, EventType.RESET);
+	}
+	
+	public static int getNumEvents(OTModelLogging model, EventType type) {
 		OTObjectList items = model.getLog();
 		int cnt = 0;
 		for (int i = 0; i < items.size(); ++i) {
 		    OTModelEvent item = (OTModelEvent) items.get(i);
-			if (item != null && item.getType() != null && item.getType().equals(EventType.START)) {
+			if (item != null && item.getType() != null && item.getType().equals(type)) {
 				++cnt;
 			}
 		}

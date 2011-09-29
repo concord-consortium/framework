@@ -13,6 +13,9 @@ public interface OTModelEvent extends OTObjectInterface {
      *
      */
     public static enum EventType {
+    	// NOTE: If you change any of these, you'll mess up any generated student data, since the learner
+    	// data format saves these as strings.
+    	
         // types of events MW logs
         MW_EVENT,
         // types of events Netlogo logs
