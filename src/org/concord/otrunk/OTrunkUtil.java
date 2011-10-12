@@ -360,6 +360,11 @@ public class OTrunkUtil
 			return false;
 		}
 		
+		// if they're the same object instance, by definition they have to be the same
+		if (obj1 == obj2) {
+			return true;
+		}
+		
 		OTClass otClass = obj1.otClass();
 		if(!otClass.equals(obj2.otClass())){
 			logger.fine("Object classes don't match: " + otClass + " != " + obj2.otClass());
