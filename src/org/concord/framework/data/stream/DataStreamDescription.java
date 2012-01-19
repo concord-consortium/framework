@@ -56,8 +56,8 @@ public class DataStreamDescription
 		
 		//Dt channel description
 		dtChannelDescription =  new DataChannelDescription();
-		dtChannelDescription.setName("dt");
-		dtChannelDescription.setPrecision(2);			
+		dtChannelDescription.setName("time");
+		dtChannelDescription.setPrecision(2);
 	}
 	
 	public void setDt(float dt)
