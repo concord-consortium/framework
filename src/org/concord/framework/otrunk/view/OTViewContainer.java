@@ -74,4 +74,7 @@ public interface OTViewContainer
     public OTViewContainer getUpdateableContainer();
     
     public void reloadView();
+    
+    public void addViewContainerListener(OTViewContainerListener listener);
+    public void removeViewContainerListener(OTViewContainerListener listener);
 }
