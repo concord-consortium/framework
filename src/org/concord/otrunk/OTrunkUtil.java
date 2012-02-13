@@ -6,6 +6,7 @@ package org.concord.otrunk;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 import java.util.Vector;
 import java.util.logging.Logger;
@@ -349,172 +350,192 @@ public class OTrunkUtil
 	 */
 	public static boolean compareObjects(OTObject obj1, OTObject obj2, boolean compareXMLStrings, int depth)
 	{
-		int nextDepth = depth - 1;
-		if (depth == -1) {
-			nextDepth = -1;
-		}
-		// if only one is null, return false. If both are null, return true
-		if (obj1 == null && obj2 == null){
-			return true;
-		} else if (obj1 == null || obj2 == null){
-			return false;
-		}
-		
-		// if they're the same object instance, by definition they have to be the same
-		if (obj1 == obj2) {
-			return true;
-		}
-		
-		OTClass otClass = obj1.otClass();
-		if(!otClass.equals(obj2.otClass())){
-			logger.fine("Object classes don't match: " + otClass + " != " + obj2.otClass());
-			return false;
-		}
-		
-		if (depth == 0) {
-			// Since we can't check children at this depth setting, return true.
-			// They are both not null and of the same type.
-			return true;
-		}
-		
-		ArrayList<OTClassProperty> allClassProperties = otClass.getOTAllClassProperties();
-		for(int i=0; i<allClassProperties.size(); i++){
-			OTClassProperty property = allClassProperties.get(i);
+		ObjectComparer comparer = new ObjectComparer();
+		return comparer.compareObjects(obj1, obj2, compareXMLStrings, depth);
+    }
 
-			// skip local id properties
-			if("localId".equals(property.getName())){
-				continue;
-			}
+	private static class ObjectComparer{
+		HashMap<OTObject, OTObject> comparedObjects = new HashMap<OTObject, OTObject>();
+		
+		private boolean compareObjects(OTObject obj1, OTObject obj2, boolean compareXMLStrings, int depth)
+		{
 			
-			boolean isSet = obj1.otIsSet(property);
-			if(isSet != obj2.otIsSet(property)){
-				logFiner(property, (isSet ? "is" : "is not") + " set on obj1, but " + (isSet ? "is not" : "is") + " set on obj2");
+			int nextDepth = depth - 1;
+			if (depth == -1) {
+				nextDepth = -1;
+			}
+			// if only one is null, return false. If both are null, return true
+			if (obj1 == null && obj2 == null){
+				return true;
+			} else if (obj1 == null || obj2 == null){
 				return false;
 			}
 			
-			if(!isSet){
-				continue;
+			// if they're the same object instance, by definition they have to be the same
+			if (obj1 == obj2) {
+				return true;
+			}
+		
+			if(comparedObjects.get(obj1) == obj2){
+				// we have already or are currently comparing these objects
+				// if they didn't match that should have already caused a false return
+				// if they are currently matching then that will cause a false return if they don't match
+				return true;
+			}
+
+			comparedObjects.put(obj1, obj2);
+			
+			OTClass otClass = obj1.otClass();
+			if(!otClass.equals(obj2.otClass())){
+				logger.fine("Object classes don't match: " + otClass + " != " + obj2.otClass());
+				return false;
 			}
 			
-			// skip otxml strings because the will have changed and we
-			// need special parsing code to handle them
-			if(property.getType().getInstanceClass() == OTXMLString.class ){
-				if (! compareXMLStrings) {
+			if (depth == 0) {
+				// Since we can't check children at this depth setting, return true.
+				// They are both not null and of the same type.
+				return true;
+			}
+			
+			ArrayList<OTClassProperty> allClassProperties = otClass.getOTAllClassProperties();
+			for(int i=0; i<allClassProperties.size(); i++){
+				OTClassProperty property = allClassProperties.get(i);
+
+				// skip local id properties
+				if("localId".equals(property.getName())){
 					continue;
 				}
-			}
-			
-			Object value1 = obj1.otGet(property);
-			Object value2 = obj2.otGet(property);
+				
+				boolean isSet = obj1.otIsSet(property);
+				if(isSet != obj2.otIsSet(property)){
+					logFiner(property, (isSet ? "is" : "is not") + " set on obj1, but " + (isSet ? "is not" : "is") + " set on obj2");
+					return false;
+				}
+				
+				if(!isSet){
+					continue;
+				}
+				
+				// skip otxml strings because the will have changed and we
+				// need special parsing code to handle them
+				if(property.getType().getInstanceClass() == OTXMLString.class ){
+					if (! compareXMLStrings) {
+						continue;
+					}
+				}
+				
+				Object value1 = obj1.otGet(property);
+				Object value2 = obj2.otGet(property);
 
-			if(value1 instanceof OTObject && value2 instanceof OTObject){
-				if(!compareObjects((OTObject)value1, (OTObject)value2, compareXMLStrings, nextDepth)){
-					logFiner(property, "Child objects are not the same");
-					return false;
-				}
-			} else if (value1 instanceof OTResourceList){
-				OTResourceList list1 = (OTResourceList) value1;
-				OTResourceList list2 = (OTResourceList) value2;
-				if(list1.size() != list2.size()){
-					logFiner(property, "resource lists have different sizes -- " + list1.size() + " != " + list2.size());
-					return false;
-				}
-				
-				for(int j=0; j<list1.size(); j++){
-					if(!list1.get(j).equals(list2.get(j))){
-						logFiner(property, "resource list item " + j + " is not the same: '" + list1.get(j) + "' != '" + list2.get(j) + "'");
+				if(value1 instanceof OTObject && value2 instanceof OTObject){
+					if(!compareObjects((OTObject)value1, (OTObject)value2, compareXMLStrings, nextDepth)){
+						logFiner(property, "Child objects are not the same");
 						return false;
 					}
-				}
-				
-			} else if (value1 instanceof OTObjectList){
-				OTObjectList list1 = (OTObjectList) value1;
-				OTObjectList list2 = (OTObjectList) value2;
-				if(list1.size() != list2.size()){
-					logFiner(property, "object lists have different sizes -- " + list1.size() + " != " + list2.size());
-					return false;
-				}
-				
-				for(int j=0; j<list1.size(); j++){
-					if(!compareObjects(list1.get(j), list2.get(j), compareXMLStrings, nextDepth)){
-						logFiner(property, "object list item " + j + " is not the same");
-						return false;
-					}
-				}
-				
-			} else if (value1 instanceof OTResourceMap){
-				OTResourceMap map1 = (OTResourceMap) value1;
-				OTResourceMap map2 = (OTResourceMap) value2;
-				if(map1.size() != map2.size()){
-					logFiner(property, "resource maps have different sizes -- " + map1.size() + " != " + map2.size());
-					return false;
-				}
-				
-				String[] objectKeys = map1.getKeys();
-				for(int j=0; j<objectKeys.length; j++){
-					String key = objectKeys[j];
-					if(! map1.get(key).equals(map2.get(key))){
-						logFiner(property, "resource map item with key '" + key + "' is not the same: '" + map1.get(key) + "' != '" + map2.get(key) + "'");
+				} else if (value1 instanceof OTResourceList){
+					OTResourceList list1 = (OTResourceList) value1;
+					OTResourceList list2 = (OTResourceList) value2;
+					if(list1.size() != list2.size()){
+						logFiner(property, "resource lists have different sizes -- " + list1.size() + " != " + list2.size());
 						return false;
 					}
 					
-				}				
-			} else if (value1 instanceof OTObjectMap){
-				OTObjectMap map1 = (OTObjectMap) value1;
-				OTObjectMap map2 = (OTObjectMap) value2;
-				if(map1.size() != map2.size()){
-					logFiner(property, "object maps have different sizes -- " + map1.size() + " != " + map2.size());
-					return false;
-				}
-				
-				Vector<String> objectKeys = map1.getObjectKeys();
-				for(int j=0; j<objectKeys.size(); j++){
-					String key = objectKeys.get(j);
-					if(!compareObjects(map1.getObject(key), map2.getObject(key), compareXMLStrings, nextDepth)){
-						logFiner(property, "object map item with key '" + key + "' is not the same");
+					for(int j=0; j<list1.size(); j++){
+						if(!list1.get(j).equals(list2.get(j))){
+							logFiner(property, "resource list item " + j + " is not the same: '" + list1.get(j) + "' != '" + list2.get(j) + "'");
+							return false;
+						}
+					}
+					
+				} else if (value1 instanceof OTObjectList){
+					OTObjectList list1 = (OTObjectList) value1;
+					OTObjectList list2 = (OTObjectList) value2;
+					if(list1.size() != list2.size()){
+						logFiner(property, "object lists have different sizes -- " + list1.size() + " != " + list2.size());
 						return false;
 					}
 					
-				}				
-			} else if(value1 instanceof BlobResource && value2 instanceof BlobResource){
-				BlobResource blob1 = (BlobResource) value1;
-				BlobResource blob2 = (BlobResource) value2;
-				byte[] bytes1 = blob1.getBytes();
-				byte[] bytes2 = blob2.getBytes();
-				
-				if(bytes1.length != bytes2.length){
-					logFiner(property, "blobs have different byte[] lengths");
-					return false;
-				}
-				
-				for(int j=0;j<bytes1.length;j++){
-					if(bytes1[j] != bytes2[j]){
-						logFiner(property, "byte at index " + j + " doesn't match: " + bytes1[j] + " != " + bytes2[j]);
+					for(int j=0; j<list1.size(); j++){
+						if(!compareObjects(list1.get(j), list2.get(j), compareXMLStrings, nextDepth)){
+							logFiner(property, "object list item " + j + " is not the same");
+							return false;
+						}
+					}
+					
+				} else if (value1 instanceof OTResourceMap){
+					OTResourceMap map1 = (OTResourceMap) value1;
+					OTResourceMap map2 = (OTResourceMap) value2;
+					if(map1.size() != map2.size()){
+						logFiner(property, "resource maps have different sizes -- " + map1.size() + " != " + map2.size());
 						return false;
 					}
-				}
-			} else if (value1 instanceof OTXMLString) {
-				
-				// FIXME parse for object references and be sure to compare those objects
-				String string1 = ((OTXMLString) value1).getContent();
-				String string2 = ((OTXMLString) value1).getContent();
-				
-				// ignore whitespace
-				string1 = string1.replaceAll("[ ]+", " ");
-				string2 = string2.replaceAll("[ ]+", " ");
-				
-				if (!string1.equals(string2)) {
-					logFiner(property, "xmls strings don't match: '" + string1 + "' != '" + string2 + "'");
-				}
-			} else {
-				if(!value1.equals(value2)){
-					logFiner(property, "values don't match: '" + value1 + "' != '" + value2 + "'");
-					return false;
+					
+					String[] objectKeys = map1.getKeys();
+					for(int j=0; j<objectKeys.length; j++){
+						String key = objectKeys[j];
+						if(! map1.get(key).equals(map2.get(key))){
+							logFiner(property, "resource map item with key '" + key + "' is not the same: '" + map1.get(key) + "' != '" + map2.get(key) + "'");
+							return false;
+						}
+						
+					}				
+				} else if (value1 instanceof OTObjectMap){
+					OTObjectMap map1 = (OTObjectMap) value1;
+					OTObjectMap map2 = (OTObjectMap) value2;
+					if(map1.size() != map2.size()){
+						logFiner(property, "object maps have different sizes -- " + map1.size() + " != " + map2.size());
+						return false;
+					}
+					
+					Vector<String> objectKeys = map1.getObjectKeys();
+					for(int j=0; j<objectKeys.size(); j++){
+						String key = objectKeys.get(j);
+						if(!compareObjects(map1.getObject(key), map2.getObject(key), compareXMLStrings, nextDepth)){
+							logFiner(property, "object map item with key '" + key + "' is not the same");
+							return false;
+						}
+						
+					}				
+				} else if(value1 instanceof BlobResource && value2 instanceof BlobResource){
+					BlobResource blob1 = (BlobResource) value1;
+					BlobResource blob2 = (BlobResource) value2;
+					byte[] bytes1 = blob1.getBytes();
+					byte[] bytes2 = blob2.getBytes();
+					
+					if(bytes1.length != bytes2.length){
+						logFiner(property, "blobs have different byte[] lengths");
+						return false;
+					}
+					
+					for(int j=0;j<bytes1.length;j++){
+						if(bytes1[j] != bytes2[j]){
+							logFiner(property, "byte at index " + j + " doesn't match: " + bytes1[j] + " != " + bytes2[j]);
+							return false;
+						}
+					}
+				} else if (value1 instanceof OTXMLString) {
+					
+					// FIXME parse for object references and be sure to compare those objects
+					String string1 = ((OTXMLString) value1).getContent();
+					String string2 = ((OTXMLString) value1).getContent();
+					
+					// ignore whitespace
+					string1 = string1.replaceAll("[ ]+", " ");
+					string2 = string2.replaceAll("[ ]+", " ");
+					
+					if (!string1.equals(string2)) {
+						logFiner(property, "xmls strings don't match: '" + string1 + "' != '" + string2 + "'");
+					}
+				} else {
+					if(!value1.equals(value2)){
+						logFiner(property, "values don't match: '" + value1 + "' != '" + value2 + "'");
+						return false;
+					}
 				}
 			}
+			return true;
 		}
-		return true;
-	}
+	};
 	
 	private static void logFiner(OTClassProperty property, String msg) {
 		logger.finer("'" + property.getName() + "': " + msg);
