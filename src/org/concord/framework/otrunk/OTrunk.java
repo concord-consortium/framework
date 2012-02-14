@@ -49,6 +49,7 @@ public interface OTrunk {
 	public void setRoot(OTObject obj) throws Exception;
 
 	public OTObject getRoot() throws Exception;
+	public OTObjectService getRootObjectService();
 
 	public void close();
 
