@@ -1,5 +1,6 @@
 package org.concord.otrunk.logging;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -56,15 +57,8 @@ public class LogHelper {
 	}
 	
 	public static int getNumEvents(OTModelLogging model, EventType type) {
-		OTObjectList items = model.getLog();
-		int cnt = 0;
-		for (int i = 0; i < items.size(); ++i) {
-		    OTModelEvent item = (OTModelEvent) items.get(i);
-			if (item != null && item.getType() != null && item.getType().equals(type)) {
-				++cnt;
-			}
-		}
-		return cnt;
+		ArrayList<OTModelEvent> events = getEvents(model, type);
+		return events.size();
 	}
 	
 	public static long getTotalCollectionTime(OTModelLogging model) {
@@ -86,5 +80,36 @@ public class LogHelper {
 		    }
 		}
 		return sum;
+	}
+	
+	public static ArrayList<OTModelEvent> getEvents(OTModelLogging model, EventType type) {
+		return getEvents(model, type, -2); // default time is -1, so use -2 to include all events
+	}
+	
+	public static ArrayList<OTModelEvent> getEvents(OTModelLogging model, EventType type, long afterTime) {
+		OTObjectList items = model.getLog();
+		ArrayList<OTModelEvent> events = new ArrayList<OTModelEvent>();
+		for (int i = 0; i < items.size(); ++i) {
+		    OTModelEvent item = (OTModelEvent) items.get(i);
+			if (item != null && item.getType() != null && item.getType().equals(type) && item.getTimestamp() > afterTime) {
+				events.add(item);
+			}
+		}
+		return events;
+	}
+	
+	public static ArrayList<OTObject> getExtraInfo(ArrayList<OTModelEvent> events, String infoKey) {
+		ArrayList<OTObject> infoItems = new ArrayList<OTObject>();
+		for (OTModelEvent event : events) {
+			OTObject obj = getExtraInfo(event, infoKey);
+			if (obj != null) {
+				infoItems.add(obj);
+			}
+		}
+		return infoItems;
+	}
+	
+	public static OTObject getExtraInfo(OTModelEvent event, String infoKey) {
+		return event.getInfo().getObject(infoKey);
 	}
 }
