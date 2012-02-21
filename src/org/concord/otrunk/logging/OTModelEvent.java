@@ -30,7 +30,7 @@ public interface OTModelEvent extends OTObjectInterface {
     public EventType getType();
     public void setType(EventType type);
     
-    public static long DEFAULT_Timestamp = -1;
+    public static long DEFAULT_timestamp = -1;
     public long getTimestamp();
     public void setTimestamp(long millis);
     
