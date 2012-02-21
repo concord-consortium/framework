@@ -15,6 +15,12 @@ public class StartableEvent {
 		STOPPED,
 		
 		/**
+		 * This startable is about to be reset. This should be sent just before the reset method of the
+		 * startable is called.
+		 */
+		PRE_RESET,
+		
+		/**
 		 * This startable has just been reset, usually this is sent after the reset method of the 
 		 * startable is called.
 		 */
